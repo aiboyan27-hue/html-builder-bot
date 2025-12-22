@@ -1,4 +1,5 @@
-import { Star, Play, Check } from "lucide-react";
+import { Link } from "react-router-dom";
+import { Star, Check } from "lucide-react";
 import { Button } from "@/components/ui/button";
 
 const Hero = () => {
@@ -6,7 +7,7 @@ const Hero = () => {
     <section className="relative pt-24 md:pt-32 pb-16 md:pb-24 overflow-hidden">
       {/* Background gradient */}
       <div className="absolute inset-0 bg-gradient-to-br from-primary-light via-background to-background -z-10" />
-      
+
       {/* Decorative blobs */}
       <div className="absolute top-20 right-0 w-96 h-96 bg-primary/5 rounded-full blur-3xl -z-10" />
       <div className="absolute bottom-0 left-0 w-80 h-80 bg-primary/5 rounded-full blur-3xl -z-10" />
@@ -19,7 +20,10 @@ const Hero = () => {
             <div className="inline-flex items-center gap-2 bg-accent text-accent-foreground px-4 py-2 rounded-full text-sm font-medium mb-6 animate-fade-in-up">
               <div className="flex -space-x-1">
                 {[...Array(3)].map((_, i) => (
-                  <div key={i} className="w-5 h-5 rounded-full bg-primary/20 border-2 border-accent" />
+                  <div
+                    key={i}
+                    className="w-5 h-5 rounded-full bg-primary/20 border-2 border-accent"
+                  />
                 ))}
               </div>
               Miami Locals Love Us
@@ -44,16 +48,22 @@ const Hero = () => {
 
             {/* Description */}
             <p className="text-lg text-muted-foreground max-w-lg mx-auto lg:mx-0 mb-8 animate-fade-in-up animation-delay-400">
-              Feel good about your clean home again. Trusted by 7,000+ clients across South Florida for reliable, high-standard cleaning.
+              Feel good about your clean home again. Trusted by 7,000+ clients
+              across South Florida for reliable, high-standard cleaning.
             </p>
 
             {/* CTAs */}
             <div className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start animate-fade-in-up animation-delay-600">
-              <Button size="lg" className="rounded-full px-8 text-base">
-                Get Instant Quote
+              <Button asChild size="lg" className="rounded-full px-8 text-base">
+                <Link to="/quote">Get Instant Quote</Link>
               </Button>
-              <Button variant="outline" size="lg" className="rounded-full px-8 text-base">
-                Call (305) 575-2776
+              <Button
+                asChild
+                variant="outline"
+                size="lg"
+                className="rounded-full px-8 text-base"
+              >
+                <a href="tel:3055752776">Call (305) 575-2776</a>
               </Button>
             </div>
 
@@ -75,10 +85,15 @@ const Hero = () => {
               <div className="flex items-center gap-2">
                 <div className="flex">
                   {[...Array(5)].map((_, i) => (
-                    <Star key={i} className="w-5 h-5 fill-yellow-400 text-yellow-400" />
+                    <Star
+                      key={i}
+                      className="w-5 h-5 fill-yellow-400 text-yellow-400"
+                    />
                   ))}
                 </div>
-                <span className="text-sm font-medium text-muted-foreground">360+ 5-Star Reviews</span>
+                <span className="text-sm font-medium text-muted-foreground">
+                  360+ 5-Star Reviews
+                </span>
               </div>
             </div>
           </div>
@@ -91,7 +106,7 @@ const Hero = () => {
                 alt="Professional cleaner at work"
                 className="w-full h-auto object-cover"
               />
-              
+
               {/* Overlay badge */}
               <div className="absolute bottom-6 left-6 right-6 bg-background/90 backdrop-blur-sm rounded-2xl p-4 shadow-card">
                 <div className="flex items-center gap-3">
@@ -99,7 +114,9 @@ const Hero = () => {
                     <Check className="w-5 h-5 text-primary-foreground" />
                   </div>
                   <div>
-                    <p className="font-semibold text-foreground">100% Satisfaction</p>
+                    <p className="font-semibold text-foreground">
+                      100% Satisfaction
+                    </p>
                   </div>
                 </div>
               </div>

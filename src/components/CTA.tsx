@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import { Sparkles } from "lucide-react";
 
@@ -21,11 +22,12 @@ const CTA = () => {
               Instant pricing. No commitment. Book your peace of mind today.
             </h2>
             <Button
+              asChild
               size="lg"
               variant="secondary"
               className="rounded-full px-10 text-base mt-4"
             >
-              Book Cleaning Now
+              <Link to="/quote">Book Cleaning Now</Link>
             </Button>
           </div>
         </div>
