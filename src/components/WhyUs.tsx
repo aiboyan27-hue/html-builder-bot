@@ -1,59 +1,93 @@
-import { Shield, Leaf, Users, Award } from "lucide-react";
+import { 
+  Shield, 
+  Droplets, 
+  Users, 
+  CheckSquare, 
+  Wind, 
+  Sparkles, 
+  Star, 
+  Heart 
+} from "lucide-react";
 
 const features = [
-  { icon: Shield, title: "Vetted Pros", description: "Background checked & insured." },
-  { icon: Leaf, title: "Eco-Friendly", description: "Safe for kids and pets." },
-  { icon: Users, title: "Consistent Team", description: "Familiar faces every time." },
-  { icon: Award, title: "6000+ Cleanings", description: "A track record of excellence." },
+  { 
+    icon: Shield, 
+    title: "Vetted pros", 
+    description: "Background checked and insured." 
+  },
+  { 
+    icon: Droplets, 
+    title: "Non-toxic products", 
+    description: "Safe for your kids and pets." 
+  },
+  { 
+    icon: Users, 
+    title: "Same team, every time", 
+    description: "Familiar faces every time." 
+  },
+  { 
+    icon: CheckSquare, 
+    title: "Custom checklists", 
+    description: "Cleaning that fits your lifestyle." 
+  },
+  { 
+    icon: Wind, 
+    title: "HEPA vacuums", 
+    description: "Captures dust and allergens." 
+  },
+  { 
+    icon: Sparkles, 
+    title: "Sanitized supplies", 
+    description: "Fresh tools for every home." 
+  },
+  { 
+    icon: Star, 
+    title: "6000+ cleanings", 
+    description: "A track record of trust." 
+  },
+  { 
+    icon: Heart, 
+    title: "360+ 5-star reviews", 
+    description: "Loved by Miami locals." 
+  },
 ];
 
 const WhyUs = () => {
   return (
-    <section id="about" className="py-20 md:py-28 bg-muted/30">
+    <section id="about" className="py-20 md:py-28 bg-background">
       <div className="container">
-        <div className="grid lg:grid-cols-2 gap-12 lg:gap-20 items-center">
-          {/* Content */}
-          <div>
-            <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-4">
-              Why Miami locals trust us
-            </h2>
-            <p className="text-lg text-muted-foreground mb-10">
-              We're not just another cleaning company. Here's how we deliver on our promises over and over again.
-            </p>
+        {/* Header - Left aligned */}
+        <div className="mb-12">
+          <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-4">
+            Why Miami locals trust us
+          </h2>
+          <p className="text-lg text-muted-foreground max-w-2xl">
+            We're not just another cleaning company.
+            <br />
+            Here's how we deliver on our promises over and over again.
+          </p>
+        </div>
 
-            <div className="grid sm:grid-cols-2 gap-6">
-              {features.map((feature) => (
-                <div key={feature.title} className="flex gap-4">
-                  <div className="w-12 h-12 rounded-xl bg-primary/10 flex items-center justify-center flex-shrink-0">
-                    <feature.icon className="w-6 h-6 text-primary" />
-                  </div>
-                  <div>
-                    <h3 className="font-semibold text-foreground mb-1">{feature.title}</h3>
-                    <p className="text-sm text-muted-foreground">{feature.description}</p>
-                  </div>
-                </div>
-              ))}
+        {/* Features Grid - 4 columns on desktop, 2 on tablet, 1 on mobile */}
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 lg:gap-8">
+          {features.map((feature) => (
+            <div key={feature.title} className="flex items-start gap-4">
+              {/* Icon */}
+              <div className="w-14 h-14 rounded-2xl bg-muted/60 flex items-center justify-center flex-shrink-0">
+                <feature.icon className="w-6 h-6 text-foreground" />
+              </div>
+              
+              {/* Text */}
+              <div className="pt-1">
+                <h3 className="font-medium text-muted-foreground text-sm mb-1">
+                  {feature.title}
+                </h3>
+                <p className="text-foreground font-medium text-sm leading-snug">
+                  {feature.description}
+                </p>
+              </div>
             </div>
-          </div>
-
-          {/* Image & Quote */}
-          <div className="relative">
-            <div className="rounded-3xl overflow-hidden shadow-elevated">
-              <img
-                src="https://images.unsplash.com/photo-1556909114-f6e7ad7d3136?w=600&h=500&fit=crop"
-                alt="Clean modern kitchen"
-                className="w-full h-auto object-cover"
-              />
-            </div>
-            
-            {/* Quote card */}
-            <div className="absolute -bottom-6 -left-6 right-12 bg-card rounded-2xl p-6 shadow-elevated border border-border">
-              <h4 className="font-bold text-foreground mb-2">Built by a mom & son.</h4>
-              <p className="text-sm text-muted-foreground italic">
-                "We treat every home like it's our own. Everything we do is designed to earn your trust and keep it."
-              </p>
-            </div>
-          </div>
+          ))}
         </div>
       </div>
     </section>
