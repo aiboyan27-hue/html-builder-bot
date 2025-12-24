@@ -88,7 +88,7 @@ const Header = () => {
               </div>
             </div>
             <Link
-              to="/quote"
+              to="/contact"
               className="text-sm font-medium text-foreground hover:text-primary transition-colors"
             >
               Contact
@@ -175,7 +175,7 @@ const Header = () => {
               </div>
             </div>
             <Link
-              to="/quote"
+              to="/contact"
               className="block py-2 text-foreground font-medium"
               onClick={() => setMobileMenuOpen(false)}
             >
