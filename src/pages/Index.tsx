@@ -6,7 +6,7 @@ import WhyUs from "@/components/WhyUs";
 import Story from "@/components/Story";
 import Reviews from "@/components/Reviews";
 import FAQ from "@/components/FAQ";
-import CTA from "@/components/CTA";
+
 import Footer from "@/components/Footer";
 
 const Index = () => {
@@ -20,7 +20,7 @@ const Index = () => {
       <Story />
       <FAQ />
       <Reviews />
-      <CTA />
+      
       <Footer />
     </main>
   );
