@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { Link, useLocation } from "react-router-dom";
+import { Link, useLocation, useNavigate } from "react-router-dom";
 import { Phone, ChevronDown, Menu, X, Sparkles, Home, RefreshCw, Building, Droplets, Hammer, Grid3X3, PartyPopper } from "lucide-react";
 import { Button } from "@/components/ui/button";
 
@@ -18,13 +18,36 @@ const Header = () => {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [servicesOpen, setServicesOpen] = useState(false);
   const location = useLocation();
+  const navigate = useNavigate();
 
-  const isHome = location.pathname === "/";
+  const scrollToTop = () => {
+    window.scrollTo({ top: 0, behavior: "smooth" });
+  };
 
-  const scrollToSection = (sectionId: string) => {
-    if (isHome) {
-      const element = document.getElementById(sectionId);
-      element?.scrollIntoView({ behavior: "smooth" });
+  const handleNavClick = (path: string) => {
+    setMobileMenuOpen(false);
+    setServicesOpen(false);
+    if (location.pathname === path) {
+      scrollToTop();
+    } else {
+      navigate(path);
+      setTimeout(() => {
+        window.scrollTo({ top: 0, behavior: "smooth" });
+      }, 100);
+    }
+  };
+
+  const handleServiceClick = (slug: string) => {
+    const path = `/services/${slug}`;
+    setMobileMenuOpen(false);
+    setServicesOpen(false);
+    if (location.pathname === path) {
+      scrollToTop();
+    } else {
+      navigate(path);
+      setTimeout(() => {
+        window.scrollTo({ top: 0, behavior: "smooth" });
+      }, 100);
     }
   };
 
@@ -33,7 +56,7 @@ const Header = () => {
       <div className="container">
         <div className="flex items-center justify-between h-16 md:h-20">
           {/* Logo */}
-          <Link to="/" className="flex items-center gap-2.5">
+          <button onClick={() => handleNavClick("/")} className="flex items-center gap-2.5">
             <div className="w-10 h-10 bg-primary rounded-lg flex items-center justify-center">
               <div className="w-6 h-6 bg-primary-foreground rounded-sm flex items-center justify-center">
                 <div className="w-3 h-3 bg-primary rounded-full" />
@@ -43,16 +66,16 @@ const Header = () => {
               <span className="text-xs font-bold text-foreground uppercase tracking-wide">ÉLITE</span>
               <span className="text-sm font-bold text-primary uppercase tracking-wide">PROPRETÉ</span>
             </div>
-          </Link>
+          </button>
 
           {/* Desktop Navigation - Centered */}
           <nav className="hidden lg:flex items-center gap-10">
-            <Link
-              to="/about"
+            <button
+              onClick={() => handleNavClick("/about")}
               className="text-sm font-medium text-foreground hover:text-primary transition-colors"
             >
               À propos
-            </Link>
+            </button>
             <div 
               className="relative"
               onMouseEnter={() => setServicesOpen(true)}
@@ -66,18 +89,12 @@ const Header = () => {
                 <ChevronDown className={`w-4 h-4 transition-transform ${servicesOpen ? 'rotate-180' : ''}`} />
               </button>
             </div>
-            <Link
-              to="/contact"
+            <button
+              onClick={() => handleNavClick("/contact")}
               className="text-sm font-medium text-foreground hover:text-primary transition-colors"
             >
               Contact
-            </Link>
-            <Link
-              to="/signin"
-              className="text-sm font-medium text-foreground hover:text-primary transition-colors"
-            >
-              Connexion
-            </Link>
+            </button>
           </nav>
 
           {/* Desktop CTA - Right aligned */}
@@ -90,10 +107,10 @@ const Header = () => {
               (514) 123-4567
             </a>
             <Button 
-              asChild 
+              onClick={() => handleNavClick("/quote")}
               className="bg-primary hover:bg-primary/90 text-primary-foreground rounded-full px-6 py-2.5 text-sm font-bold uppercase tracking-wide"
             >
-              <Link to="/quote">Réserver</Link>
+              Réserver
             </Button>
           </div>
 
@@ -120,15 +137,14 @@ const Header = () => {
             {services.map((service) => {
               const Icon = service.icon;
               return (
-                <Link
+                <button
                   key={service.slug}
-                  to={`/services/${service.slug}`}
-                  onClick={() => setServicesOpen(false)}
-                  className="flex items-center gap-3 text-primary-foreground hover:text-foreground transition-colors group py-2"
+                  onClick={() => handleServiceClick(service.slug)}
+                  className="flex items-center gap-3 text-primary-foreground hover:text-foreground transition-colors group py-2 text-left"
                 >
                   <Icon className="w-4 h-4 flex-shrink-0" />
                   <span className="text-sm font-medium">{service.title}</span>
-                </Link>
+                </button>
               );
             })}
           </div>
@@ -139,13 +155,12 @@ const Header = () => {
       {mobileMenuOpen && (
         <div className="lg:hidden bg-background border-t border-border">
           <div className="container py-4 space-y-4">
-            <Link
-              to="/about"
-              className="block py-2 text-foreground font-medium"
-              onClick={() => setMobileMenuOpen(false)}
+            <button
+              onClick={() => handleNavClick("/about")}
+              className="block py-2 text-foreground font-medium w-full text-left"
             >
               À propos
-            </Link>
+            </button>
             <div className="space-y-2">
               <button 
                 className="w-full py-2 text-foreground font-medium flex items-center justify-between"
@@ -159,34 +174,25 @@ const Header = () => {
                   {services.map((service) => {
                     const Icon = service.icon;
                     return (
-                      <Link
+                      <button
                         key={service.slug}
-                        to={`/services/${service.slug}`}
-                        className="flex items-center gap-3 py-1.5 text-muted-foreground hover:text-primary"
-                        onClick={() => setMobileMenuOpen(false)}
+                        onClick={() => handleServiceClick(service.slug)}
+                        className="flex items-center gap-3 py-1.5 text-muted-foreground hover:text-primary w-full text-left"
                       >
                         <Icon className="w-4 h-4" />
                         <span className="text-sm">{service.title}</span>
-                      </Link>
+                      </button>
                     );
                   })}
                 </div>
               )}
             </div>
-            <Link
-              to="/contact"
-              className="block py-2 text-foreground font-medium"
-              onClick={() => setMobileMenuOpen(false)}
+            <button
+              onClick={() => handleNavClick("/contact")}
+              className="block py-2 text-foreground font-medium w-full text-left"
             >
               Contact
-            </Link>
-            <Link
-              to="/signin"
-              className="block py-2 text-foreground font-medium"
-              onClick={() => setMobileMenuOpen(false)}
-            >
-              Connexion
-            </Link>
+            </button>
             <div className="pt-4 border-t border-border space-y-3">
               <a
                 href="tel:5141234567"
@@ -195,10 +201,8 @@ const Header = () => {
                 <Phone className="w-4 h-4" />
                 (514) 123-4567
               </a>
-              <Button asChild className="w-full rounded-full py-3 font-bold uppercase tracking-wide">
-                <Link to="/quote" onClick={() => setMobileMenuOpen(false)}>
-                  Réserver
-                </Link>
+              <Button onClick={() => handleNavClick("/quote")} className="w-full rounded-full py-3 font-bold uppercase tracking-wide">
+                Réserver
               </Button>
             </div>
           </div>
