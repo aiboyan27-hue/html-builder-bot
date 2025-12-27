@@ -33,9 +33,9 @@ const services = [
     icon: Building,
   },
   {
-    slug: "nettoyage-ceramique-coulis",
-    title: "Nettoyage céramique & coulis",
-    icon: Grid3X3,
+    slug: "nettoyage-commercial",
+    title: "Nettoyage commercial",
+    icon: Building,
   },
   {
     slug: "nettoyage-evenementiel",
