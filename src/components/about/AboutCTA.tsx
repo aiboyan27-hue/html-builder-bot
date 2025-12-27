@@ -16,7 +16,7 @@ const AboutCTA = () => {
             asChild
             className="bg-primary hover:bg-primary/90 text-primary-foreground rounded-lg px-8 py-3 font-semibold text-sm uppercase tracking-wide w-fit"
           >
-            <Link to="/quote">Book Now</Link>
+            <Link to="/booking">Book Now</Link>
           </Button>
         </div>
       </div>

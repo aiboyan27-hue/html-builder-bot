@@ -15,7 +15,7 @@ export interface BookingFormData {
   squareFeet: string;
   propertyCondition: string;
   pets: string;
-  addOns: string[];
+  addOns: Record<string, number>; // Changed to object with quantities
 }
 
 const Booking = () => {
@@ -29,7 +29,7 @@ const Booking = () => {
     squareFeet: "",
     propertyCondition: "",
     pets: "No Pets",
-    addOns: [],
+    addOns: {},
   });
 
   const pricing = useMemo(() => {
@@ -40,7 +40,10 @@ const Booking = () => {
 
     const bedroomsCost = formData.bedrooms * BEDROOM_PRICE;
     const bathroomsCost = formData.bathrooms * BATHROOM_PRICE;
-    const addonsCost = formData.addOns.length * ADDON_PRICE;
+    
+    // Calculate total add-on units
+    const totalAddonUnits = Object.values(formData.addOns).reduce((sum, qty) => sum + qty, 0);
+    const addonsCost = totalAddonUnits * ADDON_PRICE;
 
     const subtotal = BASE_PRICE + bedroomsCost + bathroomsCost + addonsCost;
 
@@ -57,6 +60,7 @@ const Booking = () => {
       bedrooms: bedroomsCost,
       bathrooms: bathroomsCost,
       addons: addonsCost,
+      addonCount: totalAddonUnits,
       subtotal,
       discountPercent,
       discountAmount,

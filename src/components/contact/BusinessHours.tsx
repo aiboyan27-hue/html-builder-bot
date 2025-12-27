@@ -36,7 +36,7 @@ const BusinessHours = () => {
             asChild
             className="mt-8 bg-primary hover:bg-primary/90 text-primary-foreground px-8 py-6 text-base font-bold uppercase tracking-wide rounded-md"
           >
-            <Link to="/quote">Book Now</Link>
+            <Link to="/booking">Book Now</Link>
           </Button>
         </div>
       </div>

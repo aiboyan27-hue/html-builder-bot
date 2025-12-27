@@ -148,7 +148,7 @@ const Reviews = () => {
             {/* Right: Button */}
             <div className="flex-shrink-0">
               <Link
-                to="/quote"
+                to="/booking"
                 className="inline-block bg-primary hover:bg-primary/90 text-primary-foreground font-semibold px-8 py-4 rounded-lg transition-colors uppercase tracking-wide text-sm"
               >
                 Book Cleaning Now

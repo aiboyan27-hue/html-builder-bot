@@ -48,7 +48,7 @@ const Hero = () => {
             {/* CTAs */}
             <div className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start animate-fade-in-up animation-delay-600">
               <Button asChild size="lg" className="rounded-full px-8 text-base">
-                <Link to="/quote">Get Instant Quote</Link>
+                <Link to="/booking">Get Instant Quote</Link>
               </Button>
               <Button asChild variant="outline" size="lg" className="rounded-full px-8 text-base">
                 <a href="tel:3055752776">Call (305) 575-2776</a>

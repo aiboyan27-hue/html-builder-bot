@@ -38,7 +38,7 @@ const ServiceHero = ({ title, subtitle, benefits, image }: ServiceHeroProps) => 
                 size="lg"
                 className="bg-foreground hover:bg-foreground/90 text-background rounded-lg px-8 py-6 text-base font-semibold uppercase tracking-wide"
               >
-                <Link to="/quote">Réserver maintenant</Link>
+                <Link to="/booking">Réserver maintenant</Link>
               </Button>
               <Button 
                 asChild 
