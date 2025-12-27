@@ -54,7 +54,7 @@ const ServiceDescription = ({ title, description }: ServiceDescriptionProps) => 
                 asChild 
                 className="w-full mt-8 bg-foreground hover:bg-foreground/90 text-background rounded-lg py-6 text-base font-semibold uppercase tracking-wide"
               >
-                <Link to="/quote">Obtenir une estimation</Link>
+                <Link to="/booking">Obtenir une estimation</Link>
               </Button>
             </div>
           </div>

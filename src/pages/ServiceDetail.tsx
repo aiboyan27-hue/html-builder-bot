@@ -166,7 +166,7 @@ const ServiceDetail = () => {
               </div>
 
               <Button asChild size="lg" className="rounded-full px-8">
-                <Link to="/quote">Get Your Quote</Link>
+                <Link to="/booking">Get Your Quote</Link>
               </Button>
             </div>
 
@@ -236,7 +236,7 @@ const ServiceDetail = () => {
             Get your personalized quote in under 2 minutes. No commitment required.
           </p>
           <Button asChild size="lg" variant="secondary" className="rounded-full px-10">
-            <Link to="/quote">Get Your Free Quote</Link>
+            <Link to="/booking">Get Your Free Quote</Link>
           </Button>
         </div>
       </section>

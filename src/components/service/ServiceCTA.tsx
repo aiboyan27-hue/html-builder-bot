@@ -19,7 +19,7 @@ const ServiceCTA = () => {
             size="lg"
             className="bg-primary hover:bg-primary/90 text-primary-foreground rounded-lg px-10 py-6 text-base font-semibold uppercase tracking-wide whitespace-nowrap"
           >
-            <Link to="/quote">Réserver un nettoyage</Link>
+            <Link to="/booking">Réserver un nettoyage</Link>
           </Button>
         </div>
       </div>

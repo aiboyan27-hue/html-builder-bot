@@ -9,6 +9,7 @@ interface BookingSummaryProps {
     bedrooms: number;
     bathrooms: number;
     addons: number;
+    addonCount: number;
     subtotal: number;
     discountPercent: number;
     discountAmount: number;
@@ -93,7 +94,7 @@ const BookingSummary = ({ formData, pricing }: BookingSummaryProps) => {
           </div>
           {pricing.addons > 0 && (
             <div className="flex justify-between">
-              <span className="text-muted-foreground">Add-ons ({formData.addOns.length})</span>
+              <span className="text-muted-foreground">Add-ons ({pricing.addonCount} units)</span>
               <span className="text-foreground">+${pricing.addons.toFixed(2)}</span>
             </div>
           )}

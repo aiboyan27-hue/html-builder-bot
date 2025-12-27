@@ -35,7 +35,7 @@ const ExpertTeamSection = () => {
               asChild 
               className="bg-primary hover:bg-primary/90 text-primary-foreground rounded-lg px-8 py-6 text-base font-semibold uppercase tracking-wide"
             >
-              <Link to="/quote">Réserver maintenant</Link>
+              <Link to="/booking">Réserver maintenant</Link>
             </Button>
           </div>
         </div>

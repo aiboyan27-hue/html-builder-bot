@@ -13,7 +13,7 @@ const ContactCTA = () => {
             asChild
             className="bg-primary hover:bg-primary/90 text-primary-foreground px-10 py-6 text-base font-bold uppercase tracking-wide rounded-md w-fit"
           >
-            <Link to="/quote">Book Now</Link>
+            <Link to="/booking">Book Now</Link>
           </Button>
         </div>
       </div>

@@ -1,9 +1,9 @@
 import { cn } from "@/lib/utils";
-import { Info } from "lucide-react";
+import { Info, Minus, Plus } from "lucide-react";
 
 interface AddOnsGridProps {
-  selected: string[];
-  onChange: (selected: string[]) => void;
+  selected: Record<string, number>;
+  onChange: (selected: Record<string, number>) => void;
 }
 
 const addOns = [
@@ -178,11 +178,25 @@ const getIcon = (id: string) => {
 };
 
 const AddOnsGrid = ({ selected, onChange }: AddOnsGridProps) => {
-  const toggleAddOn = (id: string) => {
-    if (selected.includes(id)) {
-      onChange(selected.filter((item) => item !== id));
+  const handleSelect = (id: string) => {
+    if (selected[id]) return; // Already selected, use +/- buttons
+    onChange({ ...selected, [id]: 1 });
+  };
+
+  const handleIncrement = (id: string, e: React.MouseEvent) => {
+    e.stopPropagation();
+    onChange({ ...selected, [id]: (selected[id] || 0) + 1 });
+  };
+
+  const handleDecrement = (id: string, e: React.MouseEvent) => {
+    e.stopPropagation();
+    const newQty = (selected[id] || 0) - 1;
+    if (newQty <= 0) {
+      const newSelected = { ...selected };
+      delete newSelected[id];
+      onChange(newSelected);
     } else {
-      onChange([...selected, id]);
+      onChange({ ...selected, [id]: newQty });
     }
   };
 
@@ -198,28 +212,55 @@ const AddOnsGrid = ({ selected, onChange }: AddOnsGridProps) => {
       </div>
 
       <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-3">
-        {addOns.map((addon) => (
-          <button
-            key={addon.id}
-            onClick={() => toggleAddOn(addon.id)}
-            className={cn(
-              "p-4 rounded-lg border-2 text-center transition-all duration-200 flex flex-col items-center gap-2 min-h-[120px]",
-              selected.includes(addon.id)
-                ? "border-[hsl(195,53%,37%)] bg-[hsl(195,53%,37%)]/5"
-                : "border-border bg-card hover:border-[hsl(195,53%,37%)]/50"
-            )}
-          >
-            <div className="text-[hsl(210,29%,24%)]">
-              {getIcon(addon.id)}
-            </div>
-            <span className="text-xs font-medium text-foreground flex items-center gap-1">
-              {addon.label}
-              {addon.hasInfo && (
-                <Info className="w-3 h-3 text-muted-foreground" />
+        {addOns.map((addon) => {
+          const isSelected = !!selected[addon.id];
+          const quantity = selected[addon.id] || 0;
+
+          return (
+            <button
+              key={addon.id}
+              onClick={() => handleSelect(addon.id)}
+              className={cn(
+                "p-4 rounded-lg border-2 text-center transition-all duration-200 flex flex-col items-center gap-2 min-h-[140px] relative",
+                isSelected
+                  ? "border-[hsl(195,75%,65%)] bg-[hsl(195,60%,92%)]"
+                  : "border-border bg-card hover:border-[hsl(195,53%,37%)]/50"
               )}
-            </span>
-          </button>
-        ))}
+            >
+              {isSelected ? (
+                // Selected state with quantity controls
+                <div className="flex items-center justify-center w-full h-12 gap-2">
+                  <button
+                    onClick={(e) => handleDecrement(addon.id, e)}
+                    className="w-8 h-8 flex items-center justify-center bg-[hsl(210,14%,53%)] text-white rounded hover:bg-[hsl(210,14%,43%)] transition-colors"
+                  >
+                    <Minus className="w-4 h-4" />
+                  </button>
+                  <div className="w-10 h-10 flex items-center justify-center bg-[hsl(210,14%,53%)] text-white font-bold text-lg rounded">
+                    {quantity}
+                  </div>
+                  <button
+                    onClick={(e) => handleIncrement(addon.id, e)}
+                    className="w-8 h-8 flex items-center justify-center bg-[hsl(210,14%,53%)] text-white rounded hover:bg-[hsl(210,14%,43%)] transition-colors"
+                  >
+                    <Plus className="w-4 h-4" />
+                  </button>
+                </div>
+              ) : (
+                // Unselected state with icon
+                <div className="text-[hsl(210,29%,24%)]">
+                  {getIcon(addon.id)}
+                </div>
+              )}
+              <span className="text-xs font-medium text-foreground flex items-center gap-1">
+                {addon.label}
+                {addon.hasInfo && (
+                  <Info className="w-3 h-3 text-muted-foreground" />
+                )}
+              </span>
+            </button>
+          );
+        })}
       </div>
     </div>
   );
