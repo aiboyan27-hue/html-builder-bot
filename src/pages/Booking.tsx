@@ -4,6 +4,7 @@ import Footer from "@/components/Footer";
 import BookingSummary from "@/components/booking/BookingSummary";
 import PopularQuestions from "@/components/booking/PopularQuestions";
 import BookingForm from "@/components/booking/BookingForm";
+import BookingStep2 from "@/components/booking/BookingStep2";
 
 export interface BookingFormData {
   zipCode: string;
@@ -15,22 +16,24 @@ export interface BookingFormData {
   squareFeet: string;
   propertyCondition: string;
   pets: string;
-  addOns: Record<string, number>; // Changed to object with quantities
+  addOns: Record<string, number>;
 }
 
 const Booking = () => {
-  // Scroll to top on mount
+  const [currentStep, setCurrentStep] = useState(1);
+
+  // Scroll to top on mount and step change
   useEffect(() => {
     window.scrollTo(0, 0);
-  }, []);
+  }, [currentStep]);
 
   const [formData, setFormData] = useState<BookingFormData>({
     zipCode: "",
     email: "",
     cleaningType: "Standard Cleaning",
     frequency: "One-Time",
-    bedrooms: -1, // -1 means not selected
-    bathrooms: -1, // -1 means not selected
+    bedrooms: -1,
+    bathrooms: -1,
     squareFeet: "",
     propertyCondition: "",
     pets: "No Pets",
@@ -46,7 +49,6 @@ const Booking = () => {
     const bedroomsCost = formData.bedrooms > 0 ? formData.bedrooms * BEDROOM_PRICE : 0;
     const bathroomsCost = formData.bathrooms > 0 ? formData.bathrooms * BATHROOM_PRICE : 0;
     
-    // Calculate total add-on units
     const totalAddonUnits = Object.values(formData.addOns).reduce((sum, qty) => sum + qty, 0);
     const addonsCost = totalAddonUnits * ADDON_PRICE;
 
@@ -77,6 +79,14 @@ const Booking = () => {
     setFormData((prev) => ({ ...prev, ...updates }));
   };
 
+  const handleGoToStep2 = () => {
+    setCurrentStep(2);
+  };
+
+  const handleBackToStep1 = () => {
+    setCurrentStep(1);
+  };
+
   return (
     <div className="min-h-screen bg-background">
       <Header />
@@ -102,7 +112,18 @@ const Booking = () => {
           <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
             {/* Left column - Form */}
             <div className="lg:col-span-2">
-              <BookingForm formData={formData} updateFormData={updateFormData} />
+              {currentStep === 1 ? (
+                <BookingForm 
+                  formData={formData} 
+                  updateFormData={updateFormData}
+                  onNext={handleGoToStep2}
+                />
+              ) : (
+                <BookingStep2 
+                  formData={formData} 
+                  onBack={handleBackToStep1}
+                />
+              )}
             </div>
 
             {/* Right column - Summary & FAQ */}
