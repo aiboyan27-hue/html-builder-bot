@@ -40,11 +40,11 @@ const BookingSummary = ({ formData, pricing }: BookingSummaryProps) => {
         </div>
         <div className="flex justify-between">
           <span className="text-muted-foreground">Bedrooms</span>
-          <span className="font-medium text-foreground">: {formData.bedrooms}</span>
+          <span className="font-medium text-foreground">: {formData.bedrooms >= 0 ? formData.bedrooms : 0}</span>
         </div>
         <div className="flex justify-between">
           <span className="text-muted-foreground">Bathrooms</span>
-          <span className="font-medium text-foreground">: {formData.bathrooms}</span>
+          <span className="font-medium text-foreground">: {formData.bathrooms >= 0 ? formData.bathrooms : 0}</span>
         </div>
         <div className="flex justify-between items-center">
           <span className="text-muted-foreground">Estimated Length</span>
