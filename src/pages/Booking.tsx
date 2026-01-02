@@ -1,4 +1,4 @@
-import { useState, useMemo } from "react";
+import { useState, useMemo, useEffect } from "react";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import BookingSummary from "@/components/booking/BookingSummary";
@@ -19,13 +19,18 @@ export interface BookingFormData {
 }
 
 const Booking = () => {
+  // Scroll to top on mount
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
+
   const [formData, setFormData] = useState<BookingFormData>({
     zipCode: "",
     email: "",
     cleaningType: "Standard Cleaning",
     frequency: "One-Time",
-    bedrooms: 0,
-    bathrooms: 0,
+    bedrooms: -1, // -1 means not selected
+    bathrooms: -1, // -1 means not selected
     squareFeet: "",
     propertyCondition: "",
     pets: "No Pets",
@@ -38,8 +43,8 @@ const Booking = () => {
     const BATHROOM_PRICE = 35;
     const ADDON_PRICE = 40;
 
-    const bedroomsCost = formData.bedrooms * BEDROOM_PRICE;
-    const bathroomsCost = formData.bathrooms * BATHROOM_PRICE;
+    const bedroomsCost = formData.bedrooms > 0 ? formData.bedrooms * BEDROOM_PRICE : 0;
+    const bathroomsCost = formData.bathrooms > 0 ? formData.bathrooms * BATHROOM_PRICE : 0;
     
     // Calculate total add-on units
     const totalAddonUnits = Object.values(formData.addOns).reduce((sum, qty) => sum + qty, 0);
@@ -102,12 +107,8 @@ const Booking = () => {
 
             {/* Right column - Summary & FAQ */}
             <div className="space-y-6">
-              <div className="lg:sticky lg:top-24">
-                <BookingSummary formData={formData} pricing={pricing} />
-                <div className="mt-6">
-                  <PopularQuestions />
-                </div>
-              </div>
+              <BookingSummary formData={formData} pricing={pricing} />
+              <PopularQuestions />
             </div>
           </div>
         </div>

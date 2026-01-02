@@ -1,7 +1,8 @@
 import { useState } from "react";
 import { Link, useLocation, useNavigate } from "react-router-dom";
-import { Phone, ChevronDown, Menu, X, Sparkles, Home, RefreshCw, Building, Droplets, Hammer, Grid3X3, PartyPopper } from "lucide-react";
+import { Phone, ChevronDown, Menu, X, Sparkles, Home, RefreshCw, Building, Droplets, Hammer, PartyPopper } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import auraLogo from "@/assets/aura-logo.png";
 
 const services = [
   { slug: "nettoyage-en-profondeur", title: "Nettoyage en profondeur", icon: Sparkles },
@@ -10,7 +11,7 @@ const services = [
   { slug: "nettoyage-vitres", title: "Nettoyage de vitres", icon: Droplets },
   { slug: "nettoyage-apres-construction", title: "Nettoyage après construction", icon: Hammer },
   { slug: "nettoyage-tapis", title: "Nettoyage de tapis", icon: Building },
-  { slug: "nettoyage-ceramique-coulis", title: "Nettoyage céramique & coulis", icon: Grid3X3 },
+  { slug: "nettoyage-commercial", title: "Nettoyage commercial", icon: Building },
   { slug: "nettoyage-evenementiel", title: "Nettoyage événementiel", icon: PartyPopper },
 ];
 
@@ -56,16 +57,12 @@ const Header = () => {
       <div className="container">
         <div className="flex items-center justify-between h-16 md:h-20">
           {/* Logo */}
-          <button onClick={() => handleNavClick("/")} className="flex items-center gap-2.5">
-            <div className="w-10 h-10 bg-primary rounded-lg flex items-center justify-center">
-              <div className="w-6 h-6 bg-primary-foreground rounded-sm flex items-center justify-center">
-                <div className="w-3 h-3 bg-primary rounded-full" />
-              </div>
-            </div>
-            <div className="flex flex-col leading-tight">
-              <span className="text-xs font-bold text-foreground uppercase tracking-wide">ÉLITE</span>
-              <span className="text-sm font-bold text-primary uppercase tracking-wide">PROPRETÉ</span>
-            </div>
+          <button onClick={() => handleNavClick("/")} className="flex items-center">
+            <img 
+              src={auraLogo} 
+              alt="Aura Nettoyage" 
+              className="h-12 md:h-14 w-auto object-contain"
+            />
           </button>
 
           {/* Desktop Navigation - Centered */}

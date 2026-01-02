@@ -1,3 +1,4 @@
+import { useState } from "react";
 import { Info, Calendar } from "lucide-react";
 import { Input } from "@/components/ui/input";
 import { Button } from "@/components/ui/button";
@@ -61,7 +62,11 @@ const petOptions = [
 ];
 
 const BookingForm = ({ formData, updateFormData }: BookingFormProps) => {
+  const [errors, setErrors] = useState<{ bedrooms?: string; bathrooms?: string }>({});
+
   const handleNext = () => {
+    const newErrors: { bedrooms?: string; bathrooms?: string } = {};
+    
     if (!formData.zipCode.trim()) {
       toast.error("Please enter your zip code");
       return;
@@ -70,6 +75,20 @@ const BookingForm = ({ formData, updateFormData }: BookingFormProps) => {
       toast.error("Please enter a valid email address");
       return;
     }
+    if (formData.bedrooms < 0) {
+      newErrors.bedrooms = "Please select number of bedrooms";
+    }
+    if (formData.bathrooms < 0) {
+      newErrors.bathrooms = "Please select number of bathrooms";
+    }
+    
+    if (Object.keys(newErrors).length > 0) {
+      setErrors(newErrors);
+      toast.error("Please complete all required fields");
+      return;
+    }
+    
+    setErrors({});
     toast.success("Next step coming soon!");
   };
 
@@ -167,11 +186,14 @@ const BookingForm = ({ formData, updateFormData }: BookingFormProps) => {
           <div className="space-y-2">
             <label className="text-sm font-medium text-foreground">Bedrooms</label>
             <Select
-              value={formData.bedrooms.toString()}
-              onValueChange={(value) => updateFormData({ bedrooms: parseInt(value) })}
+              value={formData.bedrooms >= 0 ? formData.bedrooms.toString() : ""}
+              onValueChange={(value) => {
+                updateFormData({ bedrooms: parseInt(value) });
+                setErrors(prev => ({ ...prev, bedrooms: undefined }));
+              }}
             >
-              <SelectTrigger className="h-12 bg-background border-border">
-                <SelectValue placeholder="0" />
+              <SelectTrigger className={`h-12 bg-background ${errors.bedrooms ? 'border-red-500' : 'border-border'}`}>
+                <SelectValue placeholder="Select Option" />
               </SelectTrigger>
               <SelectContent className="bg-card border-border z-50 max-h-60">
                 {bedroomOptions.map((num) => (
@@ -181,17 +203,23 @@ const BookingForm = ({ formData, updateFormData }: BookingFormProps) => {
                 ))}
               </SelectContent>
             </Select>
+            {errors.bedrooms && (
+              <p className="text-sm text-red-500">{errors.bedrooms}</p>
+            )}
           </div>
 
           {/* Bathrooms */}
           <div className="space-y-2">
             <label className="text-sm font-medium text-foreground">Bathrooms</label>
             <Select
-              value={formData.bathrooms.toString()}
-              onValueChange={(value) => updateFormData({ bathrooms: parseFloat(value) })}
+              value={formData.bathrooms >= 0 ? formData.bathrooms.toString() : ""}
+              onValueChange={(value) => {
+                updateFormData({ bathrooms: parseFloat(value) });
+                setErrors(prev => ({ ...prev, bathrooms: undefined }));
+              }}
             >
-              <SelectTrigger className="h-12 bg-background border-border">
-                <SelectValue placeholder="0" />
+              <SelectTrigger className={`h-12 bg-background ${errors.bathrooms ? 'border-red-500' : 'border-border'}`}>
+                <SelectValue placeholder="Select Option" />
               </SelectTrigger>
               <SelectContent className="bg-card border-border z-50 max-h-60">
                 {bathroomOptions.map((num) => (
@@ -201,6 +229,9 @@ const BookingForm = ({ formData, updateFormData }: BookingFormProps) => {
                 ))}
               </SelectContent>
             </Select>
+            {errors.bathrooms && (
+              <p className="text-sm text-red-500">{errors.bathrooms}</p>
+            )}
           </div>
         </div>
       </div>
