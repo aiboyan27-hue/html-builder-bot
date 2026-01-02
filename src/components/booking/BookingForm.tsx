@@ -17,6 +17,7 @@ import { toast } from "sonner";
 interface BookingFormProps {
   formData: BookingFormData;
   updateFormData: (updates: Partial<BookingFormData>) => void;
+  onNext: () => void;
 }
 
 const cleaningTypes = [
@@ -61,7 +62,7 @@ const petOptions = [
   { value: "2+ Cats", emoji: "🐱" },
 ];
 
-const BookingForm = ({ formData, updateFormData }: BookingFormProps) => {
+const BookingForm = ({ formData, updateFormData, onNext }: BookingFormProps) => {
   const [errors, setErrors] = useState<{ bedrooms?: string; bathrooms?: string }>({});
 
   const handleNext = () => {
@@ -89,7 +90,7 @@ const BookingForm = ({ formData, updateFormData }: BookingFormProps) => {
     }
     
     setErrors({});
-    toast.success("Next step coming soon!");
+    onNext();
   };
 
   return (
