@@ -2,7 +2,6 @@ import { useState } from "react";
 import { ArrowLeft, Calendar as CalendarIcon } from "lucide-react";
 import { format } from "date-fns";
 import { Button } from "@/components/ui/button";
-import { Input } from "@/components/ui/input";
 import { Checkbox } from "@/components/ui/checkbox";
 import { Textarea } from "@/components/ui/textarea";
 import {
@@ -12,7 +11,7 @@ import {
   SelectTrigger,
   SelectValue,
 } from "@/components/ui/select";
-import { BookingFormData } from "@/pages/Booking";
+import { BookingFormData, Step2Data } from "@/pages/Booking";
 import DateTimeModal from "./DateTimeModal";
 import TipsAndParking from "./TipsAndParking";
 import CustomerDetails from "./CustomerDetails";
@@ -22,31 +21,24 @@ import { toast } from "sonner";
 
 interface BookingStep2Props {
   formData: BookingFormData;
+  step2Data: Step2Data;
+  updateStep2Data: (updates: Partial<Step2Data>) => void;
   onBack: () => void;
-}
-
-interface Step2Data {
-  selectedDate?: Date;
-  selectedTime?: string;
-  howDidYouFind: string;
-  tipPercent: string;
-  parkingAmount: string;
-  customTip: string;
-  customParking: string;
-  firstName: string;
-  lastName: string;
-  email: string;
-  phone: string;
-  address: string;
-  aptNo: string;
-  city: string;
-  state: string;
-  zipcode: string;
-  buildingName: string;
-  specialNotes: string;
-  cardNumber: string;
-  couponCode: string;
-  acceptTerms: boolean;
+  pricing: {
+    base: number;
+    bedrooms: number;
+    bathrooms: number;
+    addons: number;
+    addonCount: number;
+    subtotal: number;
+    discountPercent: number;
+    discountAmount: number;
+    tip: number;
+    parking: number;
+    total: number;
+  };
+  showErrorBanner: (message: string) => void;
+  hideErrorBanner: () => void;
 }
 
 const howDidYouFindOptions = [
@@ -60,62 +52,98 @@ const howDidYouFindOptions = [
   "LinkedIn",
 ];
 
-const BookingStep2 = ({ formData, onBack }: BookingStep2Props) => {
+const BookingStep2 = ({ formData, step2Data, updateStep2Data, onBack, pricing, showErrorBanner, hideErrorBanner }: BookingStep2Props) => {
   const [isDateModalOpen, setIsDateModalOpen] = useState(false);
-  const [step2Data, setStep2Data] = useState<Step2Data>({
-    selectedDate: undefined,
-    selectedTime: undefined,
-    howDidYouFind: "",
-    tipPercent: "0%",
-    parkingAmount: "$0",
-    customTip: "",
-    customParking: "",
-    firstName: "",
-    lastName: "",
-    email: formData.email, // Pre-fill from Step 1
-    phone: "",
-    address: "",
-    aptNo: "",
-    city: "",
-    state: "",
-    zipcode: formData.zipCode, // Pre-fill from Step 1
-    buildingName: "",
-    specialNotes: "",
-    cardNumber: "",
-    couponCode: "",
-    acceptTerms: false,
-  });
-
   const [errors, setErrors] = useState<Record<string, string>>({});
-
-  const updateStep2Data = (updates: Partial<Step2Data>) => {
-    setStep2Data((prev) => ({ ...prev, ...updates }));
-  };
 
   const handleDateTimeSelect = (date: Date, time: string) => {
     updateStep2Data({ selectedDate: date, selectedTime: time });
+    setErrors(prev => ({ ...prev, date: "", time: "" }));
+    hideErrorBanner();
+  };
+
+  const scrollToFirstError = (fieldId: string) => {
+    const element = document.getElementById(fieldId);
+    if (element) {
+      element.scrollIntoView({ behavior: 'smooth', block: 'center' });
+      element.focus();
+    }
   };
 
   const handleSaveBooking = () => {
+    hideErrorBanner();
     const newErrors: Record<string, string> = {};
+    let firstErrorField: string | null = null;
 
-    // Validate required fields
-    if (!step2Data.selectedDate) newErrors.date = "Please select a date";
-    if (!step2Data.selectedTime) newErrors.time = "Please select a time";
-    if (!step2Data.howDidYouFind) newErrors.howDidYouFind = "Please select an option";
-    if (!step2Data.firstName.trim()) newErrors.firstName = "First name is required";
-    if (!step2Data.lastName.trim()) newErrors.lastName = "Last name is required";
-    if (!step2Data.email.trim() || !step2Data.email.includes("@")) newErrors.email = "Valid email is required";
-    if (!step2Data.phone.trim()) newErrors.phone = "Phone number is required";
-    if (!step2Data.address.trim()) newErrors.address = "Address is required";
-    if (!step2Data.city.trim()) newErrors.city = "City is required";
-    if (!step2Data.state.trim()) newErrors.state = "State is required";
-    if (!step2Data.zipcode.trim()) newErrors.zipcode = "Zipcode is required";
-    if (!step2Data.acceptTerms) newErrors.acceptTerms = "You must accept the terms and conditions";
+    // Validate required fields in order
+    if (!step2Data.selectedDate) {
+      newErrors.date = "Please select a date";
+      if (!firstErrorField) firstErrorField = "selectDate";
+    }
+    if (!step2Data.selectedTime) {
+      newErrors.time = "Please select a time";
+      if (!firstErrorField) firstErrorField = "selectDate";
+    }
+    if (!step2Data.howDidYouFind) {
+      newErrors.howDidYouFind = "Please select an option";
+      if (!firstErrorField) firstErrorField = "howDidYouFind";
+    }
+    if (!step2Data.firstName.trim()) {
+      newErrors.firstName = "First name is required";
+      if (!firstErrorField) firstErrorField = "firstName";
+    }
+    if (!step2Data.lastName.trim()) {
+      newErrors.lastName = "Last name is required";
+      if (!firstErrorField) firstErrorField = "lastName";
+    }
+    if (!step2Data.email.trim() || !step2Data.email.includes("@")) {
+      newErrors.email = "Valid email is required";
+      if (!firstErrorField) firstErrorField = "step2Email";
+    }
+    if (!step2Data.phone.trim()) {
+      newErrors.phone = "Phone number is required";
+      if (!firstErrorField) firstErrorField = "phone";
+    }
+    if (!step2Data.address.trim()) {
+      newErrors.address = "Address is required";
+      if (!firstErrorField) firstErrorField = "address";
+    }
+    if (!step2Data.city.trim()) {
+      newErrors.city = "City is required";
+      if (!firstErrorField) firstErrorField = "city";
+    }
+    if (!step2Data.state.trim()) {
+      newErrors.state = "State is required";
+      if (!firstErrorField) firstErrorField = "state";
+    }
+    if (!step2Data.zipcode.trim()) {
+      newErrors.zipcode = "Zipcode is required";
+      if (!firstErrorField) firstErrorField = "step2Zipcode";
+    }
+    if (!step2Data.acceptTerms) {
+      newErrors.acceptTerms = "You must accept the terms and conditions";
+      if (!firstErrorField) firstErrorField = "terms";
+    }
 
     if (Object.keys(newErrors).length > 0) {
       setErrors(newErrors);
-      toast.error("Please complete all required fields");
+      const errorMessages: Record<string, string> = {
+        selectDate: "Please select a date and time for your booking.",
+        howDidYouFind: "Please tell us how you found us.",
+        firstName: "Please enter your first name.",
+        lastName: "Please enter your last name.",
+        step2Email: "Please enter a valid email address.",
+        phone: "Please enter your phone number.",
+        address: "Please fill in the location for this booking.",
+        city: "Please enter your city.",
+        state: "Please enter your state.",
+        step2Zipcode: "Please enter your zipcode.",
+        terms: "Please accept the terms and conditions.",
+      };
+      showErrorBanner(errorMessages[firstErrorField!] || "Please complete all required fields");
+      if (firstErrorField) {
+        setTimeout(() => scrollToFirstError(firstErrorField!), 100);
+      }
       return;
     }
 
@@ -144,9 +172,10 @@ const BookingStep2 = ({ formData, onBack }: BookingStep2Props) => {
         <div className="space-y-2">
           <label className="text-sm font-medium text-foreground">Select Date</label>
           <button
+            id="selectDate"
             onClick={() => setIsDateModalOpen(true)}
             className={`w-full md:w-auto min-w-[250px] h-12 px-4 flex items-center justify-between bg-background border rounded-lg text-left ${
-              errors.date ? 'border-red-500' : 'border-border'
+              errors.date || errors.time ? 'border-red-500' : 'border-border'
             }`}
           >
             <span className={step2Data.selectedDate ? "text-foreground" : "text-muted-foreground"}>
@@ -180,9 +209,10 @@ const BookingStep2 = ({ formData, onBack }: BookingStep2Props) => {
           onValueChange={(value) => {
             updateStep2Data({ howDidYouFind: value });
             setErrors((prev) => ({ ...prev, howDidYouFind: "" }));
+            hideErrorBanner();
           }}
         >
-          <SelectTrigger className={`h-12 bg-background ${errors.howDidYouFind ? 'border-red-500' : 'border-border'}`}>
+          <SelectTrigger id="howDidYouFind" className={`h-12 bg-background ${errors.howDidYouFind ? 'border-red-500' : 'border-border'}`}>
             <SelectValue placeholder="Select Option" />
           </SelectTrigger>
           <SelectContent className="bg-card border-border z-50">
@@ -223,18 +253,22 @@ const BookingStep2 = ({ formData, onBack }: BookingStep2Props) => {
         onFirstNameChange={(value) => {
           updateStep2Data({ firstName: value });
           setErrors((prev) => ({ ...prev, firstName: "" }));
+          hideErrorBanner();
         }}
         onLastNameChange={(value) => {
           updateStep2Data({ lastName: value });
           setErrors((prev) => ({ ...prev, lastName: "" }));
+          hideErrorBanner();
         }}
         onEmailChange={(value) => {
           updateStep2Data({ email: value });
           setErrors((prev) => ({ ...prev, email: "" }));
+          hideErrorBanner();
         }}
         onPhoneChange={(value) => {
           updateStep2Data({ phone: value });
           setErrors((prev) => ({ ...prev, phone: "" }));
+          hideErrorBanner();
         }}
         errors={{
           firstName: errors.firstName,
@@ -257,19 +291,23 @@ const BookingStep2 = ({ formData, onBack }: BookingStep2Props) => {
         onAddressChange={(value) => {
           updateStep2Data({ address: value });
           setErrors((prev) => ({ ...prev, address: "" }));
+          hideErrorBanner();
         }}
         onAptNoChange={(value) => updateStep2Data({ aptNo: value })}
         onCityChange={(value) => {
           updateStep2Data({ city: value });
           setErrors((prev) => ({ ...prev, city: "" }));
+          hideErrorBanner();
         }}
         onStateChange={(value) => {
           updateStep2Data({ state: value });
           setErrors((prev) => ({ ...prev, state: "" }));
+          hideErrorBanner();
         }}
         onZipcodeChange={(value) => {
           updateStep2Data({ zipcode: value });
           setErrors((prev) => ({ ...prev, zipcode: "" }));
+          hideErrorBanner();
         }}
         onBuildingNameChange={(value) => updateStep2Data({ buildingName: value })}
         errors={{
@@ -326,6 +364,7 @@ const BookingStep2 = ({ formData, onBack }: BookingStep2Props) => {
             onCheckedChange={(checked) => {
               updateStep2Data({ acceptTerms: checked as boolean });
               setErrors((prev) => ({ ...prev, acceptTerms: "" }));
+              hideErrorBanner();
             }}
             className={errors.acceptTerms ? "border-red-500" : ""}
           />

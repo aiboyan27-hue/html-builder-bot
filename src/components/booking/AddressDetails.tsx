@@ -47,6 +47,7 @@ const AddressDetails = ({
         <div className="md:col-span-2 space-y-2">
           <label className="text-sm font-medium text-foreground">Address</label>
           <Input
+            id="address"
             placeholder="Type Address"
             value={address}
             onChange={(e) => onAddressChange(e.target.value)}
@@ -72,6 +73,7 @@ const AddressDetails = ({
         <div className="space-y-2">
           <label className="text-sm font-medium text-foreground">City</label>
           <Input
+            id="city"
             placeholder="City"
             value={city}
             onChange={(e) => onCityChange(e.target.value)}
@@ -85,6 +87,7 @@ const AddressDetails = ({
         <div className="space-y-2">
           <label className="text-sm font-medium text-foreground">State</label>
           <Input
+            id="state"
             placeholder="State"
             value={state}
             onChange={(e) => onStateChange(e.target.value)}
@@ -98,6 +101,7 @@ const AddressDetails = ({
         <div className="space-y-2">
           <label className="text-sm font-medium text-foreground">Zipcode/Postal code</label>
           <Input
+            id="step2Zipcode"
             placeholder="Zipcode/Postal code"
             value={zipcode}
             onChange={(e) => onZipcodeChange(e.target.value)}

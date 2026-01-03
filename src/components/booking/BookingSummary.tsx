@@ -13,11 +13,14 @@ interface BookingSummaryProps {
     subtotal: number;
     discountPercent: number;
     discountAmount: number;
+    tip?: number;
+    parking?: number;
     total: number;
   };
+  currentStep?: number;
 }
 
-const BookingSummary = ({ formData, pricing }: BookingSummaryProps) => {
+const BookingSummary = ({ formData, pricing, currentStep = 1 }: BookingSummaryProps) => {
   const [showDetails, setShowDetails] = useState(false);
 
   return (
@@ -106,6 +109,18 @@ const BookingSummary = ({ formData, pricing }: BookingSummaryProps) => {
             <div className="flex justify-between text-green-600">
               <span>Discount ({pricing.discountPercent}%)</span>
               <span>-${pricing.discountAmount.toFixed(2)}</span>
+            </div>
+          )}
+          {currentStep === 2 && (pricing.tip ?? 0) > 0 && (
+            <div className="flex justify-between">
+              <span className="text-muted-foreground">Tip</span>
+              <span className="text-foreground">+${(pricing.tip ?? 0).toFixed(2)}</span>
+            </div>
+          )}
+          {currentStep === 2 && (pricing.parking ?? 0) > 0 && (
+            <div className="flex justify-between">
+              <span className="text-muted-foreground">Parking</span>
+              <span className="text-foreground">+${(pricing.parking ?? 0).toFixed(2)}</span>
             </div>
           )}
           <div className="flex justify-between pt-2 border-t border-border font-bold">

@@ -38,6 +38,7 @@ const CustomerDetails = ({
         <div className="space-y-2">
           <label className="text-sm font-medium text-foreground">First Name</label>
           <Input
+            id="firstName"
             placeholder="Ex: James"
             value={firstName}
             onChange={(e) => onFirstNameChange(e.target.value)}
@@ -51,6 +52,7 @@ const CustomerDetails = ({
         <div className="space-y-2">
           <label className="text-sm font-medium text-foreground">Last Name</label>
           <Input
+            id="lastName"
             placeholder="Ex: Lee"
             value={lastName}
             onChange={(e) => onLastNameChange(e.target.value)}
@@ -65,6 +67,7 @@ const CustomerDetails = ({
       <div className="space-y-2">
         <label className="text-sm font-medium text-foreground">Email Address</label>
         <Input
+          id="step2Email"
           type="email"
           placeholder="Ex: example@xyz.com"
           value={email}
@@ -79,6 +82,7 @@ const CustomerDetails = ({
       <div className="space-y-2">
         <label className="text-sm font-medium text-foreground">Phone No</label>
         <Input
+          id="phone"
           type="tel"
           placeholder="Phone No."
           value={phone}
