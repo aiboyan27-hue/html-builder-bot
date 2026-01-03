@@ -18,6 +18,8 @@ interface BookingFormProps {
   formData: BookingFormData;
   updateFormData: (updates: Partial<BookingFormData>) => void;
   onNext: () => void;
+  showErrorBanner: (message: string) => void;
+  hideErrorBanner: () => void;
 }
 
 const cleaningTypes = [
@@ -62,30 +64,51 @@ const petOptions = [
   { value: "2+ Cats", emoji: "🐱" },
 ];
 
-const BookingForm = ({ formData, updateFormData, onNext }: BookingFormProps) => {
-  const [errors, setErrors] = useState<{ bedrooms?: string; bathrooms?: string }>({});
+const BookingForm = ({ formData, updateFormData, onNext, showErrorBanner, hideErrorBanner }: BookingFormProps) => {
+  const [errors, setErrors] = useState<Record<string, string>>({});
+
+  const scrollToFirstError = (fieldId: string) => {
+    const element = document.getElementById(fieldId);
+    if (element) {
+      element.scrollIntoView({ behavior: 'smooth', block: 'center' });
+      element.focus();
+    }
+  };
 
   const handleNext = () => {
-    const newErrors: { bedrooms?: string; bathrooms?: string } = {};
+    hideErrorBanner();
+    const newErrors: Record<string, string> = {};
+    let firstErrorField: string | null = null;
     
     if (!formData.zipCode.trim()) {
-      toast.error("Please enter your zip code");
-      return;
+      newErrors.zipCode = "Please enter a valid zipcode";
+      if (!firstErrorField) firstErrorField = "zipCode";
     }
     if (!formData.email.trim() || !formData.email.includes("@")) {
-      toast.error("Please enter a valid email address");
-      return;
+      newErrors.email = "Please enter a valid email address";
+      if (!firstErrorField) firstErrorField = "email";
     }
     if (formData.bedrooms < 0) {
       newErrors.bedrooms = "Please select number of bedrooms";
+      if (!firstErrorField) firstErrorField = "bedrooms";
     }
     if (formData.bathrooms < 0) {
       newErrors.bathrooms = "Please select number of bathrooms";
+      if (!firstErrorField) firstErrorField = "bathrooms";
     }
     
     if (Object.keys(newErrors).length > 0) {
       setErrors(newErrors);
-      toast.error("Please complete all required fields");
+      const errorMessages: Record<string, string> = {
+        zipCode: "Please fill in the location for this booking.",
+        email: "Please enter a valid email address.",
+        bedrooms: "Please select the number of bedrooms.",
+        bathrooms: "Please select the number of bathrooms.",
+      };
+      showErrorBanner(errorMessages[firstErrorField!] || "Please complete all required fields");
+      if (firstErrorField) {
+        setTimeout(() => scrollToFirstError(firstErrorField!), 100);
+      }
       return;
     }
     
@@ -99,11 +122,24 @@ const BookingForm = ({ formData, updateFormData, onNext }: BookingFormProps) => 
       <div className="space-y-2">
         <label className="text-sm font-medium text-foreground">Zip Code</label>
         <Input
+          id="zipCode"
           placeholder="Zip Code"
           value={formData.zipCode}
-          onChange={(e) => updateFormData({ zipCode: e.target.value })}
-          className="h-12 bg-background border-border"
+          onChange={(e) => {
+            updateFormData({ zipCode: e.target.value });
+            setErrors(prev => ({ ...prev, zipCode: "" }));
+            hideErrorBanner();
+          }}
+          className={`h-12 bg-background ${errors.zipCode ? 'border-red-500' : 'border-border'}`}
         />
+        {errors.zipCode && (
+          <p className="text-sm text-red-500 flex items-center gap-1">
+            <svg className="w-4 h-4" fill="currentColor" viewBox="0 0 20 20">
+              <path fillRule="evenodd" d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zm-7-4a1 1 0 11-2 0 1 1 0 012 0zM9 9a1 1 0 000 2v3a1 1 0 001 1h1a1 1 0 100-2v-3a1 1 0 00-1-1H9z" clipRule="evenodd" />
+            </svg>
+            {errors.zipCode}
+          </p>
+        )}
       </div>
 
       <div className="border-t border-border" />
@@ -112,12 +148,25 @@ const BookingForm = ({ formData, updateFormData, onNext }: BookingFormProps) => 
       <div className="space-y-2">
         <label className="text-sm font-medium text-foreground">Email Address</label>
         <Input
+          id="email"
           type="email"
           placeholder="Ex: example@xyz.com"
           value={formData.email}
-          onChange={(e) => updateFormData({ email: e.target.value })}
-          className="h-12 bg-background border-border"
+          onChange={(e) => {
+            updateFormData({ email: e.target.value });
+            setErrors(prev => ({ ...prev, email: "" }));
+            hideErrorBanner();
+          }}
+          className={`h-12 bg-background ${errors.email ? 'border-red-500' : 'border-border'}`}
         />
+        {errors.email && (
+          <p className="text-sm text-red-500 flex items-center gap-1">
+            <svg className="w-4 h-4" fill="currentColor" viewBox="0 0 20 20">
+              <path fillRule="evenodd" d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zm-7-4a1 1 0 11-2 0 1 1 0 012 0zM9 9a1 1 0 000 2v3a1 1 0 001 1h1a1 1 0 100-2v-3a1 1 0 00-1-1H9z" clipRule="evenodd" />
+            </svg>
+            {errors.email}
+          </p>
+        )}
       </div>
 
       <div className="border-t border-border" />
@@ -190,10 +239,11 @@ const BookingForm = ({ formData, updateFormData, onNext }: BookingFormProps) => 
               value={formData.bedrooms >= 0 ? formData.bedrooms.toString() : ""}
               onValueChange={(value) => {
                 updateFormData({ bedrooms: parseInt(value) });
-                setErrors(prev => ({ ...prev, bedrooms: undefined }));
+                setErrors(prev => ({ ...prev, bedrooms: "" }));
+                hideErrorBanner();
               }}
             >
-              <SelectTrigger className={`h-12 bg-background ${errors.bedrooms ? 'border-red-500' : 'border-border'}`}>
+              <SelectTrigger id="bedrooms" className={`h-12 bg-background ${errors.bedrooms ? 'border-red-500' : 'border-border'}`}>
                 <SelectValue placeholder="Select Option" />
               </SelectTrigger>
               <SelectContent className="bg-card border-border z-50 max-h-60">
@@ -216,10 +266,11 @@ const BookingForm = ({ formData, updateFormData, onNext }: BookingFormProps) => 
               value={formData.bathrooms >= 0 ? formData.bathrooms.toString() : ""}
               onValueChange={(value) => {
                 updateFormData({ bathrooms: parseFloat(value) });
-                setErrors(prev => ({ ...prev, bathrooms: undefined }));
+                setErrors(prev => ({ ...prev, bathrooms: "" }));
+                hideErrorBanner();
               }}
             >
-              <SelectTrigger className={`h-12 bg-background ${errors.bathrooms ? 'border-red-500' : 'border-border'}`}>
+              <SelectTrigger id="bathrooms" className={`h-12 bg-background ${errors.bathrooms ? 'border-red-500' : 'border-border'}`}>
                 <SelectValue placeholder="Select Option" />
               </SelectTrigger>
               <SelectContent className="bg-card border-border z-50 max-h-60">

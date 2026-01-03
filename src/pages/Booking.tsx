@@ -19,8 +19,33 @@ export interface BookingFormData {
   addOns: Record<string, number>;
 }
 
+export interface Step2Data {
+  selectedDate?: Date;
+  selectedTime?: string;
+  howDidYouFind: string;
+  tipPercent: string;
+  parkingAmount: string;
+  customTip: string;
+  customParking: string;
+  firstName: string;
+  lastName: string;
+  email: string;
+  phone: string;
+  address: string;
+  aptNo: string;
+  city: string;
+  state: string;
+  zipcode: string;
+  buildingName: string;
+  specialNotes: string;
+  cardNumber: string;
+  couponCode: string;
+  acceptTerms: boolean;
+}
+
 const Booking = () => {
   const [currentStep, setCurrentStep] = useState(1);
+  const [errorBanner, setErrorBanner] = useState<string | null>(null);
 
   // Scroll to top on mount and step change
   useEffect(() => {
@@ -39,6 +64,47 @@ const Booking = () => {
     pets: "No Pets",
     addOns: {},
   });
+
+  const [step2Data, setStep2Data] = useState<Step2Data>({
+    selectedDate: undefined,
+    selectedTime: undefined,
+    howDidYouFind: "",
+    tipPercent: "0%",
+    parkingAmount: "$0",
+    customTip: "",
+    customParking: "",
+    firstName: "",
+    lastName: "",
+    email: "",
+    phone: "",
+    address: "",
+    aptNo: "",
+    city: "",
+    state: "",
+    zipcode: "",
+    buildingName: "",
+    specialNotes: "",
+    cardNumber: "",
+    couponCode: "",
+    acceptTerms: false,
+  });
+
+  // Calculate tip and parking amounts
+  const tipAmount = useMemo(() => {
+    if (step2Data.tipPercent === "Other") {
+      const customValue = parseFloat(step2Data.customTip) || 0;
+      return customValue;
+    }
+    const percent = parseFloat(step2Data.tipPercent) || 0;
+    return 0; // Will be calculated based on subtotal later
+  }, [step2Data.tipPercent, step2Data.customTip]);
+
+  const parkingAmountValue = useMemo(() => {
+    if (step2Data.parkingAmount === "Other") {
+      return parseFloat(step2Data.customParking) || 0;
+    }
+    return parseFloat(step2Data.parkingAmount.replace('$', '')) || 0;
+  }, [step2Data.parkingAmount, step2Data.customParking]);
 
   const pricing = useMemo(() => {
     const BASE_PRICE = 105;
@@ -60,7 +126,26 @@ const Booking = () => {
     else if (formData.frequency === "Monthly - 5% Off") discountPercent = 5;
 
     const discountAmount = (subtotal * discountPercent) / 100;
-    const total = subtotal - discountAmount;
+    const afterDiscount = subtotal - discountAmount;
+
+    // Calculate tip
+    let tipCalc = 0;
+    if (step2Data.tipPercent === "Other") {
+      tipCalc = parseFloat(step2Data.customTip) || 0;
+    } else {
+      const tipPercentValue = parseFloat(step2Data.tipPercent) || 0;
+      tipCalc = (afterDiscount * tipPercentValue) / 100;
+    }
+
+    // Calculate parking
+    let parkingCalc = 0;
+    if (step2Data.parkingAmount === "Other") {
+      parkingCalc = parseFloat(step2Data.customParking) || 0;
+    } else {
+      parkingCalc = parseFloat(step2Data.parkingAmount.replace('$', '')) || 0;
+    }
+
+    const total = afterDiscount + tipCalc + parkingCalc;
 
     return {
       base: BASE_PRICE,
@@ -71,15 +156,27 @@ const Booking = () => {
       subtotal,
       discountPercent,
       discountAmount,
+      tip: tipCalc,
+      parking: parkingCalc,
       total,
     };
-  }, [formData]);
+  }, [formData, step2Data.tipPercent, step2Data.customTip, step2Data.parkingAmount, step2Data.customParking]);
 
   const updateFormData = (updates: Partial<BookingFormData>) => {
     setFormData((prev) => ({ ...prev, ...updates }));
   };
 
+  const updateStep2Data = (updates: Partial<Step2Data>) => {
+    setStep2Data((prev) => ({ ...prev, ...updates }));
+  };
+
   const handleGoToStep2 = () => {
+    // Pre-fill email and zipcode from step 1
+    setStep2Data(prev => ({
+      ...prev,
+      email: formData.email,
+      zipcode: formData.zipCode,
+    }));
     setCurrentStep(2);
   };
 
@@ -87,11 +184,34 @@ const Booking = () => {
     setCurrentStep(1);
   };
 
+  const showErrorBanner = (message: string) => {
+    setErrorBanner(message);
+  };
+
+  const hideErrorBanner = () => {
+    setErrorBanner(null);
+  };
+
   return (
     <div className="min-h-screen bg-background">
       <Header />
       <main className="pt-24 pb-16">
         <div className="container mx-auto px-4 max-w-7xl">
+          {/* Error Banner */}
+          {errorBanner && (
+            <div className="fixed top-20 left-1/2 -translate-x-1/2 z-50 bg-red-700 text-white px-6 py-3 rounded-lg shadow-lg flex items-center gap-3 animate-fade-in-up">
+              <svg className="w-5 h-5 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zM8.707 7.293a1 1 0 00-1.414 1.414L8.586 10l-1.293 1.293a1 1 0 101.414 1.414L10 11.414l1.293 1.293a1 1 0 001.414-1.414L11.414 10l1.293-1.293a1 1 0 00-1.414-1.414L10 8.586 8.707 7.293z" clipRule="evenodd" />
+              </svg>
+              <span>{errorBanner}</span>
+              <button onClick={hideErrorBanner} className="ml-2 hover:opacity-80">
+                <svg className="w-4 h-4" fill="currentColor" viewBox="0 0 20 20">
+                  <path fillRule="evenodd" d="M4.293 4.293a1 1 0 011.414 0L10 8.586l4.293-4.293a1 1 0 111.414 1.414L11.414 10l4.293 4.293a1 1 0 01-1.414 1.414L10 11.414l-4.293 4.293a1 1 0 01-1.414-1.414L8.586 10 4.293 5.707a1 1 0 010-1.414z" clipRule="evenodd" />
+                </svg>
+              </button>
+            </div>
+          )}
+
           {/* Page Header */}
           <div className="mb-10">
             <h1 className="text-3xl md:text-4xl font-bold text-[hsl(210,29%,24%)] font-serif mb-2">
@@ -117,18 +237,25 @@ const Booking = () => {
                   formData={formData} 
                   updateFormData={updateFormData}
                   onNext={handleGoToStep2}
+                  showErrorBanner={showErrorBanner}
+                  hideErrorBanner={hideErrorBanner}
                 />
               ) : (
                 <BookingStep2 
-                  formData={formData} 
+                  formData={formData}
+                  step2Data={step2Data}
+                  updateStep2Data={updateStep2Data}
                   onBack={handleBackToStep1}
+                  pricing={pricing}
+                  showErrorBanner={showErrorBanner}
+                  hideErrorBanner={hideErrorBanner}
                 />
               )}
             </div>
 
             {/* Right column - Summary & FAQ */}
             <div className="space-y-6">
-              <BookingSummary formData={formData} pricing={pricing} />
+              <BookingSummary formData={formData} pricing={pricing} currentStep={currentStep} />
               <PopularQuestions />
             </div>
           </div>

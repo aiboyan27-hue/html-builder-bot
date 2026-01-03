@@ -56,9 +56,10 @@ const TipsAndParking = ({
         </div>
         {tipPercent === "Other" && (
           <Input
-            placeholder="Enter tip percentage"
+            type="number"
+            placeholder="Enter tip amount ($)"
             value={customTip}
-            onChange={(e) => onCustomTipChange(e.target.value)}
+            onChange={(e) => onCustomTipChange(e.target.value.replace(/[^0-9.]/g, ''))}
             className="h-12 bg-background border-border max-w-[200px]"
           />
         )}
@@ -84,9 +85,10 @@ const TipsAndParking = ({
         </div>
         {parkingAmount === "Other" && (
           <Input
-            placeholder="Enter parking amount"
+            type="number"
+            placeholder="Enter parking amount ($)"
             value={customParking}
-            onChange={(e) => onCustomParkingChange(e.target.value)}
+            onChange={(e) => onCustomParkingChange(e.target.value.replace(/[^0-9.]/g, ''))}
             className="h-12 bg-background border-border max-w-[200px]"
           />
         )}
