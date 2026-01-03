@@ -1,87 +1,99 @@
 import { Link } from "react-router-dom";
-import { Facebook, Instagram, Twitter } from "lucide-react";
+import { Facebook, Instagram } from "lucide-react";
+import auraLogo from "@/assets/aura-logo.png";
 
 const Footer = () => {
   return (
-    <footer className="bg-foreground text-background py-16">
+    <footer className="bg-primary text-primary-foreground py-16">
       <div className="container">
-        <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-10">
+        <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-12">
           {/* Brand */}
           <div>
-            <h3 className="text-xl font-bold mb-2">Prime Cleaner</h3>
-            <p className="text-sm text-background/60 mb-4">
-              © 2025 The Prime Cleaner.
+            <img 
+              src={auraLogo} 
+              alt="Aura Nettoyage" 
+              className="h-14 w-auto object-contain mb-4 brightness-0 invert"
+            />
+            <p className="text-sm text-primary-foreground/70 mb-6">
+              Service de nettoyage professionnel et fiable pour votre tranquillité d'esprit.
             </p>
             <div className="flex gap-3">
               <a
                 href="#"
-                className="w-9 h-9 rounded-full bg-background/10 flex items-center justify-center hover:bg-background/20 transition-colors"
+                className="w-10 h-10 bg-primary-foreground/10 flex items-center justify-center hover:bg-primary-foreground/20 transition-colors"
               >
-                <Facebook className="w-4 h-4" />
+                <Facebook className="w-5 h-5" />
               </a>
               <a
                 href="#"
-                className="w-9 h-9 rounded-full bg-background/10 flex items-center justify-center hover:bg-background/20 transition-colors"
+                className="w-10 h-10 bg-primary-foreground/10 flex items-center justify-center hover:bg-primary-foreground/20 transition-colors"
               >
-                <Instagram className="w-4 h-4" />
-              </a>
-              <a
-                href="#"
-                className="w-9 h-9 rounded-full bg-background/10 flex items-center justify-center hover:bg-background/20 transition-colors"
-              >
-                <Twitter className="w-4 h-4" />
+                <Instagram className="w-5 h-5" />
               </a>
             </div>
           </div>
 
-          {/* Company */}
+          {/* Navigation */}
           <div>
-            <h4 className="font-semibold mb-4">Company</h4>
-            <ul className="space-y-3 text-sm text-background/60">
+            <h4 className="font-heading font-semibold text-lg mb-6">Navigation</h4>
+            <ul className="space-y-3 text-primary-foreground/70">
               <li>
-                <Link to="/about" className="hover:text-background transition-colors">
-                  About Us
+                <Link to="/" className="hover:text-primary-foreground transition-colors">
+                  Accueil
                 </Link>
               </li>
               <li>
-                <a href="#" className="hover:text-background transition-colors">
-                  Careers
-                </a>
+                <Link to="/about" className="hover:text-primary-foreground transition-colors">
+                  À propos
+                </Link>
               </li>
               <li>
-                <a href="#" className="hover:text-background transition-colors">
-                  Privacy Policy
-                </a>
+                <Link to="/contact" className="hover:text-primary-foreground transition-colors">
+                  Contact
+                </Link>
+              </li>
+              <li>
+                <Link to="/booking" className="hover:text-primary-foreground transition-colors">
+                  Réservation
+                </Link>
               </li>
             </ul>
           </div>
 
           {/* Services */}
           <div>
-            <h4 className="font-semibold mb-4">Services</h4>
-            <ul className="space-y-3 text-sm text-background/60">
+            <h4 className="font-heading font-semibold text-lg mb-6">Services</h4>
+            <ul className="space-y-3 text-primary-foreground/70">
               <li>
                 <Link
-                  to="/services/deep-cleaning"
-                  className="hover:text-background transition-colors"
+                  to="/services/nettoyage-en-profondeur"
+                  className="hover:text-primary-foreground transition-colors"
                 >
-                  Deep Cleaning
+                  Nettoyage en profondeur
                 </Link>
               </li>
               <li>
                 <Link
-                  to="/services/move-in-out"
-                  className="hover:text-background transition-colors"
+                  to="/services/nettoyage-demenagement"
+                  className="hover:text-primary-foreground transition-colors"
                 >
-                  Move In/Out
+                  Nettoyage déménagement
                 </Link>
               </li>
               <li>
                 <Link
-                  to="/services/standard-cleaning"
-                  className="hover:text-background transition-colors"
+                  to="/services/nettoyage-standard"
+                  className="hover:text-primary-foreground transition-colors"
                 >
-                  Standard Cleaning
+                  Nettoyage standard
+                </Link>
+              </li>
+              <li>
+                <Link
+                  to="/services/nettoyage-commercial"
+                  className="hover:text-primary-foreground transition-colors"
+                >
+                  Nettoyage commercial
                 </Link>
               </li>
             </ul>
@@ -89,19 +101,25 @@ const Footer = () => {
 
           {/* Contact */}
           <div>
-            <h4 className="font-semibold mb-4">Contact</h4>
-            <ul className="space-y-3 text-sm text-background/60">
+            <h4 className="font-heading font-semibold text-lg mb-6">Contact</h4>
+            <ul className="space-y-3 text-primary-foreground/70">
               <li>
                 <a
-                  href="tel:3055752776"
-                  className="hover:text-background transition-colors"
+                  href="tel:5141234567"
+                  className="hover:text-primary-foreground transition-colors"
                 >
-                  (305) 575-2776
+                  (514) 123-4567
                 </a>
               </li>
-              <li>Miami, Florida</li>
+              <li>info@auranettoyage.ca</li>
+              <li>Montréal, Québec</li>
             </ul>
           </div>
+        </div>
+
+        {/* Bottom bar */}
+        <div className="mt-12 pt-8 border-t border-primary-foreground/20 text-center text-sm text-primary-foreground/60">
+          <p>© 2025 Aura Nettoyage. Tous droits réservés.</p>
         </div>
       </div>
     </footer>

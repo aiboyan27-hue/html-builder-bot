@@ -15,7 +15,7 @@ export default {
   	extend: {
   		fontFamily: {
   			sans: [
-  				'Roboto',
+  				'Work Sans',
   				'ui-sans-serif',
   				'system-ui',
   				'-apple-system',
@@ -23,20 +23,15 @@ export default {
   				'Segoe UI',
   				'Helvetica Neue',
   				'Arial',
-  				'Noto Sans',
   				'sans-serif'
   			],
-  			serif: [
-  				'Libre Caslon Text',
-  				'ui-serif',
-  				'Georgia',
-  				'Cambria',
-  				'Times New Roman',
-  				'Times',
-  				'serif'
+  			heading: [
+  				'Dosis',
+  				'ui-sans-serif',
+  				'system-ui',
+  				'sans-serif'
   			],
   			mono: [
-  				'Roboto Mono',
   				'ui-monospace',
   				'SFMono-Regular',
   				'Menlo',
@@ -46,6 +41,11 @@ export default {
   				'Courier New',
   				'monospace'
   			]
+  		},
+  		fontSize: {
+  			'body': ['18px', { lineHeight: '1.6' }],
+  			'h1': ['54px', { lineHeight: '1.1', fontWeight: '600' }],
+  			'h2': ['54px', { lineHeight: '1.1', fontWeight: '600' }],
   		},
   		colors: {
   			border: 'hsl(var(--border))',
@@ -95,8 +95,8 @@ export default {
   		},
   		borderRadius: {
   			lg: 'var(--radius)',
-  			md: 'calc(var(--radius) - 2px)',
-  			sm: 'calc(var(--radius) - 4px)'
+  			md: 'calc(var(--radius))',
+  			sm: 'calc(var(--radius))'
   		},
   		boxShadow: {
   			card: 'var(--shadow-card)',
