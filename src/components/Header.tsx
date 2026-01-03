@@ -53,23 +53,23 @@ const Header = () => {
   };
 
   return (
-    <header className="fixed top-0 left-0 right-0 z-50 bg-background border-b border-border/30">
+    <header className="fixed top-0 left-0 right-0 z-50 bg-background border-b border-border">
       <div className="container">
-        <div className="flex items-center justify-between h-16 md:h-20">
-          {/* Logo */}
+        <div className="flex items-center justify-between h-20 md:h-24">
+          {/* Logo - Left aligned, bigger */}
           <button onClick={() => handleNavClick("/")} className="flex items-center">
             <img 
               src={auraLogo} 
               alt="Aura Nettoyage" 
-              className="h-14 md:h-16 w-auto object-contain"
+              className="h-16 md:h-20 w-auto object-contain"
             />
           </button>
 
           {/* Desktop Navigation - Centered */}
-          <nav className="hidden lg:flex items-center gap-10">
+          <nav className="hidden lg:flex items-center gap-12">
             <button
               onClick={() => handleNavClick("/about")}
-              className="text-sm font-medium text-foreground hover:text-primary transition-colors"
+              className="text-base font-medium text-foreground hover:text-foreground/70 transition-colors"
             >
               À propos
             </button>
@@ -79,7 +79,7 @@ const Header = () => {
               onMouseLeave={() => setServicesOpen(false)}
             >
               <button
-                className="flex items-center gap-1.5 text-sm font-medium text-foreground hover:text-primary transition-colors"
+                className="flex items-center gap-1.5 text-base font-medium text-foreground hover:text-foreground/70 transition-colors"
                 onClick={() => setServicesOpen(!servicesOpen)}
               >
                 Services
@@ -88,24 +88,24 @@ const Header = () => {
             </div>
             <button
               onClick={() => handleNavClick("/contact")}
-              className="text-sm font-medium text-foreground hover:text-primary transition-colors"
+              className="text-base font-medium text-foreground hover:text-foreground/70 transition-colors"
             >
               Contact
             </button>
           </nav>
 
           {/* Desktop CTA - Right aligned */}
-          <div className="hidden lg:flex items-center gap-3">
+          <div className="hidden lg:flex items-center gap-4">
             <a
               href="tel:5141234567"
-              className="inline-flex items-center gap-2.5 bg-primary text-primary-foreground px-5 py-2.5 rounded-full text-sm font-semibold hover:bg-primary/90 transition-colors"
+              className="inline-flex items-center gap-2.5 bg-secondary text-secondary-foreground px-6 py-3 text-base font-semibold hover:bg-secondary/80 transition-colors border border-border"
             >
               <Phone className="w-4 h-4" />
               (514) 123-4567
             </a>
             <Button 
               onClick={() => handleNavClick("/booking")}
-              className="bg-primary hover:bg-primary/90 text-primary-foreground rounded-full px-6 py-2.5 text-sm font-bold uppercase tracking-wide"
+              className="bg-primary hover:bg-primary/90 text-primary-foreground px-8 py-3 h-auto text-base font-bold uppercase tracking-wide"
             >
               Réserver
             </Button>
@@ -124,7 +124,7 @@ const Header = () => {
       {/* Full-width Services Mega Menu */}
       <div
         className={`absolute top-full left-0 right-0 w-full bg-primary overflow-hidden transition-all duration-300 ease-in-out ${
-          servicesOpen ? "max-h-40 opacity-100" : "max-h-0 opacity-0"
+          servicesOpen ? "max-h-44 opacity-100" : "max-h-0 opacity-0"
         }`}
         onMouseEnter={() => setServicesOpen(true)}
         onMouseLeave={() => setServicesOpen(false)}
@@ -137,7 +137,7 @@ const Header = () => {
                 <button
                   key={service.slug}
                   onClick={() => handleServiceClick(service.slug)}
-                  className="flex items-center gap-3 text-primary-foreground hover:text-foreground transition-colors group py-2 text-left"
+                  className="flex items-center gap-3 text-primary-foreground hover:text-primary-foreground/70 transition-colors group py-2 text-left"
                 >
                   <Icon className="w-4 h-4 flex-shrink-0" />
                   <span className="text-sm font-medium">{service.title}</span>
@@ -167,14 +167,14 @@ const Header = () => {
                 <ChevronDown className={`w-4 h-4 transition-transform ${servicesOpen ? 'rotate-180' : ''}`} />
               </button>
               {servicesOpen && (
-                <div className="pl-4 space-y-2 bg-primary/10 rounded-lg py-3">
+                <div className="pl-4 space-y-2 bg-secondary py-3">
                   {services.map((service) => {
                     const Icon = service.icon;
                     return (
                       <button
                         key={service.slug}
                         onClick={() => handleServiceClick(service.slug)}
-                        className="flex items-center gap-3 py-1.5 text-muted-foreground hover:text-primary w-full text-left"
+                        className="flex items-center gap-3 py-1.5 text-muted-foreground hover:text-foreground w-full text-left"
                       >
                         <Icon className="w-4 h-4" />
                         <span className="text-sm">{service.title}</span>
@@ -193,12 +193,12 @@ const Header = () => {
             <div className="pt-4 border-t border-border space-y-3">
               <a
                 href="tel:5141234567"
-                className="flex items-center justify-center gap-2 bg-primary text-primary-foreground py-3 rounded-full font-semibold"
+                className="flex items-center justify-center gap-2 bg-secondary text-secondary-foreground py-3 font-semibold border border-border"
               >
                 <Phone className="w-4 h-4" />
                 (514) 123-4567
               </a>
-              <Button onClick={() => handleNavClick("/booking")} className="w-full rounded-full py-3 font-bold uppercase tracking-wide">
+              <Button onClick={() => handleNavClick("/booking")} className="w-full py-3 h-auto font-bold uppercase tracking-wide">
                 Réserver
               </Button>
             </div>
