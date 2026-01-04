@@ -55,13 +55,13 @@ const Header = () => {
   return (
     <header className="fixed top-0 left-0 right-0 z-50 bg-background border-b border-border">
       <div className="container">
-        <div className="flex items-center justify-between h-20 md:h-24">
+        <div className="flex items-center justify-between h-24 md:h-28">
           {/* Logo - Left aligned, bigger */}
           <button onClick={() => handleNavClick("/")} className="flex items-center">
             <img 
               src={auraLogo} 
               alt="Aura Nettoyage" 
-              className="h-16 md:h-20 w-auto object-contain"
+              className="h-20 md:h-24 w-auto object-contain"
             />
           </button>
 
@@ -121,9 +121,9 @@ const Header = () => {
         </div>
       </div>
 
-      {/* Full-width Services Mega Menu */}
+      {/* Full-width Services Mega Menu - White background like Prime Cleaner */}
       <div
-        className={`absolute top-full left-0 right-0 w-full bg-primary overflow-hidden transition-all duration-300 ease-in-out ${
+        className={`absolute top-full left-0 right-0 w-full bg-background border-b border-border shadow-md overflow-hidden transition-all duration-300 ease-in-out ${
           servicesOpen ? "max-h-44 opacity-100" : "max-h-0 opacity-0"
         }`}
         onMouseEnter={() => setServicesOpen(true)}
@@ -137,9 +137,9 @@ const Header = () => {
                 <button
                   key={service.slug}
                   onClick={() => handleServiceClick(service.slug)}
-                  className="flex items-center gap-3 text-primary-foreground hover:text-primary-foreground/70 transition-colors group py-2 text-left"
+                  className="flex items-center gap-3 text-foreground hover:text-primary transition-colors group py-2 text-left"
                 >
-                  <Icon className="w-4 h-4 flex-shrink-0" />
+                  <Icon className="w-4 h-4 flex-shrink-0 text-primary" />
                   <span className="text-sm font-medium">{service.title}</span>
                 </button>
               );

@@ -117,7 +117,7 @@ const BookingForm = ({ formData, updateFormData, onNext, showErrorBanner, hideEr
   };
 
   return (
-    <div className="bg-card rounded-xl border border-border p-6 md:p-8 space-y-8">
+    <div className="bg-background border border-border p-6 md:p-8 space-y-8">
       {/* Zip Code */}
       <div className="space-y-2">
         <label className="text-sm font-medium text-foreground">Zip Code</label>
@@ -215,7 +215,7 @@ const BookingForm = ({ formData, updateFormData, onNext, showErrorBanner, hideEr
       {/* Property Details */}
       <div className="space-y-4">
         <div>
-          <h3 className="text-xl font-bold text-[hsl(195,53%,37%)] font-serif">
+          <h3 className="text-xl font-bold text-accent font-heading">
             Property Details
           </h3>
           <p className="text-sm text-muted-foreground mt-1">
@@ -224,7 +224,7 @@ const BookingForm = ({ formData, updateFormData, onNext, showErrorBanner, hideEr
               href="https://www.realtor.com"
               target="_blank"
               rel="noopener noreferrer"
-              className="text-[hsl(195,53%,37%)] font-medium hover:underline"
+              className="text-accent font-medium hover:underline"
             >
               REALTOR.COM
             </a>
@@ -376,7 +376,7 @@ const BookingForm = ({ formData, updateFormData, onNext, showErrorBanner, hideEr
       {/* Next Button */}
       <Button
         onClick={handleNext}
-        className="w-full h-14 bg-[hsl(210,29%,24%)] hover:bg-[hsl(210,29%,20%)] text-white text-lg font-medium"
+        className="w-full h-14 bg-primary hover:bg-primary/90 text-primary-foreground text-lg font-medium"
       >
         <Calendar className="w-5 h-5 mr-2" />
         Next

@@ -152,12 +152,12 @@ const BookingStep2 = ({ formData, step2Data, updateStep2Data, onBack, pricing, s
   };
 
   return (
-    <div className="bg-card rounded-xl border border-border p-6 md:p-8 space-y-8">
+    <div className="bg-background border border-border p-6 md:p-8 space-y-8">
       {/* Back Button */}
       <Button
         variant="outline"
         onClick={onBack}
-        className="bg-[hsl(210,29%,24%)] text-white hover:bg-[hsl(210,29%,20%)] hover:text-white border-none"
+        className="bg-primary text-primary-foreground hover:bg-primary/90 border-none"
       >
         <ArrowLeft className="w-4 h-4 mr-2" />
         Go Back to Step 1
@@ -165,7 +165,7 @@ const BookingStep2 = ({ formData, step2Data, updateStep2Data, onBack, pricing, s
 
       {/* Date & Time Selection */}
       <div className="space-y-4">
-        <h3 className="text-xl font-bold text-[hsl(195,53%,37%)] font-serif">
+        <h3 className="text-xl font-bold text-accent font-heading">
           Select a Convenient Date & Time
         </h3>
 
@@ -322,7 +322,7 @@ const BookingStep2 = ({ formData, step2Data, updateStep2Data, onBack, pricing, s
 
       {/* Special Notes */}
       <div className="space-y-4">
-        <h3 className="text-xl font-bold text-[hsl(195,53%,37%)] font-serif">
+        <h3 className="text-xl font-bold text-accent font-heading">
           Special Notes Or Instructions
         </h3>
         <div className="space-y-2">
@@ -384,7 +384,7 @@ const BookingStep2 = ({ formData, step2Data, updateStep2Data, onBack, pricing, s
       {/* Save Booking Button */}
       <Button
         onClick={handleSaveBooking}
-        className="w-full h-14 bg-[hsl(210,29%,24%)] hover:bg-[hsl(210,29%,20%)] text-white text-lg font-medium"
+        className="w-full h-14 bg-primary hover:bg-primary/90 text-primary-foreground text-lg font-medium"
       >
         <CalendarIcon className="w-5 h-5 mr-2" />
         Save Booking

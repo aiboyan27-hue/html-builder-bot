@@ -214,14 +214,14 @@ const Booking = () => {
 
           {/* Page Header */}
           <div className="mb-10">
-            <h1 className="text-3xl md:text-4xl font-bold text-[hsl(210,29%,24%)] font-serif mb-2">
+            <h1 className="text-3xl md:text-4xl font-bold text-foreground font-heading mb-2">
               Check Pricing & Book Online Easily
             </h1>
             <p className="text-muted-foreground">
               Have questions? Call or text us at{" "}
               <a
                 href="tel:5141234567"
-                className="text-[hsl(210,29%,24%)] font-medium underline underline-offset-2 hover:text-primary transition-colors"
+                className="text-foreground font-medium underline underline-offset-2 hover:text-accent transition-colors"
               >
                 (514) 123-4567
               </a>

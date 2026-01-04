@@ -20,10 +20,10 @@ const FrequencySelector = ({ value, onChange }: FrequencySelectorProps) => {
           key={freq.value}
           onClick={() => onChange(freq.value)}
           className={cn(
-            "px-4 py-2.5 rounded-lg text-sm font-medium transition-all duration-200",
+            "px-4 py-2.5 text-sm font-medium transition-all duration-200",
             value === freq.value
-              ? "bg-[hsl(210,29%,24%)] text-white shadow-md"
-              : "bg-background border border-border text-foreground hover:border-[hsl(210,29%,24%)]/50"
+              ? "bg-primary text-primary-foreground shadow-md"
+              : "bg-background border border-border text-foreground hover:border-primary/50"
           )}
         >
           {freq.label}

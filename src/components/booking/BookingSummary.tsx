@@ -24,9 +24,9 @@ const BookingSummary = ({ formData, pricing, currentStep = 1 }: BookingSummaryPr
   const [showDetails, setShowDetails] = useState(false);
 
   return (
-    <div className="bg-card rounded-xl border border-border p-6">
+    <div className="bg-background border border-border p-6">
       <div className="flex items-center justify-between mb-6">
-        <h3 className="text-lg font-bold text-[hsl(210,29%,24%)]">Booking Summary</h3>
+        <h3 className="text-lg font-bold text-foreground">Booking Summary</h3>
         <button className="p-1 text-muted-foreground hover:text-foreground transition-colors">
           <Minus className="w-5 h-5" />
         </button>
@@ -60,10 +60,10 @@ const BookingSummary = ({ formData, pricing, currentStep = 1 }: BookingSummaryPr
 
       <div className="mt-6 pt-4 border-t border-border">
         <div className="flex justify-between items-end">
-          <span className="text-[hsl(195,53%,37%)] text-lg font-semibold">
+          <span className="text-accent text-lg font-semibold">
             Estimated<br />Total
           </span>
-          <span className="text-3xl font-bold text-foreground">
+          <span className="text-3xl font-bold text-accent">
             ${pricing.total.toFixed(2)}
           </span>
         </div>
@@ -71,7 +71,7 @@ const BookingSummary = ({ formData, pricing, currentStep = 1 }: BookingSummaryPr
 
       <button
         onClick={() => setShowDetails(!showDetails)}
-        className="mt-4 text-[hsl(195,53%,37%)] text-sm font-medium flex items-center gap-1 hover:underline w-full justify-end"
+        className="mt-4 text-accent text-sm font-medium flex items-center gap-1 hover:underline w-full justify-end"
       >
         {showDetails ? "Hide Details" : "Show Details"}
         {showDetails ? (

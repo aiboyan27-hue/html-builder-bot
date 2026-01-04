@@ -62,8 +62,8 @@ const questions = [
 
 const PopularQuestions = () => {
   return (
-    <div className="bg-card rounded-xl border border-border p-6">
-      <h3 className="text-lg font-bold text-[hsl(210,29%,24%)] mb-4">
+    <div className="bg-background border border-border p-6">
+      <h3 className="text-lg font-bold text-foreground mb-4">
         Popular Questions
       </h3>
 
