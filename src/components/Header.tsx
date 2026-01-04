@@ -55,13 +55,13 @@ const Header = () => {
   return (
     <header className="fixed top-0 left-0 right-0 z-50 bg-background border-b border-border">
       <div className="container">
-        <div className="flex items-center justify-between h-24 md:h-28">
-          {/* Logo - Left aligned, bigger */}
-          <button onClick={() => handleNavClick("/")} className="flex items-center">
+        <div className="flex items-center justify-between h-20">
+          {/* Logo - Left aligned, bigger without changing header height */}
+          <button onClick={() => handleNavClick("/")} className="flex items-center py-1">
             <img 
               src={auraLogo} 
               alt="Aura Nettoyage" 
-              className="h-20 md:h-24 w-auto object-contain"
+              className="h-16 md:h-18 w-auto object-contain"
             />
           </button>
 

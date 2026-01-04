@@ -1,8 +1,10 @@
 import { Link } from "react-router-dom";
-import { Star, Check } from "lucide-react";
+import { Star, Check, Shield } from "lucide-react";
 import { Button } from "@/components/ui/button";
+
 const Hero = () => {
-  return <section className="relative pt-24 md:pt-32 pb-16 md:pb-24 overflow-hidden">
+  return (
+    <section className="relative pt-24 md:pt-32 pb-16 md:pb-24 overflow-hidden">
       {/* Background gradient */}
       <div className="absolute inset-0 bg-gradient-to-br from-primary-light via-background to-background -z-10" />
 
@@ -14,44 +16,55 @@ const Hero = () => {
         <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center">
           {/* Content */}
           <div className="text-center lg:text-left">
-            {/* Badge */}
-            <div className="inline-flex items-center gap-2 bg-accent text-accent-foreground px-4 py-2 rounded-full text-sm font-medium mb-6 animate-fade-in-up">
-              <div className="flex -space-x-1">
-                {[...Array(3)].map((_, i) => <div key={i} className="w-5 h-5 rounded-full bg-primary/20 border-2 border-accent" />)}
+            {/* Badge - Prime Cleaner style */}
+            <div className="inline-flex items-center gap-3 mb-6 animate-fade-in-up">
+              <div className="w-14 h-14 bg-accent rounded-full flex items-center justify-center border-4 border-primary">
+                <Shield className="w-6 h-6 text-primary" />
               </div>
-              Miami Locals Love Us
+              <div className="flex flex-col">
+                <span className="bg-primary text-primary-foreground px-3 py-1 text-sm font-semibold">
+                  Montréal Local
+                </span>
+                <span className="text-xs text-muted-foreground mt-1">Qualité garantie</span>
+              </div>
             </div>
 
             {/* Heading */}
-            <h1 className="text-4xl md:text-5xl lg:text-6xl font-extrabold text-foreground leading-tight mb-6 animate-fade-in-up animation-delay-200">
-              We clean.
+            <h1 className="font-heading text-h1 font-extrabold text-foreground leading-tight mb-6 animate-fade-in-up animation-delay-200">
+              Nous nettoyons.
               <br />
-              You'll find{" "}
-              <span className="text-primary relative">
+              Vous trouvez{" "}
+              <span className="text-accent relative">
                 <span className="inline-block h-[1.2em] overflow-hidden align-bottom">
                   <span className="flex flex-col animate-text-rotate">
-                    <span>joy.</span>
-                    <span>time.</span>
-                    <span>peace.</span>
-                    <span>joy.</span>
+                    <span>la joie.</span>
+                    <span>le temps.</span>
+                    <span>la paix.</span>
+                    <span>la joie.</span>
                   </span>
                 </span>
               </span>
             </h1>
 
             {/* Description */}
-            <p className="text-lg text-muted-foreground max-w-lg mx-auto lg:mx-0 mb-8 animate-fade-in-up animation-delay-400">
-              Feel good about your clean home again. Trusted by 7,000+ clients
-              across South Florida for reliable, high-standard cleaning.
+            <p className="text-lg text-muted-foreground max-w-lg mx-auto lg:mx-0 mb-6 animate-fade-in-up animation-delay-400">
+              Retrouvez le plaisir d'un foyer propre. Plus de 7 000 clients nous font confiance à Montréal.
             </p>
 
             {/* CTAs */}
             <div className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start animate-fade-in-up animation-delay-600">
-              <Button asChild size="lg" className="rounded-full px-8 text-base">
-                <Link to="/booking">Get Instant Quote</Link>
+              <Button asChild size="lg" className="px-8 text-base">
+                <Link to="/booking">Réserver maintenant</Link>
               </Button>
-              <Button asChild variant="outline" size="lg" className="rounded-full px-8 text-base">
-                <a href="tel:3055752776">Call (305) 575-2776</a>
+              <Button asChild variant="outline" size="lg" className="px-8 text-base">
+                <a href="tel:5141234567">Appelez (514) 123-4567</a>
+              </Button>
+            </div>
+
+            {/* Commercial CTA */}
+            <div className="mt-4 animate-fade-in-up animation-delay-600">
+              <Button asChild variant="secondary" size="lg" className="border border-primary text-primary hover:bg-primary hover:text-primary-foreground">
+                <Link to="/commercial">Nettoyage commercial – Cliquez ici</Link>
               </Button>
             </div>
 
@@ -59,18 +72,25 @@ const Hero = () => {
             <div className="flex flex-col sm:flex-row items-center gap-6 mt-10 justify-center lg:justify-start">
               <div className="flex items-center gap-3">
                 <div className="flex -space-x-2">
-                  {[...Array(4)].map((_, i) => <div key={i} className="w-10 h-10 rounded-full bg-muted border-2 border-background flex items-center justify-center text-xs font-medium text-muted-foreground">
+                  {[...Array(4)].map((_, i) => (
+                    <div
+                      key={i}
+                      className="w-10 h-10 rounded-full bg-muted border-2 border-background flex items-center justify-center text-xs font-medium text-muted-foreground"
+                    >
                       {String.fromCharCode(65 + i)}
-                    </div>)}
+                    </div>
+                  ))}
                 </div>
                 <span className="text-2xl font-bold text-foreground">+7k</span>
               </div>
               <div className="flex items-center gap-2">
                 <div className="flex">
-                  {[...Array(5)].map((_, i) => <Star key={i} className="w-5 h-5 fill-yellow-400 text-yellow-400" />)}
+                  {[...Array(5)].map((_, i) => (
+                    <Star key={i} className="w-5 h-5 fill-yellow-400 text-yellow-400" />
+                  ))}
                 </div>
                 <span className="text-sm font-medium text-muted-foreground">
-                  360+ 5-Star Reviews
+                  350+ avis 5 étoiles
                 </span>
               </div>
             </div>
@@ -98,6 +118,8 @@ const Hero = () => {
           </div>
         </div>
       </div>
-    </section>;
+    </section>
+  );
 };
+
 export default Hero;
