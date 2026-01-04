@@ -50,7 +50,7 @@ interface ServiceMegaMenuProps {
 
 const ServiceMegaMenu = ({ onClose }: ServiceMegaMenuProps) => {
   return (
-    <div className="absolute top-full left-0 right-0 w-screen bg-primary z-50 animate-fade-in">
+    <div className="absolute top-full left-0 right-0 w-screen bg-background border-b border-border shadow-md z-50 animate-fade-in">
       <div className="container py-6">
         <div className="grid grid-cols-2 md:grid-cols-4 gap-x-16 gap-y-4">
           {services.map((service) => {
@@ -60,9 +60,9 @@ const ServiceMegaMenu = ({ onClose }: ServiceMegaMenuProps) => {
                 key={service.slug}
                 to={`/services/${service.slug}`}
                 onClick={onClose}
-                className="flex items-center gap-3 text-primary-foreground hover:text-foreground transition-colors group py-2"
+                className="flex items-center gap-3 text-foreground hover:text-accent transition-colors group py-2"
               >
-                <Icon className="w-4 h-4 flex-shrink-0" />
+                <Icon className="w-4 h-4 flex-shrink-0 text-primary" />
                 <span className="text-sm font-medium">{service.title}</span>
               </Link>
             );

@@ -203,7 +203,7 @@ const AddOnsGrid = ({ selected, onChange }: AddOnsGridProps) => {
   return (
     <div className="space-y-4">
       <div>
-        <h3 className="text-xl font-bold text-[hsl(195,53%,37%)] font-serif">
+        <h3 className="text-xl font-bold text-accent font-heading">
           Add-Ons for a Deeper Clean
         </h3>
         <p className="text-sm text-muted-foreground mt-1">
@@ -221,10 +221,10 @@ const AddOnsGrid = ({ selected, onChange }: AddOnsGridProps) => {
               key={addon.id}
               onClick={() => handleSelect(addon.id)}
               className={cn(
-                "p-4 rounded-lg border-2 text-center transition-all duration-200 flex flex-col items-center gap-2 min-h-[140px] relative",
+                "p-4 border-2 text-center transition-all duration-200 flex flex-col items-center gap-2 min-h-[140px] relative",
                 isSelected
-                  ? "border-[hsl(195,75%,65%)] bg-[hsl(195,60%,92%)]"
-                  : "border-border bg-card hover:border-[hsl(195,53%,37%)]/50"
+                  ? "border-primary bg-secondary"
+                  : "border-border bg-background hover:border-primary/50"
               )}
             >
               {isSelected ? (
@@ -232,23 +232,23 @@ const AddOnsGrid = ({ selected, onChange }: AddOnsGridProps) => {
                 <div className="flex items-center justify-center w-full h-12 gap-2">
                   <button
                     onClick={(e) => handleDecrement(addon.id, e)}
-                    className="w-8 h-8 flex items-center justify-center bg-[hsl(210,14%,53%)] text-white rounded hover:bg-[hsl(210,14%,43%)] transition-colors"
+                    className="w-8 h-8 flex items-center justify-center bg-primary text-primary-foreground hover:bg-primary/80 transition-colors"
                   >
                     <Minus className="w-4 h-4" />
                   </button>
-                  <div className="w-10 h-10 flex items-center justify-center bg-[hsl(210,14%,53%)] text-white font-bold text-lg rounded">
+                  <div className="w-10 h-10 flex items-center justify-center bg-primary text-primary-foreground font-bold text-lg">
                     {quantity}
                   </div>
                   <button
                     onClick={(e) => handleIncrement(addon.id, e)}
-                    className="w-8 h-8 flex items-center justify-center bg-[hsl(210,14%,53%)] text-white rounded hover:bg-[hsl(210,14%,43%)] transition-colors"
+                    className="w-8 h-8 flex items-center justify-center bg-primary text-primary-foreground hover:bg-primary/80 transition-colors"
                   >
                     <Plus className="w-4 h-4" />
                   </button>
                 </div>
               ) : (
                 // Unselected state with icon
-                <div className="text-[hsl(210,29%,24%)]">
+                <div className="text-foreground">
                   {getIcon(addon.id)}
                 </div>
               )}
