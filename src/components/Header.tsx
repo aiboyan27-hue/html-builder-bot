@@ -61,7 +61,7 @@ const Header = () => {
             <img 
               src={auraLogo} 
               alt="Aura Nettoyage" 
-              className="h-16 md:h-18 w-auto object-contain"
+              className="h-20 md:h-24 w-auto object-contain"
             />
           </button>
 
