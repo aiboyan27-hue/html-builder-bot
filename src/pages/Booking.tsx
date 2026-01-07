@@ -1,7 +1,9 @@
 import { useState, useMemo, useEffect } from "react";
+import { Link } from "react-router-dom";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import BookingSummary from "@/components/booking/BookingSummary";
+import { Button } from "@/components/ui/button";
 import PopularQuestions from "@/components/booking/PopularQuestions";
 import BookingForm from "@/components/booking/BookingForm";
 import BookingStep2 from "@/components/booking/BookingStep2";
@@ -217,7 +219,7 @@ const Booking = () => {
             <h1 className="text-3xl md:text-4xl font-bold text-foreground font-heading mb-2">
               Check Pricing & Book Online Easily
             </h1>
-            <p className="text-muted-foreground">
+            <p className="text-muted-foreground mb-4">
               Have questions? Call or text us at{" "}
               <a
                 href="tel:5141234567"
@@ -226,6 +228,9 @@ const Booking = () => {
                 (514) 123-4567
               </a>
             </p>
+            <Button asChild className="bg-accent text-accent-foreground hover:bg-accent/90 font-semibold">
+              <Link to="/commercial">Nettoyage commercial – Réserver ici</Link>
+            </Button>
           </div>
 
           {/* Two-column layout */}
