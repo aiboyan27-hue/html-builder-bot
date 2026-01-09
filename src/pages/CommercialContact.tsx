@@ -53,7 +53,7 @@ const CommercialContact = () => {
             {/* Header */}
             <div className="text-center mb-12">
               <h1 className="font-heading text-h1 font-bold text-foreground mb-4">
-                Nettoyage Commercial
+                Obtenir une soumission
               </h1>
               <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
                 Des solutions de nettoyage professionnelles pour bureaux, commerces et espaces d'affaires à Montréal.
