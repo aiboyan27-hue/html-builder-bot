@@ -11,7 +11,7 @@ const ServiceCTA = () => {
               Professionnel et fiable
             </h2>
             <p className="text-muted-foreground max-w-xl">
-              Vous pouvez réserver directement sur notre site ou nous contacter par texto, téléphone ou courriel. Contactez-nous dès aujourd'hui.
+              Obtenez une soumission personnalisée pour votre espace commercial. Contactez-nous dès aujourd'hui — sans engagement.
             </p>
           </div>
           <Button 
@@ -19,7 +19,7 @@ const ServiceCTA = () => {
             size="lg"
             className="bg-primary hover:bg-primary/90 text-primary-foreground rounded-lg px-10 py-6 text-base font-semibold uppercase tracking-wide whitespace-nowrap"
           >
-            <Link to="/booking">Réserver un nettoyage</Link>
+            <Link to="/commercial">Obtenir une soumission</Link>
           </Button>
         </div>
       </div>
