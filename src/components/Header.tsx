@@ -104,10 +104,10 @@ const Header = () => {
               (514) 123-4567
             </a>
             <Button 
-              onClick={() => handleNavClick("/booking")}
+              onClick={() => handleNavClick("/commercial")}
               className="bg-primary hover:bg-primary/90 text-primary-foreground px-8 py-3 h-auto text-base font-bold uppercase tracking-wide"
             >
-              Réserver
+              Obtenir une soumission
             </Button>
           </div>
 
@@ -198,8 +198,8 @@ const Header = () => {
                 <Phone className="w-4 h-4" />
                 (514) 123-4567
               </a>
-              <Button onClick={() => handleNavClick("/booking")} className="w-full py-3 h-auto font-bold uppercase tracking-wide">
-                Réserver
+              <Button onClick={() => handleNavClick("/commercial")} className="w-full py-3 h-auto font-bold uppercase tracking-wide">
+                Obtenir une soumission
               </Button>
             </div>
           </div>
