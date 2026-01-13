@@ -27,7 +27,7 @@ const ContactReviews = () => {
       <div className="container">
         {/* Section Title */}
         <h2 className="text-3xl md:text-4xl font-serif font-bold text-foreground text-center mb-12">
-          What your neighbors say
+          Ce que vos voisins disent
         </h2>
 
         {/* Review Cards */}
@@ -64,7 +64,7 @@ const ContactReviews = () => {
 
               {/* Posted on Google */}
               <div className="pt-4 border-t border-border/50">
-                <p className="text-xs text-muted-foreground mb-1">Posted On</p>
+                <p className="text-xs text-muted-foreground mb-1">Publié sur</p>
                 <div className="flex items-center gap-1">
                   <span className="text-sm font-medium">
                     <span className="text-[#4285F4]">G</span>
@@ -85,7 +85,6 @@ const ContactReviews = () => {
           {/* Rating Stat */}
           <div>
             <div className="flex items-center gap-3 mb-4">
-              <span className="text-6xl md:text-7xl font-bold text-primary">4.9</span>
               <div className="flex gap-0.5">
                 {[...Array(5)].map((_, i) => (
                   <Star key={i} className="w-6 h-6 fill-primary text-primary" />
@@ -93,23 +92,20 @@ const ContactReviews = () => {
               </div>
             </div>
             <h3 className="text-xl font-bold text-foreground mb-2">
-              Google rating from 350+ users
+              ★★★★★ 5 étoiles – Avis Google
             </h3>
             <p className="text-muted-foreground">
-              Trusted across Miami with a nearly perfect score. Real feedback from real clients.
+              Appréciés partout au Québec avec une note parfaite. Des avis authentiques de clients réels.
             </p>
           </div>
 
           {/* Homes Cleaned Stat */}
           <div>
-            <span className="text-6xl md:text-7xl font-bold text-foreground block mb-4">
-              7000+
-            </span>
             <h3 className="text-xl font-bold text-foreground mb-2">
-              Homes cleaned across South Florida
+              Des centaines de maisons nettoyées à travers le Québec
             </h3>
             <p className="text-muted-foreground">
-              From one-time resets to long-term clients. We've been trusted thousands of times to get the job done right.
+              Du nettoyage occasionnel aux nettoyages réguliers, des centaines de clients nous font confiance pour un travail bien fait.
             </p>
           </div>
         </div>

@@ -7,101 +7,101 @@ import Footer from "@/components/Footer";
 const servicesData = {
   "deep-cleaning": {
     icon: Sparkles,
-    title: "Deep Cleaning",
-    subtitle: "A thorough, top-to-bottom clean for your entire home",
-    description: "Our deep cleaning service goes beyond the surface. We tackle every corner, every crevice, and every often-forgotten spot to give your home a complete refresh. Perfect for first-time clients, seasonal cleaning, or when your home needs extra attention.",
-    price: "From $199",
-    duration: "4-6 hours",
+    title: "Nettoyage en profondeur",
+    subtitle: "Un nettoyage complet de votre espace",
+    description: "Notre service de nettoyage en profondeur va au-delà de la surface. Nous nettoyons chaque coin, chaque recoin et chaque endroit souvent oublié pour donner à votre espace un rafraîchissement complet. Parfait pour les nouveaux clients, le nettoyage saisonnier ou lorsque votre espace nécessite une attention particulière.",
+    price: "Sur devis",
+    duration: "4-6 heures",
     includes: [
-      "All surfaces wiped and sanitized",
-      "Inside appliances (oven, microwave, fridge)",
-      "Baseboards and door frames cleaned",
-      "Light fixtures and ceiling fans dusted",
-      "Inside cabinets and drawers wiped",
-      "Windows cleaned (interior)",
-      "Detailed bathroom scrubbing",
-      "Kitchen degreasing",
+      "Toutes les surfaces essuyées et désinfectées",
+      "Intérieur des appareils (four, micro-ondes, réfrigérateur)",
+      "Plinthes et cadres de portes nettoyés",
+      "Luminaires et ventilateurs de plafond dépoussiérés",
+      "Intérieur des armoires et tiroirs essuyés",
+      "Fenêtres nettoyées (intérieur)",
+      "Nettoyage détaillé des salles de bain",
+      "Dégraissage de la cuisine",
     ],
     perfectFor: [
-      "First-time clients",
-      "Before or after events",
-      "Seasonal deep cleaning",
-      "Moving into a new home",
+      "Nouveaux clients",
+      "Avant ou après des événements",
+      "Nettoyage saisonnier",
+      "Emménagement dans un nouveau logement",
     ],
     image: "https://images.unsplash.com/photo-1581578731548-c64695cc6952?w=800&h=600&fit=crop",
   },
   "move-in-out": {
     icon: Home,
-    title: "Move In/Out Cleaning",
-    subtitle: "Start fresh or leave spotless",
-    description: "Moving is stressful enough. Let us handle the cleaning so you can focus on what matters. Whether you're moving into a new place or leaving your old one, we'll make sure every surface sparkles.",
-    price: "From $249",
-    duration: "5-8 hours",
+    title: "Nettoyage déménagement",
+    subtitle: "Commencez frais ou partez impeccable",
+    description: "Le déménagement est suffisamment stressant. Laissez-nous nous occuper du nettoyage pour que vous puissiez vous concentrer sur ce qui compte. Que vous emménagiez ou déménagiez, nous nous assurerons que chaque surface brille.",
+    price: "Sur devis",
+    duration: "5-8 heures",
     includes: [
-      "Complete deep cleaning of all rooms",
-      "Inside all cabinets and closets",
-      "All appliances cleaned inside and out",
-      "Window sills and tracks cleaned",
-      "Light switches and outlets wiped",
-      "Garage sweep (if applicable)",
-      "Removal of any left-behind debris",
-      "Final walkthrough inspection",
+      "Nettoyage complet en profondeur de toutes les pièces",
+      "Intérieur de toutes les armoires et placards",
+      "Tous les appareils nettoyés à l'intérieur et à l'extérieur",
+      "Rebords et rails de fenêtres nettoyés",
+      "Interrupteurs et prises essuyés",
+      "Balayage du garage (si applicable)",
+      "Enlèvement de tout débris laissé",
+      "Inspection finale",
     ],
     perfectFor: [
-      "Renters getting deposit back",
-      "Sellers preparing for showing",
-      "New homeowners moving in",
-      "Property managers",
+      "Locataires récupérant leur dépôt",
+      "Vendeurs préparant une visite",
+      "Nouveaux propriétaires emménageant",
+      "Gestionnaires immobiliers",
     ],
     image: "https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=800&h=600&fit=crop",
   },
   "standard-cleaning": {
     icon: RefreshCw,
-    title: "Standard Upkeep",
-    subtitle: "Regular maintenance to keep your home sparkling",
-    description: "Our most popular service for busy Miami families. We'll maintain your home's cleanliness with regular visits, so you always come home to a fresh, welcoming space. Available weekly, bi-weekly, or monthly.",
-    price: "From $129",
-    duration: "2-3 hours",
+    title: "Nettoyage standard",
+    subtitle: "Entretien régulier pour garder votre espace impeccable",
+    description: "Notre service le plus populaire pour les familles occupées. Nous maintiendrons la propreté de votre espace avec des visites régulières, pour que vous rentriez toujours dans un espace frais et accueillant. Disponible hebdomadaire, bimensuel ou mensuel.",
+    price: "Sur devis",
+    duration: "2-3 heures",
     includes: [
-      "Dusting all accessible surfaces",
-      "Vacuuming and mopping floors",
-      "Kitchen counters and appliances (exterior)",
-      "Bathroom cleaning and sanitizing",
-      "Bed making and tidying",
-      "Trash removal",
-      "Mirror and glass cleaning",
-      "General tidying up",
+      "Époussetage de toutes les surfaces accessibles",
+      "Aspiration et lavage des planchers",
+      "Comptoirs et appareils de cuisine (extérieur)",
+      "Nettoyage et désinfection des salles de bain",
+      "Faire les lits et ranger",
+      "Sortie des poubelles",
+      "Nettoyage des miroirs et vitres",
+      "Rangement général",
     ],
     perfectFor: [
-      "Busy professionals",
-      "Families with children",
-      "Pet owners",
-      "Anyone who values their time",
+      "Professionnels occupés",
+      "Familles avec enfants",
+      "Propriétaires d'animaux",
+      "Tous ceux qui valorisent leur temps",
     ],
     image: "https://images.unsplash.com/photo-1527515545081-5db817172677?w=800&h=600&fit=crop",
   },
   "vacation-rental": {
     icon: Building,
-    title: "Vacation Rental Turnover",
-    subtitle: "5-star clean for 5-star reviews",
-    description: "Quick, thorough turnovers that keep your guests happy and your reviews glowing. We understand the tight schedules of Airbnb and VRBO hosts, and we deliver hotel-quality cleaning every time.",
-    price: "From $149",
-    duration: "2-4 hours",
+    title: "Location de vacances",
+    subtitle: "Nettoyage 5 étoiles pour des avis 5 étoiles",
+    description: "Des rotations rapides et complètes qui gardent vos invités heureux et vos avis élogieux. Nous comprenons les horaires serrés des hôtes Airbnb et VRBO, et nous offrons un nettoyage de qualité hôtelière à chaque fois.",
+    price: "Sur devis",
+    duration: "2-4 heures",
     includes: [
-      "Full property cleaning",
-      "Fresh linens and bed making",
-      "Towel arrangement (hotel-style)",
-      "Restocking essentials check",
-      "Kitchen reset and sanitization",
-      "Appliance spot-check",
-      "Welcome staging (if requested)",
-      "Photo-ready presentation",
+      "Nettoyage complet de la propriété",
+      "Draps frais et lits faits",
+      "Arrangement des serviettes (style hôtelier)",
+      "Vérification du réapprovisionnement des essentiels",
+      "Réinitialisation et désinfection de la cuisine",
+      "Vérification rapide des appareils",
+      "Mise en scène d'accueil (si demandé)",
+      "Présentation prête pour les photos",
     ],
     perfectFor: [
-      "Airbnb hosts",
-      "VRBO property managers",
-      "Short-term rental owners",
-      "Property management companies",
+      "Hôtes Airbnb",
+      "Gestionnaires de propriétés VRBO",
+      "Propriétaires de locations à court terme",
+      "Sociétés de gestion immobilière",
     ],
     image: "https://images.unsplash.com/photo-1502672260266-1c1ef2d93688?w=800&h=600&fit=crop",
   },
@@ -116,9 +116,9 @@ const ServiceDetail = () => {
       <main className="min-h-screen bg-background">
         <Header />
         <div className="container pt-32 pb-20 text-center">
-          <h1 className="text-3xl font-bold text-foreground mb-4">Service Not Found</h1>
+          <h1 className="text-3xl font-bold text-foreground mb-4">Service non trouvé</h1>
           <Button asChild>
-            <Link to="/">Back to Home</Link>
+            <Link to="/">Retour à l'accueil</Link>
           </Button>
         </div>
         <Footer />
@@ -140,7 +140,7 @@ const ServiceDetail = () => {
             className="inline-flex items-center gap-2 text-sm font-medium text-muted-foreground hover:text-primary transition-colors mb-8"
           >
             <ArrowLeft className="w-4 h-4" />
-            Back to Home
+            Retour à l'accueil
           </Link>
 
           <div className="grid lg:grid-cols-2 gap-12 items-center">
@@ -166,7 +166,7 @@ const ServiceDetail = () => {
               </div>
 
               <Button asChild size="lg" className="rounded-full px-8">
-                <Link to="/booking">Get Your Quote</Link>
+                <Link to="/commercial">Obtenir une soumission</Link>
               </Button>
             </div>
 
@@ -186,7 +186,7 @@ const ServiceDetail = () => {
         <div className="container">
           <div className="grid lg:grid-cols-2 gap-12">
             <div>
-              <h2 className="text-3xl font-bold text-foreground mb-8">What's Included</h2>
+              <h2 className="text-3xl font-bold text-foreground mb-8">Ce qui est inclus</h2>
               <div className="grid gap-4">
                 {service.includes.map((item) => (
                   <div key={item} className="flex items-start gap-3">
@@ -200,7 +200,7 @@ const ServiceDetail = () => {
             </div>
 
             <div>
-              <h2 className="text-3xl font-bold text-foreground mb-8">Perfect For</h2>
+              <h2 className="text-3xl font-bold text-foreground mb-8">Parfait pour</h2>
               <div className="grid gap-4">
                 {service.perfectFor.map((item) => (
                   <div key={item} className="flex items-start gap-3">
@@ -213,12 +213,12 @@ const ServiceDetail = () => {
               </div>
 
               <div className="mt-10 p-6 bg-muted/50 rounded-2xl">
-                <h3 className="font-semibold text-foreground mb-2">Not sure which service you need?</h3>
+                <h3 className="font-semibold text-foreground mb-2">Vous ne savez pas quel service choisir ?</h3>
                 <p className="text-sm text-muted-foreground mb-4">
-                  Get in touch and we'll help you choose the perfect cleaning plan for your home.
+                  Contactez-nous et nous vous aiderons à choisir le plan de nettoyage parfait pour votre espace.
                 </p>
                 <Button asChild variant="outline" className="rounded-full">
-                  <a href="tel:3055752776">Call (305) 575-2776</a>
+                  <a href="tel:5141234567">Appelez (514) 123-4567</a>
                 </Button>
               </div>
             </div>
@@ -230,13 +230,13 @@ const ServiceDetail = () => {
       <section className="py-20 bg-primary">
         <div className="container text-center">
           <h2 className="text-3xl md:text-4xl font-bold text-primary-foreground mb-4">
-            Ready for a Spotless Home?
+            Prêt pour un espace impeccable ?
           </h2>
           <p className="text-primary-foreground/80 mb-8 max-w-xl mx-auto">
-            Get your personalized quote in under 2 minutes. No commitment required.
+            Obtenez une soumission personnalisée. Sans engagement.
           </p>
           <Button asChild size="lg" variant="secondary" className="rounded-full px-10">
-            <Link to="/booking">Get Your Free Quote</Link>
+            <Link to="/commercial">Obtenir une soumission</Link>
           </Button>
         </div>
       </section>

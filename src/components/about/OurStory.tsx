@@ -4,16 +4,16 @@ const OurStory = () => {
       <div className="container">
         <div className="max-w-4xl mx-auto text-center">
           <h2 className="text-3xl md:text-4xl lg:text-5xl font-serif font-bold text-foreground mb-10">
-            Our Story
+            Notre histoire
           </h2>
           
           <div className="space-y-6 text-lg text-muted-foreground leading-relaxed">
             <p>
-              The Prime Cleaner began as a simple idea — to bring a more personal, trustworthy touch to cleaning. What started with just the two of them, cleaning homes with care and consistency, quickly grew through word of mouth and repeat bookings. People loved not just the results, but the care and reliability behind each visit.
+              Aura Nettoyage est née d'une idée simple : offrir un service de nettoyage plus humain, plus fiable et plus proche de ses clients. Ce qui a commencé avec une petite équipe passionnée s'est rapidement développé grâce au bouche-à-oreille et à la fidélité de nos clients. Les gens aiment non seulement les résultats, mais aussi le soin et la constance derrière chaque visite.
             </p>
             
             <p>
-              While we've grown since those early days, our mission remains the same: to bring you peace of mind in a neat & clean space. We're building a team that shares those values — friendly faces who treat every home like their own. No matter how big we get, that "family-run" feeling stays at the heart of everything we do.
+              Même si nous avons grandi depuis ces débuts, notre mission reste la même : vous offrir la tranquillité d'esprit dans un espace propre et accueillant. Nous bâtissons une équipe qui partage ces valeurs — des visages familiers qui traitent chaque espace comme le leur. Peu importe notre taille, cet esprit familial reste au cœur de tout ce que nous faisons.
             </p>
           </div>
         </div>

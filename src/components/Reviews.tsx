@@ -57,7 +57,7 @@ const Reviews = () => {
         {/* Section Title */}
         <div className="text-center mb-12">
           <h2 className="text-3xl md:text-4xl font-bold text-foreground">
-            What your neighbors say
+            Ce que vos voisins disent
           </h2>
         </div>
 
@@ -95,7 +95,7 @@ const Reviews = () => {
 
               {/* Posted on Google */}
               <div className="mt-auto">
-                <p className="text-xs text-muted-foreground mb-1">Posted On</p>
+                <p className="text-xs text-muted-foreground mb-1">Publié sur</p>
                 <GoogleLogo />
               </div>
             </div>
@@ -107,27 +107,23 @@ const Reviews = () => {
           {/* Rating Stat */}
           <div>
             <div className="flex items-center gap-4 mb-4">
-              <span className="text-6xl md:text-7xl font-bold text-primary">4.9</span>
               <StarRating size="w-6 h-6" />
             </div>
             <h3 className="text-xl font-bold text-foreground mb-2">
-              Google rating from 350+ users
+              ★★★★★ 5 étoiles – Avis Google
             </h3>
             <p className="text-muted-foreground">
-              Trusted across Miami with a nearly perfect score. Real feedback from real clients.
+              Appréciés partout au Québec avec une note parfaite. Des avis authentiques de clients réels.
             </p>
           </div>
 
           {/* Homes Cleaned Stat */}
           <div>
-            <div className="mb-4">
-              <span className="text-6xl md:text-7xl font-bold text-foreground">7000+</span>
-            </div>
             <h3 className="text-xl font-bold text-foreground mb-2">
-              Homes cleaned across South Florida
+              Des centaines de maisons nettoyées à travers le Québec
             </h3>
             <p className="text-muted-foreground">
-              From one-time resets to long-term clients. We've been trusted thousands of times to get the job done right.
+              Du nettoyage occasionnel aux nettoyages réguliers, des centaines de clients nous font confiance pour un travail bien fait.
             </p>
           </div>
         </div>
@@ -138,20 +134,20 @@ const Reviews = () => {
             {/* Left: Text */}
             <div>
               <h3 className="text-3xl md:text-4xl font-bold text-foreground italic mb-3">
-                Professional & Reliable
+                Professionnel et fiable
               </h3>
               <p className="text-muted-foreground max-w-lg">
-                You can book directly on our site or we are also available to chat via text, phone or email about your cleaning. Contact us today
+                Contactez-nous dès aujourd'hui pour obtenir une soumission personnalisée. Nous sommes disponibles par téléphone, courriel ou texto.
               </p>
             </div>
 
             {/* Right: Button */}
             <div className="flex-shrink-0">
               <Link
-                to="/booking"
+                to="/commercial"
                 className="inline-block bg-primary hover:bg-primary/90 text-primary-foreground font-semibold px-8 py-4 rounded-lg transition-colors uppercase tracking-wide text-sm"
               >
-                Book Cleaning Now
+                Obtenir une soumission
               </Link>
             </div>
           </div>
