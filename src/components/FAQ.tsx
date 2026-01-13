@@ -43,7 +43,7 @@ const FAQ = () => {
     <section className="py-20 md:py-28 bg-muted/30">
       <div className="container max-w-3xl">
         <h2 className="text-3xl md:text-4xl font-bold text-foreground text-center mb-12">
-          Foire aux questions
+          F.A.Q
         </h2>
 
         <Accordion type="single" collapsible className="space-y-4">
