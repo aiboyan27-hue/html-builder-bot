@@ -7,19 +7,34 @@ import {
 
 const faqs = [
   {
-    question: "Are cleaning supplies provided?",
+    question: "Fournissez-vous les produits et équipements de nettoyage ?",
     answer:
-      "Yes! We bring all necessary cleaning supplies and equipment, including HEPA vacuums and non-toxic products safe for pets and children.",
+      "Oui. Nous apportons tout le matériel et les produits nécessaires pour effectuer le nettoyage. Nous utilisons des produits de haute qualité, non toxiques, sécuritaires pour les enfants, les animaux et l'environnement.",
   },
   {
-    question: "Can I customize my cleaning?",
+    question: "Puis-je personnaliser mon service de nettoyage ?",
     answer:
-      "Absolutely. If you need extra attention on certain areas like the kitchen or bathrooms, just let us know and we'll tailor the checklist.",
+      "Absolument. Si certaines zones comme la cuisine, les salles de bain ou les espaces à fort passage nécessitent plus d'attention, il suffit de nous le mentionner. Nous adaptons le service selon vos besoins et vos priorités.",
   },
   {
-    question: "Do I need to be home?",
+    question: "Qu'est-ce qui est inclus dans un nettoyage régulier ?",
     answer:
-      "No, you don't need to be home as long as we have access instructions. Many clients provide a key or door code.",
+      "Nos services de nettoyage régulier comprennent les tâches essentielles telles que l'époussetage, l'aspiration, le lavage des planchers, le nettoyage de la cuisine et des salles de bain, ainsi que le rangement général pour maintenir votre espace propre et agréable.",
+  },
+  {
+    question: "Puis-je faire confiance à vos équipes de nettoyage ?",
+    answer:
+      "Oui, sans hésitation. Nos équipes sont soigneusement sélectionnées et font l'objet de vérifications rigoureuses afin de garantir un service professionnel, fiable et sécuritaire.",
+  },
+  {
+    question: "Comment fonctionne le paiement ?",
+    answer:
+      "Après avoir communiqué avec nous, nous vous enverrons un lien de paiement sécurisé. Une préautorisation est effectuée sur votre carte environ 24 heures avant le nettoyage à des fins de vérification — aucun montant n'est débité à ce moment. Le paiement est effectué uniquement une fois le service complété, et un reçu vous est transmis par courriel. Ce processus éprouvé assure une expérience simple, sécurisée et sans souci.",
+  },
+  {
+    question: "Dois-je être présent(e) lors du nettoyage ?",
+    answer:
+      "Non, votre présence n'est pas obligatoire, tant que nous avons accès à votre espace. Pour un premier nettoyage, nous recommandons toutefois une courte visite ou un suivi afin de nous assurer que tout correspond à vos attentes.",
   },
 ];
 
@@ -28,7 +43,7 @@ const FAQ = () => {
     <section className="py-20 md:py-28 bg-muted/30">
       <div className="container max-w-3xl">
         <h2 className="text-3xl md:text-4xl font-bold text-foreground text-center mb-12">
-          Frequently Asked Questions
+          Foire aux questions
         </h2>
 
         <Accordion type="single" collapsible className="space-y-4">
