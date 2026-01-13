@@ -50,7 +50,7 @@ const Hero = () => {
                     </svg>
                   ))}
                 </div>
-                <span className="text-sm text-muted-foreground font-medium">4.9 (500+ avis)</span>
+                <span className="text-sm text-muted-foreground font-medium">5 étoiles – Avis Google</span>
               </div>
             </div>
           </div>

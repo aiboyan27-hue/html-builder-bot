@@ -8,9 +8,6 @@ const TrustMetrics = () => {
           {/* Left - Rating */}
           <div>
             <div className="flex items-center gap-4 mb-4">
-              <span className="text-6xl md:text-7xl lg:text-8xl font-serif font-bold text-primary">
-                4.9
-              </span>
               <div className="flex gap-1">
                 {[...Array(5)].map((_, i) => (
                   <Star key={i} className="w-6 h-6 fill-primary text-primary" />
@@ -18,25 +15,20 @@ const TrustMetrics = () => {
               </div>
             </div>
             <h3 className="text-lg md:text-xl font-bold text-foreground mb-2">
-              Google rating from 350+ users
+              ★★★★★ 5 étoiles – Avis Google
             </h3>
             <p className="text-muted-foreground">
-              Trusted across Miami with a nearly perfect score. Real feedback from real clients.
+              Appréciés partout au Québec avec une note parfaite. Des avis authentiques de clients réels.
             </p>
           </div>
 
           {/* Right - Homes Cleaned */}
           <div>
-            <div className="mb-4">
-              <span className="text-6xl md:text-7xl lg:text-8xl font-serif font-bold text-foreground">
-                7000+
-              </span>
-            </div>
             <h3 className="text-lg md:text-xl font-bold text-foreground mb-2">
-              Homes cleaned across South Florida
+              Des centaines de maisons nettoyées à travers le Québec
             </h3>
             <p className="text-muted-foreground">
-              From one-time resets to long-term clients. We've been trusted thousands of times to get the job done right.
+              Du nettoyage occasionnel aux nettoyages réguliers, des centaines de clients nous font confiance pour un travail bien fait.
             </p>
           </div>
         </div>

@@ -53,8 +53,8 @@ const Footer = () => {
                 </Link>
               </li>
               <li>
-                <Link to="/booking" className="hover:text-primary-foreground transition-colors">
-                  Réservation
+                <Link to="/commercial" className="hover:text-primary-foreground transition-colors">
+                  Obtenir une soumission
                 </Link>
               </li>
             </ul>

@@ -16,10 +16,10 @@ const CTA = () => {
           <div className="relative">
             <div className="inline-flex items-center gap-2 bg-primary-foreground/10 text-primary-foreground px-4 py-2 rounded-full text-sm font-medium mb-6">
               <Sparkles className="w-4 h-4" />
-              Professional & Reliable
+              Professionnel et fiable
             </div>
             <h2 className="text-3xl md:text-4xl font-bold text-primary-foreground mb-4 max-w-xl mx-auto">
-              Instant pricing. No commitment. Book your peace of mind today.
+              Obtenez une soumission personnalisée. Sans engagement.
             </h2>
             <Button
               asChild
@@ -27,7 +27,7 @@ const CTA = () => {
               variant="secondary"
               className="rounded-full px-10 text-base mt-4"
             >
-              <Link to="/booking">Book Cleaning Now</Link>
+              <Link to="/commercial">Obtenir une soumission</Link>
             </Button>
           </div>
         </div>
