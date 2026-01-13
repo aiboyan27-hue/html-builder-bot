@@ -1,10 +1,8 @@
 import { Link } from "react-router-dom";
-import { Star, Check, Shield } from "lucide-react";
+import { Check, Shield } from "lucide-react";
 import { Button } from "@/components/ui/button";
-
 const Hero = () => {
-  return (
-    <section className="relative pt-24 md:pt-32 pb-16 md:pb-24 overflow-hidden">
+  return <section className="relative pt-24 md:pt-32 pb-16 md:pb-24 overflow-hidden">
       {/* Background gradient */}
       <div className="absolute inset-0 bg-gradient-to-br from-primary-light via-background to-background -z-10" />
 
@@ -70,28 +68,12 @@ const Hero = () => {
 
             {/* Social proof */}
             <div className="flex flex-col sm:flex-row items-center gap-6 mt-10 justify-center lg:justify-start">
-              <div className="flex items-center gap-3">
-                <div className="flex -space-x-2">
-                  {[...Array(4)].map((_, i) => (
-                    <div
-                      key={i}
-                      className="w-10 h-10 rounded-full bg-muted border-2 border-background flex items-center justify-center text-xs font-medium text-muted-foreground"
-                    >
-                      {String.fromCharCode(65 + i)}
-                    </div>
-                  ))}
-                </div>
-                <span className="text-2xl font-bold text-foreground">+7k</span>
-              </div>
+              
               <div className="flex items-center gap-2">
                 <div className="flex">
-                  {[...Array(5)].map((_, i) => (
-                    <Star key={i} className="w-5 h-5 fill-yellow-400 text-yellow-400" />
-                  ))}
+                  {[...Array(5)].map((_, i) => {})}
                 </div>
-                <span className="text-sm font-medium text-muted-foreground">
-                  350+ avis 5 étoiles
-                </span>
+                
               </div>
             </div>
           </div>
@@ -118,8 +100,6 @@ const Hero = () => {
           </div>
         </div>
       </div>
-    </section>
-  );
+    </section>;
 };
-
 export default Hero;
