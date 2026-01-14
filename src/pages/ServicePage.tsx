@@ -1,5 +1,6 @@
 import { useParams, Link } from "react-router-dom";
-import { Bed, Bath, UtensilsCrossed, Sofa, Home, Briefcase } from "lucide-react";
+import { useEffect } from "react";
+import { Bed, Bath, UtensilsCrossed, Sofa, Home, Briefcase, Grid3X3 } from "lucide-react";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import ServiceHero from "@/components/service/ServiceHero";
@@ -11,6 +12,22 @@ import OtherServicesCarousel from "@/components/service/OtherServicesCarousel";
 import ServiceFAQ from "@/components/service/ServiceFAQ";
 import ServiceCTA from "@/components/service/ServiceCTA";
 import { Button } from "@/components/ui/button";
+
+// Services with add-ons
+const servicesWithAddOns = [
+  "nettoyage-en-profondeur",
+  "nettoyage-regulier",
+  "nettoyage-demenagement",
+  "nettoyage-apres-construction",
+  "nettoyage-evenementiel"
+];
+
+// Services with checklist but NO add-ons
+const servicesWithChecklistOnly = [
+  "nettoyage-vitres",
+  "nettoyage-tapis",
+  "nettoyage-ceramique"
+];
 
 // Service data for all services
 const servicesData: Record<string, {
@@ -99,8 +116,8 @@ const servicesData: Record<string, {
       },
     ],
   },
-  "nettoyage-standard": {
-    heroTitle: "Service de nettoyage standard",
+  "nettoyage-regulier": {
+    heroTitle: "Service de nettoyage régulier",
     heroSubtitle: "Un entretien régulier pour garder votre maison toujours impeccable.",
     heroBenefits: [
       "Entretien hebdomadaire, bimensuel ou mensuel",
@@ -108,9 +125,9 @@ const servicesData: Record<string, {
       "Service rapide et efficace",
     ],
     heroImage: "https://images.unsplash.com/photo-1527515545081-5db817172677?w=600&h=800&fit=crop",
-    descriptionTitle: "Nettoyage standard professionnel",
+    descriptionTitle: "Nettoyage régulier professionnel",
     description: [
-      "Notre service de nettoyage standard est conçu pour les familles occupées de Montréal. Nous maintenons la propreté de votre maison avec des visites régulières.",
+      "Notre service de nettoyage régulier est conçu pour les familles occupées de Montréal. Nous maintenons la propreté de votre maison avec des visites régulières.",
       "Revenez toujours dans un espace frais et accueillant. Disponible selon votre horaire.",
     ],
     checklist: [
@@ -122,15 +139,15 @@ const servicesData: Record<string, {
       { title: "Bureau", icon: Briefcase, items: ["Épousseter", "Vider les poubelles"] },
     ],
     faqs: [
-      { question: "À quelle fréquence recommandez-vous le nettoyage standard ?", answer: "Nous recommandons un nettoyage hebdomadaire ou bimensuel pour un entretien optimal." },
+      { question: "À quelle fréquence recommandez-vous le nettoyage régulier ?", answer: "Nous recommandons un nettoyage hebdomadaire ou bimensuel pour un entretien optimal." },
       { question: "Puis-je modifier ma fréquence de nettoyage ?", answer: "Oui, vous pouvez ajuster votre calendrier à tout moment." },
-      { question: "Que comprend le nettoyage standard ?", answer: "Époussettage, aspirateur, vadrouille, nettoyage des salles de bain et cuisine." },
+      { question: "Que comprend le nettoyage régulier ?", answer: "Époussettage, aspirateur, vadrouille, nettoyage des salles de bain et cuisine." },
       { question: "Utilisez-vous mes produits ou les vôtres ?", answer: "Nous apportons nos propres produits écologiques, mais pouvons utiliser les vôtres sur demande." },
-      { question: "Combien de temps dure un nettoyage standard ?", answer: "Généralement 2-3 heures selon la taille de votre maison." },
+      { question: "Combien de temps dure un nettoyage régulier ?", answer: "Généralement 2-3 heures selon la taille de votre maison." },
     ],
   },
   "nettoyage-demenagement": {
-    heroTitle: "Nettoyage après déménagement",
+    heroTitle: "Nettoyage d'emménagement et de déménagement",
     heroSubtitle: "Commencez frais ou partez l'esprit tranquille.",
     heroBenefits: [
       "Nettoyage complet avant ou après déménagement",
@@ -174,12 +191,16 @@ const servicesData: Record<string, {
       "Notre équipe utilise des techniques professionnelles pour un résultat sans traces, à l'intérieur comme à l'extérieur.",
     ],
     checklist: [
-      { title: "Fenêtres intérieures", icon: Home, items: ["Nettoyage des vitres", "Cadres et rebords", "Moustiquaires"] },
-      { title: "Fenêtres extérieures", icon: Home, items: ["Nettoyage complet", "Cadres extérieurs", "Jusqu'à 3 étages"] },
-      { title: "Portes vitrées", icon: Home, items: ["Portes-fenêtres", "Portes d'entrée", "Baies vitrées"] },
-      { title: "Vérandas", icon: Home, items: ["Toiture vitrée", "Parois", "Structure"] },
-      { title: "Miroirs", icon: Home, items: ["Grands miroirs", "Miroirs de salle de bain"] },
-      { title: "Finitions", icon: Home, items: ["Séchage parfait", "Inspection finale"] },
+      { 
+        title: "Fenêtres extérieures", 
+        icon: Grid3X3, 
+        items: ["Nettoyer les cadres", "Nettoyer les vitres", "Laver les vitres", "Laver les moustiquaires"] 
+      },
+      { 
+        title: "Fenêtres intérieures", 
+        icon: Grid3X3, 
+        items: ["Nettoyer les cadres", "Nettoyer les vitres", "Laver les vitres", "Sécher les vitres"] 
+      },
     ],
     faqs: [
       { question: "Nettoyez-vous les fenêtres en hauteur ?", answer: "Oui, jusqu'à 3 étages avec équipement sécuritaire." },
@@ -204,12 +225,12 @@ const servicesData: Record<string, {
       "Nous éliminons la poussière fine, les résidus et préparons votre espace pour l'occupation.",
     ],
     checklist: [
-      { title: "Surfaces", icon: Home, items: ["Dépoussiérage complet", "Nettoyage des murs", "Plafonds accessibles"] },
-      { title: "Fenêtres", icon: Home, items: ["Retrait des étiquettes", "Nettoyage des cadres", "Vitres intérieures/extérieures"] },
-      { title: "Sols", icon: Home, items: ["Aspiration approfondie", "Lavage des sols durs", "Nettoyage des joints"] },
+      { title: "Chambres", icon: Bed, items: ["Dépoussiérage complet", "Nettoyage des murs", "Plafonds accessibles"] },
       { title: "Cuisine", icon: UtensilsCrossed, items: ["Nettoyage des armoires", "Électroménagers", "Comptoirs"] },
       { title: "Salle de bain", icon: Bath, items: ["Désinfection", "Robinetterie", "Carrelage"] },
-      { title: "Finitions", icon: Briefcase, items: ["Plinthes", "Prises électriques", "Interrupteurs"] },
+      { title: "Toute la maison", icon: Home, items: ["Aspiration approfondie", "Lavage des sols durs", "Nettoyage des joints"] },
+      { title: "Salon", icon: Sofa, items: ["Retrait des étiquettes", "Nettoyage des cadres", "Vitres intérieures/extérieures"] },
+      { title: "Bureau", icon: Briefcase, items: ["Plinthes", "Prises électriques", "Interrupteurs"] },
     ],
     faqs: [
       { question: "Combien de temps après les travaux ?", answer: "Attendez que tous les travaux soient terminés et la poussière retombée (24-48h)." },
@@ -234,12 +255,31 @@ const servicesData: Record<string, {
       "Nous utilisons des équipements professionnels et des produits sécuritaires pour toute la famille.",
     ],
     checklist: [
-      { title: "Préparation", icon: Home, items: ["Inspection", "Aspiration préliminaire", "Identification des taches"] },
-      { title: "Traitement", icon: Home, items: ["Prétraitement des taches", "Produits adaptés aux fibres", "Temps de pause"] },
-      { title: "Nettoyage", icon: Home, items: ["Extraction à l'eau chaude", "Brossage des fibres", "Rinçage"] },
-      { title: "Séchage", icon: Home, items: ["Extraction de l'humidité", "Ventilation", "Vérification"] },
-      { title: "Finition", icon: Home, items: ["Brossage final", "Traitement protecteur optionnel"] },
-      { title: "Inspection", icon: Briefcase, items: ["Vérification des taches", "Satisfaction client"] },
+      { 
+        title: "1. Inspection préalable", 
+        icon: Briefcase, 
+        items: ["Identifier le type de fibre et son état", "Vérifier les taches ou dommages"] 
+      },
+      { 
+        title: "2. Préparation", 
+        icon: Briefcase, 
+        items: ["Aspirer pour retirer poussière et débris", "Tester la solution sur une zone cachée"] 
+      },
+      { 
+        title: "3. Processus de nettoyage", 
+        icon: Briefcase, 
+        items: ["Appliquer la solution de nettoyage", "Utiliser une brosse douce ou extraction à vapeur"] 
+      },
+      { 
+        title: "4. Rinçage et extraction", 
+        icon: Briefcase, 
+        items: ["Rincer à l'eau", "Extraire l'humidité pour accélérer le séchage"] 
+      },
+      { 
+        title: "5. Étapes finales", 
+        icon: Briefcase, 
+        items: ["Inspecter les taches restantes", "Laisser sécher complètement", "Brosser les fibres pour restaurer la texture"] 
+      },
     ],
     faqs: [
       { question: "Combien de temps pour sécher ?", answer: "Généralement 4-8 heures selon l'humidité et la ventilation." },
@@ -247,6 +287,40 @@ const servicesData: Record<string, {
       { question: "Le nettoyage est-il sécuritaire pour les animaux ?", answer: "Oui, nous utilisons des produits non toxiques." },
       { question: "Déplacez-vous les meubles ?", answer: "Nous pouvons déplacer les petits meubles. Les gros doivent être déplacés avant." },
       { question: "À quelle fréquence nettoyer les tapis ?", answer: "Nous recommandons 1-2 fois par an pour les zones à fort passage." },
+    ],
+  },
+  "nettoyage-ceramique": {
+    heroTitle: "Nettoyage de céramique et joints",
+    heroSubtitle: "Redonnez l'éclat d'origine à vos planchers.",
+    heroBenefits: [
+      "Nettoyage en profondeur des carreaux",
+      "Blanchiment et scellement des joints",
+      "Traitement protecteur longue durée",
+    ],
+    heroImage: "https://images.unsplash.com/photo-1584622650111-993a426fbf0a?w=600&h=800&fit=crop",
+    descriptionTitle: "Nettoyage professionnel de céramique et joints",
+    description: [
+      "Les joints de céramique accumulent saleté, moisissures et taches au fil du temps. Notre service redonne l'éclat d'origine à vos planchers.",
+      "Nous utilisons des équipements professionnels et offrons un scellement protecteur pour prolonger la durée de vie de vos sols.",
+    ],
+    checklist: [
+      { 
+        title: "1. Préparation", 
+        icon: Briefcase, 
+        items: ["Inspecter le plancher", "Passer l'aspirateur", "Laver le plancher", "Appliquer un pré-nettoyant"] 
+      },
+      { 
+        title: "2. Nettoyage et scellement", 
+        icon: Briefcase, 
+        items: ["Frotter les lignes de joints", "Sécher le plancher", "Appliquer un scellant sur les joints", "Appliquer un scellant coloré ou transparent (optionnel)"] 
+      },
+    ],
+    faqs: [
+      { question: "Combien de temps dure le traitement ?", answer: "Généralement 2-4 heures selon la surface à traiter." },
+      { question: "Faut-il éviter de marcher sur le sol après ?", answer: "Nous recommandons d'attendre 24h avant de marcher sur les zones traitées." },
+      { question: "Le scellement est-il permanent ?", answer: "Le scellement dure généralement 2-3 ans selon l'usage." },
+      { question: "Traitez-vous les murs carrelés ?", answer: "Oui, nous traitons les murs de douche et autres surfaces carrelées." },
+      { question: "Utilisez-vous des produits écologiques ?", answer: "Oui, nos produits sont sécuritaires et respectueux de l'environnement." },
     ],
   },
   "nettoyage-commercial": {
@@ -260,17 +334,11 @@ const servicesData: Record<string, {
     heroImage: "https://images.unsplash.com/photo-1497366216548-37526070297c?w=600&h=800&fit=crop",
     descriptionTitle: "Nettoyage professionnel pour entreprises",
     description: [
-      "Un environnement de travail propre améliore la productivité et l'image de votre entreprise.",
-      "Nous offrons des services de nettoyage commercial adaptés à tous types d'espaces professionnels à Montréal.",
+      "Un environnement de travail propre améliore la productivité et l'image de votre entreprise. Nous comprenons que chaque espace commercial a des besoins uniques.",
+      "Nous offrons des services de nettoyage commercial adaptés à tous types d'espaces professionnels à Montréal : bureaux, cliniques, commerces, restaurants et plus.",
+      "Notre équipe est disponible en dehors des heures d'ouverture pour minimiser les perturbations à votre activité. Contactez-nous pour une soumission personnalisée.",
     ],
-    checklist: [
-      { title: "Bureaux", icon: Briefcase, items: ["Bureaux et postes de travail", "Salles de réunion", "Aires communes"] },
-      { title: "Espaces communs", icon: Home, items: ["Réception", "Couloirs", "Ascenseurs"] },
-      { title: "Cuisine/Cafétéria", icon: UtensilsCrossed, items: ["Comptoirs", "Électroménagers", "Tables"] },
-      { title: "Salles de bain", icon: Bath, items: ["Désinfection complète", "Approvisionnement", "Miroirs"] },
-      { title: "Sols", icon: Home, items: ["Aspirateur", "Vadrouille", "Cirage si nécessaire"] },
-      { title: "Finitions", icon: Briefcase, items: ["Poubelles", "Vitres intérieures", "Dépoussiérage"] },
-    ],
+    checklist: [], // No checklist for commercial
     faqs: [
       { question: "Travaillez-vous en dehors des heures de bureau ?", answer: "Oui, nous nous adaptons à vos horaires pour minimiser les perturbations." },
       { question: "Quelle est la fréquence recommandée ?", answer: "Quotidien, hebdomadaire ou mensuel selon vos besoins et votre budget." },
@@ -315,6 +383,11 @@ const ServicePage = () => {
   const { serviceId } = useParams();
   const service = servicesData[serviceId as keyof typeof servicesData];
 
+  // Scroll to top when service changes
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, [serviceId]);
+
   if (!service) {
     return (
       <main className="min-h-screen bg-background">
@@ -329,6 +402,10 @@ const ServicePage = () => {
       </main>
     );
   }
+
+  const hasAddOns = servicesWithAddOns.includes(serviceId as string);
+  const hasChecklist = service.checklist.length > 0;
+  const isCommercial = serviceId === "nettoyage-commercial";
 
   return (
     <main className="min-h-screen bg-background">
@@ -346,9 +423,13 @@ const ServicePage = () => {
         description={service.description}
       />
 
-      <CleaningChecklist checklist={service.checklist} />
+      {hasChecklist && (
+        <CleaningChecklist checklist={service.checklist} />
+      )}
 
-      <AddOns />
+      {hasAddOns && (
+        <AddOns />
+      )}
 
       <ExpertTeamSection />
 
