@@ -5,7 +5,7 @@ const services = [{
   slug: "nettoyage-en-profondeur",
   title: "Nettoyage en profondeur"
 }, {
-  slug: "nettoyage-standard",
+  slug: "nettoyage-regulier",
   title: "Nettoyage régulier"
 }, {
   slug: "nettoyage-demenagement",

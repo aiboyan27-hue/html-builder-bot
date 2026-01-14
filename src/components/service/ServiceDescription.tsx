@@ -28,7 +28,7 @@ const ServiceDescription = ({ title, description }: ServiceDescriptionProps) => 
           <div className="lg:col-span-2">
             <div className="bg-primary/10 rounded-2xl p-8">
               <h3 className="text-xl font-bold text-foreground mb-6">
-                Pourquoi Élite Propreté ?
+                Pourquoi Aura Nettoyage ?
               </h3>
               <div className="space-y-5">
                 <div className="flex items-center gap-4">
@@ -54,7 +54,7 @@ const ServiceDescription = ({ title, description }: ServiceDescriptionProps) => 
                 asChild 
                 className="w-full mt-8 bg-foreground hover:bg-foreground/90 text-background rounded-lg py-6 text-base font-semibold uppercase tracking-wide"
               >
-                <Link to="/booking">Obtenir une estimation</Link>
+                <Link to="/commercial">Obtenir une soumission</Link>
               </Button>
             </div>
           </div>
