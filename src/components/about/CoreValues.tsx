@@ -1,22 +1,22 @@
-import { useState, useRef, useEffect } from "react";
+import { useState, useRef } from "react";
 import { User, Flag, Mountain, Smile } from "lucide-react";
 
 const values = [
   {
     icon: User,
-    title: "We take Responsibility",
+    title: "Nous assumons nos responsabilités",
   },
   {
     icon: Flag,
-    title: "We Make it happen",
+    title: "Nous livrons des résultats",
   },
   {
     icon: Mountain,
-    title: "We Grow Together",
+    title: "Nous évoluons ensemble",
   },
   {
     icon: Smile,
-    title: "We are Grateful",
+    title: "Nous sommes reconnaissants",
   },
 ];
 
@@ -67,10 +67,10 @@ const CoreValues = () => {
   };
 
   return (
-    <section className="py-20 md:py-28">
+    <section className="py-20 md:py-28 bg-background">
       <div className="container">
-        <h2 className="text-3xl md:text-4xl lg:text-5xl font-serif font-bold text-foreground text-center mb-12">
-          Our Core Values
+        <h2 className="text-3xl md:text-4xl lg:text-5xl font-heading font-bold text-foreground text-center mb-12">
+          Nos valeurs
         </h2>
       </div>
 
@@ -95,14 +95,15 @@ const CoreValues = () => {
               key={value.title}
               className="flex-shrink-0 w-[260px] md:w-[300px] lg:w-[280px]"
             >
-              <div className="bg-accent rounded-2xl h-[260px] md:h-[300px] flex flex-col border border-border/20">
-                {/* Icon area with white background */}
-                <div className="flex-1 flex items-center justify-center mx-4 mt-4 bg-background rounded-xl">
-                  <value.icon className="w-14 h-14 md:w-16 md:h-16 text-foreground" strokeWidth={1.5} />
+              {/* Cream/beige outer card with soft rounded corners */}
+              <div className="bg-accent rounded-3xl h-[280px] md:h-[320px] flex flex-col p-5">
+                {/* White inner container for icon */}
+                <div className="flex-1 flex items-center justify-center bg-background rounded-2xl">
+                  <value.icon className="w-16 h-16 md:w-20 md:h-20 text-foreground" strokeWidth={1} />
                 </div>
                 
                 {/* Title area */}
-                <div className="p-5 text-center">
+                <div className="pt-5 text-center">
                   <h3 className="text-base md:text-lg font-semibold text-foreground leading-snug">
                     {value.title}
                   </h3>

@@ -6,13 +6,14 @@ import auraLogo from "@/assets/aura-logo.png";
 
 const services = [
   { slug: "nettoyage-en-profondeur", title: "Nettoyage en profondeur", icon: Sparkles },
-  { slug: "nettoyage-standard", title: "Nettoyage standard", icon: RefreshCw },
-  { slug: "nettoyage-demenagement", title: "Nettoyage après déménagement", icon: Home },
+  { slug: "nettoyage-standard", title: "Nettoyage régulier", icon: RefreshCw },
+  { slug: "nettoyage-demenagement", title: "Nettoyage d'emménagement et de déménagement", icon: Home },
   { slug: "nettoyage-vitres", title: "Nettoyage de vitres", icon: Droplets },
   { slug: "nettoyage-apres-construction", title: "Nettoyage après construction", icon: Hammer },
   { slug: "nettoyage-tapis", title: "Nettoyage de tapis", icon: Building },
-  { slug: "nettoyage-commercial", title: "Nettoyage commercial", icon: Building },
+  { slug: "nettoyage-ceramique", title: "Nettoyage de céramique et joints", icon: Droplets },
   { slug: "nettoyage-evenementiel", title: "Nettoyage événementiel", icon: PartyPopper },
+  { slug: "nettoyage-commercial", title: "Nettoyage commercial", icon: Building },
 ];
 
 const Header = () => {
