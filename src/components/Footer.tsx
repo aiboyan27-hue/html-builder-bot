@@ -71,7 +71,7 @@ const Footer = () => {
               </li>
               <li>
                 <Link to="/terms" className="hover:text-primary-foreground transition-colors">
-                  Terms of use
+                  Conditions d'utilisation
                 </Link>
               </li>
               <li>
