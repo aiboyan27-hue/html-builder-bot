@@ -2,6 +2,18 @@ import { Link } from "react-router-dom";
 import { Facebook, Instagram } from "lucide-react";
 import auraLogo from "@/assets/aura-logo.png";
 
+const services = [
+  { slug: "nettoyage-en-profondeur", title: "Nettoyage en profondeur" },
+  { slug: "nettoyage-standard", title: "Nettoyage régulier" },
+  { slug: "nettoyage-demenagement", title: "Nettoyage d'emménagement et de déménagement" },
+  { slug: "nettoyage-vitres", title: "Nettoyage de vitres" },
+  { slug: "nettoyage-apres-construction", title: "Nettoyage après construction" },
+  { slug: "nettoyage-tapis", title: "Nettoyage de tapis" },
+  { slug: "nettoyage-ceramique", title: "Nettoyage de céramique et joints" },
+  { slug: "nettoyage-evenementiel", title: "Nettoyage événementiel" },
+  { slug: "nettoyage-commercial", title: "Nettoyage commercial" },
+];
+
 const Footer = () => {
   return (
     <footer className="bg-primary text-primary-foreground py-16">
@@ -43,6 +55,11 @@ const Footer = () => {
                 </Link>
               </li>
               <li>
+                <Link to="/commercial" className="hover:text-primary-foreground transition-colors">
+                  Obtenir une soumission
+                </Link>
+              </li>
+              <li>
                 <Link to="/about" className="hover:text-primary-foreground transition-colors">
                   À propos
                 </Link>
@@ -53,8 +70,13 @@ const Footer = () => {
                 </Link>
               </li>
               <li>
-                <Link to="/commercial" className="hover:text-primary-foreground transition-colors">
-                  Obtenir une soumission
+                <Link to="/terms" className="hover:text-primary-foreground transition-colors">
+                  Terms of use
+                </Link>
+              </li>
+              <li>
+                <Link to="/privacy" className="hover:text-primary-foreground transition-colors">
+                  Privacy policy
                 </Link>
               </li>
             </ul>
@@ -64,38 +86,16 @@ const Footer = () => {
           <div>
             <h4 className="font-heading font-semibold text-lg mb-6">Services</h4>
             <ul className="space-y-3 text-primary-foreground/70">
-              <li>
-                <Link
-                  to="/services/nettoyage-en-profondeur"
-                  className="hover:text-primary-foreground transition-colors"
-                >
-                  Nettoyage en profondeur
-                </Link>
-              </li>
-              <li>
-                <Link
-                  to="/services/nettoyage-demenagement"
-                  className="hover:text-primary-foreground transition-colors"
-                >
-                  Nettoyage déménagement
-                </Link>
-              </li>
-              <li>
-                <Link
-                  to="/services/nettoyage-standard"
-                  className="hover:text-primary-foreground transition-colors"
-                >
-                  Nettoyage standard
-                </Link>
-              </li>
-              <li>
-                <Link
-                  to="/services/nettoyage-commercial"
-                  className="hover:text-primary-foreground transition-colors"
-                >
-                  Nettoyage commercial
-                </Link>
-              </li>
+              {services.map((service) => (
+                <li key={service.slug}>
+                  <Link
+                    to={`/services/${service.slug}`}
+                    className="hover:text-primary-foreground transition-colors"
+                  >
+                    {service.title}
+                  </Link>
+                </li>
+              ))}
             </ul>
           </div>
 
@@ -111,7 +111,14 @@ const Footer = () => {
                   (514) 123-4567
                 </a>
               </li>
-              <li>info@auranettoyage.ca</li>
+              <li>
+                <a
+                  href="mailto:info@auranettoyage.ca"
+                  className="hover:text-primary-foreground transition-colors"
+                >
+                  info@auranettoyage.ca
+                </a>
+              </li>
               <li>Montréal, Québec</li>
             </ul>
           </div>

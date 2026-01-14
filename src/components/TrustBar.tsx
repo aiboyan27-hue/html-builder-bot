@@ -1,5 +1,5 @@
 const TrustBar = () => {
   const logos = ["Google", "Yelp", "Thumbtack", "HomeAdvisor", "Angi", "Nextdoor", "BBB", "Trust Pilot", "Houzz"];
-  return;
+  return null;
 };
 export default TrustBar;
