@@ -3,7 +3,6 @@ import Hero from "@/components/Hero";
 import TrustBar from "@/components/TrustBar";
 import Services from "@/components/Services";
 import WhyUs from "@/components/WhyUs";
-import Story from "@/components/Story";
 import Reviews from "@/components/Reviews";
 import FAQ from "@/components/FAQ";
 
@@ -17,7 +16,6 @@ const Index = () => {
       <TrustBar />
       <Services />
       <WhyUs />
-      <Story />
       <FAQ />
       <Reviews />
       
