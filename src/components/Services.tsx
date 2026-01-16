@@ -14,7 +14,7 @@ import { useState, useEffect, useCallback } from "react";
 const services = [
   {
     slug: "house-condo",
-    title: "House & Condo Cleaning",
+    title: "Nettoyage en profondeur",
     description:
       "Professional cleaning for houses and condos. A reliable, detailed clean that keeps your space fresh and comfortable.",
     image: "https://images.unsplash.com/photo-1584622650111-993a426fbf0a?w=600&h=400&fit=crop",
