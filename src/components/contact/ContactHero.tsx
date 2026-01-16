@@ -17,18 +17,18 @@ const ContactHero = () => {
           {/* Left Content */}
           <div className="space-y-8">
             <h1 className="text-4xl md:text-5xl lg:text-6xl font-serif font-bold text-foreground leading-tight">
-              Contact Us,
+              Contactez-nous,
               <br />
-              Anytime.
+              en tout temps.
             </h1>
             <p className="text-lg text-muted-foreground max-w-md">
-              A local, family-owned company ready to support cleaning needs
+              Une entreprise locale et familiale prête à répondre à vos besoins de nettoyage
             </p>
             <Button
               asChild
               className="bg-primary hover:bg-primary/90 text-primary-foreground px-8 py-6 text-base font-bold uppercase tracking-wide rounded-md"
             >
-              <Link to="/booking">Book Now</Link>
+              <Link to="/commercial">Obtenir une soumission</Link>
             </Button>
 
             {/* Rating Row */}
@@ -38,7 +38,7 @@ const ContactHero = () => {
                   <img
                     key={index}
                     src={avatar}
-                    alt={`Customer ${index + 1}`}
+                    alt={`Client ${index + 1}`}
                     className="w-10 h-10 rounded-full border-2 border-background object-cover"
                   />
                 ))}
@@ -50,7 +50,7 @@ const ContactHero = () => {
                   ))}
                 </div>
                 <span className="text-sm text-muted-foreground">
-                  Loved by Miami Residents - 7000+ Cleanings
+                  Adoré par les Montréalais - 7000+ nettoyages
                 </span>
               </div>
             </div>
@@ -61,23 +61,9 @@ const ContactHero = () => {
             <div className="relative rounded-3xl overflow-hidden bg-muted aspect-[4/5]">
               <img
                 src="https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?w=600&h=800&fit=crop"
-                alt="Our team"
+                alt="Notre équipe"
                 className="w-full h-full object-cover"
               />
-              {/* Name Labels */}
-              <div className="absolute top-6 left-1/3 bg-foreground/80 text-background px-3 py-1.5 rounded-full text-sm font-medium">
-                Ana(Mom)
-              </div>
-              <div className="absolute top-6 right-8 bg-foreground/80 text-background px-3 py-1.5 rounded-full text-sm font-medium">
-                Jay(Son)
-              </div>
-              {/* Signature Labels */}
-              <div className="absolute bottom-12 left-8">
-                <span className="text-background font-serif text-xl italic">Ana Tomasino</span>
-              </div>
-              <div className="absolute bottom-12 right-8">
-                <span className="text-background font-serif text-xl italic">Jayger McGough</span>
-              </div>
             </div>
           </div>
         </div>
