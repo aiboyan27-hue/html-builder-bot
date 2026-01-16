@@ -6,7 +6,7 @@ import auraLogo from "@/assets/aura-logo.png";
 
 const services = [
   { slug: "nettoyage-en-profondeur", title: "Nettoyage en profondeur", icon: Sparkles },
-  { slug: "nettoyage-standard", title: "Nettoyage régulier", icon: RefreshCw },
+  { slug: "nettoyage-regulier", title: "Nettoyage régulier", icon: RefreshCw },
   { slug: "nettoyage-demenagement", title: "Nettoyage d'emménagement et de déménagement", icon: Home },
   { slug: "nettoyage-vitres", title: "Nettoyage de vitres", icon: Droplets },
   { slug: "nettoyage-apres-construction", title: "Nettoyage après construction", icon: Hammer },
