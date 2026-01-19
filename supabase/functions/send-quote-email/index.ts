@@ -108,7 +108,7 @@ const handler = async (req: Request): Promise<Response> => {
       },
       body: JSON.stringify({
         from: "Aura Nettoyage <onboarding@resend.dev>",
-        to: ["boyanzhechev9@gmail.com"],
+        to: ["aiboyan27@gmail.com"],
         subject: "Nouvelle demande de soumission – Aura Nettoyage",
         html: emailHtml,
       }),
