@@ -288,11 +288,12 @@ const servicesData: Record<string, {
       },
     ],
     faqs: [
-      { question: "Combien de temps pour sécher ?", answer: "Généralement 4-8 heures selon l'humidité et la ventilation." },
-      { question: "Toutes les taches partent-elles ?", answer: "La plupart oui, mais certaines taches anciennes peuvent persister." },
-      { question: "Le nettoyage est-il sécuritaire pour les animaux ?", answer: "Oui, nous utilisons des produits non toxiques." },
-      { question: "Déplacez-vous les meubles ?", answer: "Nous pouvons déplacer les petits meubles. Les gros doivent être déplacés avant." },
-      { question: "À quelle fréquence nettoyer les tapis ?", answer: "Nous recommandons 1-2 fois par an pour les zones à fort passage." },
+      { question: "Quelle méthode utilisez-vous pour nettoyer les tapis ?", answer: "Nous utilisons l'extraction à l'eau chaude, aussi appelée nettoyage à la vapeur. C'est la méthode recommandée par les fabricants, car elle permet de nettoyer en profondeur et d'extraire immédiatement la saleté." },
+      { question: "Combien de temps faut-il pour que le tapis sèche ?", answer: "En général, entre 4 et 8 heures, selon l'humidité et la circulation d'air. Ouvrir les fenêtres ou utiliser des ventilateurs peut accélérer le séchage." },
+      { question: "Pouvez-vous enlever les taches et odeurs causées par les animaux ?", answer: "Oui. Nous utilisons des traitements enzymatiques spécialement conçus pour éliminer les taches et neutraliser les odeurs à la source." },
+      { question: "Est-ce que le nettoyage enlève toutes les taches ?", answer: "Nous pouvons enlever ou réduire considérablement la majorité des taches. Certaines peuvent toutefois être permanentes. Nous vous informerons clairement de ce qui est possible après l'évaluation." },
+      { question: "À quelle fréquence devrais-je faire nettoyer mes tapis ?", answer: "Tous les 12 à 18 mois pour un foyer standard. Une fréquence plus élevée est recommandée en présence d'animaux, d'enfants, d'allergies ou de fort achalandage." },
+      { question: "Quels types de meubles rembourrés nettoyez-vous ?", answer: "La plupart des canapés, chaises, ottomans et matelas en tissu. Nous vérifions toujours les étiquettes d'entretien. Certains tissus nécessitent un nettoyage à sec seulement. Le cuir n'est pas inclus." },
     ],
   },
   "nettoyage-ceramique": {
