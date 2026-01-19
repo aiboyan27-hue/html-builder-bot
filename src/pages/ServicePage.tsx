@@ -238,11 +238,12 @@ const servicesData: Record<string, {
       { title: "Bureau", icon: Briefcase, items: ["Épousseter les bureaux et les tables", "Sortir les poubelles"] },
     ],
     faqs: [
-      { question: "Combien de temps après les travaux ?", answer: "Attendez que tous les travaux soient terminés et la poussière retombée (24-48h)." },
-      { question: "Plusieurs passages sont-ils nécessaires ?", answer: "Parfois 2-3 passages selon l'ampleur des travaux." },
-      { question: "Gérez-vous les gros débris ?", answer: "Non, les débris de construction doivent être retirés avant notre arrivée." },
-      { question: "Nettoyez-vous les conduits ?", answer: "Nous recommandons un service spécialisé pour les conduits." },
-      { question: "Quelle surface pouvez-vous couvrir ?", answer: "Nous gérons des projets de toutes tailles, résidentiels et commerciaux." },
+      { question: "Ai-je besoin de deux nettoyages ?", answer: "Nous le recommandons souvent. Le premier nettoyage élimine environ 90 % de la poussière, puis un second passage permet de retirer les résidus qui se redéposent après quelques jours." },
+      { question: "Combien de temps dure le nettoyage ?", answer: "Cela dépend de la taille du projet et de l'ampleur des travaux. Une petite rénovation peut prendre quelques heures, tandis qu'un projet plus important peut nécessiter une journée complète ou davantage." },
+      { question: "Quand devrais-je planifier le nettoyage ?", answer: "Idéalement lorsque les travaux sont terminés ou presque. Cela évite d'avoir à refaire un nettoyage à cause de nouvelles poussières." },
+      { question: "Combien ça coûte ?", answer: "Le prix varie selon la superficie et l'état des lieux. Nous fournissons toujours une estimation claire avant de commencer." },
+      { question: "Enlevez-vous la peinture ou le silicone (calfeutrage) ?", answer: "Normalement, ces travaux sont faits par la compagnie de construction. Nous pouvons toutefois nous en occuper au besoin, mais cela demande plus de temps et peut entraîner des frais supplémentaires." },
+      { question: "Pourquoi un nettoyage après construction est-il nécessaire ?", answer: "Les travaux laissent une fine poussière partout : sur les surfaces, dans les armoires, etc. Un nettoyage régulier ne suffit pas à l'éliminer complètement." },
     ],
   },
   "nettoyage-tapis": {
