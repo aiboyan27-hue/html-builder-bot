@@ -1,43 +1,33 @@
 import { useState, useRef } from "react";
 import { User, Flag, Mountain, Smile } from "lucide-react";
-
-const values = [
-  {
-    icon: User,
-    title: "Nous assumons nos responsabilités",
-  },
-  {
-    icon: Flag,
-    title: "Nous livrons des résultats",
-  },
-  {
-    icon: Mountain,
-    title: "Nous évoluons ensemble",
-  },
-  {
-    icon: Smile,
-    title: "Nous sommes reconnaissants",
-  },
-];
-
+const values = [{
+  icon: User,
+  title: "Nous assumons nos responsabilités"
+}, {
+  icon: Flag,
+  title: "Nous livrons des résultats"
+}, {
+  icon: Mountain,
+  title: "Nous évoluons ensemble"
+}, {
+  icon: Smile,
+  title: "Nous sommes reconnaissants"
+}];
 const CoreValues = () => {
   const [currentPage, setCurrentPage] = useState(0);
   const scrollRef = useRef<HTMLDivElement>(null);
   const [isDragging, setIsDragging] = useState(false);
   const [startX, setStartX] = useState(0);
   const [scrollLeft, setScrollLeft] = useState(0);
-
   const handleMouseDown = (e: React.MouseEvent) => {
     if (!scrollRef.current) return;
     setIsDragging(true);
     setStartX(e.pageX - scrollRef.current.offsetLeft);
     setScrollLeft(scrollRef.current.scrollLeft);
   };
-
   const handleMouseUp = () => {
     setIsDragging(false);
   };
-
   const handleMouseMove = (e: React.MouseEvent) => {
     if (!isDragging || !scrollRef.current) return;
     e.preventDefault();
@@ -45,7 +35,6 @@ const CoreValues = () => {
     const walk = (x - startX) * 1.5;
     scrollRef.current.scrollLeft = scrollLeft - walk;
   };
-
   const handleScroll = () => {
     if (scrollRef.current) {
       const scrollPos = scrollRef.current.scrollLeft;
@@ -54,7 +43,6 @@ const CoreValues = () => {
       setCurrentPage(page);
     }
   };
-
   const scrollToPage = (page: number) => {
     if (scrollRef.current) {
       const maxScroll = scrollRef.current.scrollWidth - scrollRef.current.clientWidth;
@@ -65,76 +53,6 @@ const CoreValues = () => {
       setCurrentPage(page);
     }
   };
-
-  return (
-    <section className="py-20 md:py-28 bg-background">
-      <div className="container">
-        <h2 className="text-3xl md:text-4xl lg:text-5xl font-heading font-bold text-foreground text-center mb-12">
-          Nos valeurs
-        </h2>
-      </div>
-
-      {/* Horizontal Scrolling Container */}
-      <div className="relative max-w-[1200px] mx-auto">
-        <div 
-          ref={scrollRef}
-          onScroll={handleScroll}
-          onMouseDown={handleMouseDown}
-          onMouseUp={handleMouseUp}
-          onMouseLeave={handleMouseUp}
-          onMouseMove={handleMouseMove}
-          className={`flex gap-5 overflow-x-auto pb-2 pl-8 md:pl-16 lg:pl-24 cursor-grab ${isDragging ? 'cursor-grabbing select-none' : ''}`}
-          style={{ 
-            scrollbarWidth: 'none', 
-            msOverflowStyle: 'none',
-            WebkitOverflowScrolling: 'touch'
-          }}
-        >
-          {values.map((value) => (
-            <div
-              key={value.title}
-              className="flex-shrink-0 w-[260px] md:w-[300px] lg:w-[280px]"
-            >
-              {/* Cream/beige outer card with soft rounded corners */}
-              <div className="bg-accent rounded-3xl h-[280px] md:h-[320px] flex flex-col p-5">
-                {/* White inner container for icon */}
-                <div className="flex-1 flex items-center justify-center bg-background rounded-2xl">
-                  <value.icon className="w-16 h-16 md:w-20 md:h-20 text-foreground" strokeWidth={1} />
-                </div>
-                
-                {/* Title area */}
-                <div className="pt-5 text-center">
-                  <h3 className="text-base md:text-lg font-semibold text-foreground leading-snug">
-                    {value.title}
-                  </h3>
-                </div>
-              </div>
-            </div>
-          ))}
-          {/* Spacer for partial card effect */}
-          <div className="flex-shrink-0 w-8 md:w-16 lg:w-24" />
-        </div>
-      </div>
-
-      {/* Duck Dots Navigation */}
-      <div className="flex justify-center gap-2 mt-8">
-        <button
-          onClick={() => scrollToPage(0)}
-          className={`text-2xl transition-opacity hover:scale-110 ${currentPage === 0 ? 'opacity-100' : 'opacity-40'}`}
-          aria-label="Page 1"
-        >
-          🦆
-        </button>
-        <button
-          onClick={() => scrollToPage(1)}
-          className={`text-2xl transition-opacity hover:scale-110 ${currentPage === 1 ? 'opacity-100' : 'opacity-40'}`}
-          aria-label="Page 2"
-        >
-          🦆
-        </button>
-      </div>
-    </section>
-  );
+  return;
 };
-
 export default CoreValues;
