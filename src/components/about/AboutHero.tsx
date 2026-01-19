@@ -4,8 +4,8 @@ const AboutHero = () => {
         <div className="grid lg:grid-cols-2 gap-12 lg:gap-20 items-center">
           {/* Left - Text */}
           <div className="order-2 lg:order-1">
-            <h1 className="text-4xl md:text-5xl lg:text-6xl font-serif font-bold text-foreground leading-tight mb-6">Maison propre, plus de liberté.<br />
-              Clear Mind
+            <h1 className="text-4xl md:text-5xl lg:text-6xl font-serif font-bold text-foreground leading-tight mb-6">
+              Maison propre, plus de liberté.
             </h1>
             <p className="text-lg text-muted-foreground leading-relaxed">Personnel rigoureusement sélectionnées. Produits non toxiques. Résultats constants.<br />
               trust, and growth — one clean at a time
