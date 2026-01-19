@@ -47,12 +47,12 @@ const WhyUs = () => {
         {/* Comparison Table */}
         <div className="max-w-3xl mx-auto">
           <h3 className="text-2xl font-bold text-center text-foreground mb-8">
-            Aura vs. Autres entreprises
+            Aura Nettoyage vs. Autres entreprises
           </h3>
           <div className="bg-card border border-border rounded-xl overflow-hidden">
             <div className="grid grid-cols-3 bg-primary text-primary-foreground font-semibold">
               <div className="p-4">Avantages</div>
-              <div className="p-4 text-center">Aura</div>
+              <div className="p-4 text-center">Aura Nettoyage</div>
               <div className="p-4 text-center">Autres</div>
             </div>
             {comparisonRows.map((row, index) => (

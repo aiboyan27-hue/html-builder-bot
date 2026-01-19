@@ -7,7 +7,7 @@ import ServiceHero from "@/components/service/ServiceHero";
 import ServiceDescription from "@/components/service/ServiceDescription";
 import CleaningChecklist from "@/components/service/CleaningChecklist";
 import AddOns from "@/components/service/AddOns";
-import ExpertTeamSection from "@/components/service/ExpertTeamSection";
+import WhyUs from "@/components/WhyUs";
 
 import ServiceFAQ from "@/components/service/ServiceFAQ";
 import ServiceCTA from "@/components/service/ServiceCTA";
@@ -431,7 +431,7 @@ const ServicePage = () => {
         <AddOns />
       )}
 
-      <ExpertTeamSection />
+      <WhyUs />
 
       <ServiceFAQ faqs={service.faqs} />
 
