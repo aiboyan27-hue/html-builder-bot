@@ -7,24 +7,34 @@ import {
 
 const faqs = [
   {
-    question: "Can I customize my cleaning?",
-    answer: "Absolutely! We understand every home is different. During booking, you can specify areas that need extra attention, skip certain rooms, or add special requests. Our team will accommodate your preferences.",
+    question: "Fournissez-vous les produits et équipements de nettoyage ?",
+    answer:
+      "Oui. Nous apportons tout le matériel et les produits nécessaires pour effectuer le nettoyage. Nous utilisons des produits de haute qualité, non toxiques, sécuritaires pour les enfants, les animaux et l'environnement.",
   },
   {
-    question: "What does frequent cleaning include?",
-    answer: "Our frequent cleaning service includes dusting, vacuuming, mopping, bathroom sanitization, kitchen cleaning, and general tidying. We focus on maintaining your space between deep cleans.",
+    question: "Puis-je personnaliser mon service de nettoyage ?",
+    answer:
+      "Absolument. Si certaines zones comme la cuisine, les salles de bain ou les espaces à fort passage nécessitent plus d'attention, il suffit de nous le mentionner. Nous adaptons le service selon vos besoins et vos priorités.",
   },
   {
-    question: "Can I leave a key for the cleaners?",
-    answer: "Yes, many of our clients provide a spare key or access code. We have secure key management protocols and all our staff are background-checked for your peace of mind.",
+    question: "Qu'est-ce qui est inclus dans un nettoyage régulier ?",
+    answer:
+      "Nos services de nettoyage régulier comprennent les tâches essentielles telles que l'époussetage, l'aspiration, le lavage des planchers, le nettoyage de la cuisine et des salles de bain, ainsi que le rangement général pour maintenir votre espace propre et agréable.",
   },
   {
-    question: "Can I trust your cleaners?",
-    answer: "All our cleaners undergo thorough background checks, are fully insured, and receive professional training. We've completed 7000+ cleanings with a 4.9 Google rating.",
+    question: "Puis-je faire confiance à vos équipes de nettoyage ?",
+    answer:
+      "Oui, sans hésitation. Nos équipes sont soigneusement sélectionnées et font l'objet de vérifications rigoureuses afin de garantir un service professionnel, fiable et sécuritaire.",
   },
   {
-    question: "Are cleaning supplies provided?",
-    answer: "Yes! We bring all necessary cleaning supplies and equipment. We use eco-friendly, high-quality products. If you prefer specific products, just let us know.",
+    question: "Comment fonctionne le paiement ?",
+    answer:
+      "Après avoir communiqué avec nous, nous vous enverrons un lien de paiement sécurisé. Une préautorisation est effectuée sur votre carte environ 24 heures avant le nettoyage à des fins de vérification — aucun montant n'est débité à ce moment. Le paiement est effectué uniquement une fois le service complété, et un reçu vous est transmis par courriel. Ce processus éprouvé assure une expérience simple, sécurisée et sans souci.",
+  },
+  {
+    question: "Dois-je être présent(e) lors du nettoyage ?",
+    answer:
+      "Non, votre présence n'est pas obligatoire, tant que nous avons accès à votre espace. Pour un premier nettoyage, nous recommandons toutefois une courte visite ou un suivi afin de nous assurer que tout correspond à vos attentes.",
   },
 ];
 
