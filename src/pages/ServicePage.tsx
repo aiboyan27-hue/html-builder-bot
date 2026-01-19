@@ -8,7 +8,7 @@ import ServiceDescription from "@/components/service/ServiceDescription";
 import CleaningChecklist from "@/components/service/CleaningChecklist";
 import AddOns from "@/components/service/AddOns";
 import ExpertTeamSection from "@/components/service/ExpertTeamSection";
-import OtherServicesCarousel from "@/components/service/OtherServicesCarousel";
+
 import ServiceFAQ from "@/components/service/ServiceFAQ";
 import ServiceCTA from "@/components/service/ServiceCTA";
 import { Button } from "@/components/ui/button";
@@ -432,8 +432,6 @@ const ServicePage = () => {
       )}
 
       <ExpertTeamSection />
-
-      <OtherServicesCarousel />
 
       <ServiceFAQ faqs={service.faqs} />
 
