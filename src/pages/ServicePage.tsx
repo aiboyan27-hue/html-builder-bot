@@ -95,24 +95,28 @@ const servicesData: Record<string, {
     ],
     faqs: [
       {
-        question: "Le nettoyage en profondeur est-il sécuritaire pour les animaux et les enfants ?",
-        answer: "Absolument ! Nous utilisons des produits écologiques et non toxiques, sécuritaires pour toute la famille, y compris les animaux de compagnie.",
+        question: "Quelle est la différence entre un nettoyage en profondeur et un nettoyage régulier ?",
+        answer: "Le nettoyage en profondeur est destiné aux logements très sales ou lorsque des options supplémentaires sont nécessaires (four, frigo, fenêtres). Le nettoyage régulier convient aux maisons déjà bien entretenues.",
       },
       {
-        question: "Dois-je préparer ma maison ?",
-        answer: "Nous vous recommandons de ranger les objets personnels et de dégager les surfaces pour un nettoyage optimal. Aucune préparation majeure n'est nécessaire.",
+        question: "Combien de temps dure un nettoyage ?",
+        answer: "Généralement entre 4 et 8 heures, selon la taille du logement, son état et les options choisies.",
       },
       {
-        question: "Puis-je demander des zones spécifiques à nettoyer ?",
-        answer: "Bien sûr ! Indiquez-nous vos priorités et nous adapterons notre service en conséquence.",
+        question: "À quelle fréquence devrais-je faire un nettoyage en profondeur ?",
+        answer: "Tous les 3 à 6 mois, ou lorsque le logement semble plus sale que d'habitude. Certains clients le font de façon saisonnière.",
       },
       {
-        question: "Les produits de nettoyage sont-ils fournis ?",
-        answer: "Oui, nous apportons tous les produits et équipements nécessaires. Si vous préférez vos propres produits, faites-le nous savoir.",
+        question: "Nettoyez-vous l'intérieur du frigo et du four ?",
+        answer: "Oui, sur demande. Ce sont des options supplémentaires courantes lors d'un nettoyage en profondeur.",
       },
       {
-        question: "À quelle fréquence devrait-on faire un nettoyage en profondeur ?",
-        answer: "Nous recommandons un nettoyage en profondeur tous les 3-6 mois, ou plus fréquemment si vous avez des animaux ou des allergies.",
+        question: "Dois-je nettoyer avant votre arrivée ?",
+        answer: "Ce n'est pas nécessaire. Ramasser les objets personnels aide simplement à se concentrer sur le nettoyage plutôt que le rangement.",
+      },
+      {
+        question: "Et si mon logement est très sale ?",
+        answer: "Aucun jugement. Nous pourrions avoir besoin de plus de temps, et nous en discuterons avec vous avant de commencer.",
       },
     ],
   },
