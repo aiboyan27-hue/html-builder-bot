@@ -174,11 +174,12 @@ const servicesData: Record<string, {
       { title: "Bureau", icon: Briefcase, items: ["Épousseter les bureaux et les tables", "Sortir les poubelles"] },
     ],
     faqs: [
-      { question: "Offrez-vous une garantie de dépôt ?", answer: "Nous offrons un nettoyage de qualité qui aide à récupérer les dépôts." },
-      { question: "Quand devrais-je réserver ?", answer: "Réservez dès que vous connaissez votre date de déménagement." },
-      { question: "Nettoyez-vous les maisons vides ou meublées ?", answer: "Les deux ! Les maisons vides permettent un nettoyage plus complet." },
-      { question: "Combien de temps à l'avance réserver ?", answer: "Au moins 3-5 jours, plus si possible." },
-      { question: "Faites-vous les retouches si le propriétaire n'est pas satisfait ?", answer: "Oui, nous offrons des retouches gratuites dans les 24h." },
+      { question: "Qu'est-ce qui est inclus dans un nettoyage de déménagement ?", answer: "Tout ce qui est inclus dans notre nettoyage standard, avec une attention particulière aux zones clés. Des options peuvent être ajoutées selon vos besoins." },
+      { question: "Dois-je avoir tout déménagé avant le nettoyage ?", answer: "Oui, c'est recommandé. Nettoyer une fois le logement vide permet un résultat optimal et évite qu'il se salisse de nouveau après." },
+      { question: "Nettoyez-vous l'intérieur du frigo, du four et des armoires ?", answer: "Oui. Pour les nettoyages de déménagement, l'intérieur des électroménagers et des armoires est inclus, car ce sont des points souvent vérifiés." },
+      { question: "Est-ce que ce service aide à récupérer mon dépôt ?", answer: "C'est notre objectif principal. Nous nettoyons selon les standards attendus, sans toutefois pouvoir garantir la décision finale du propriétaire." },
+      { question: "Quelle est la différence entre un nettoyage d'emménagement et de déménagement ?", answer: "Le nettoyage est similaire, mais l'objectif change. Le déménagement vise à laisser le logement impeccable, tandis que l'emménagement assure un espace propre avant de s'installer." },
+      { question: "Quand devrais-je réserver avant mon déménagement ?", answer: "Idéalement 2 à 5 jours à l'avance. Les plages se remplissent rapidement, donc plus tôt vous réservez, mieux c'est." },
     ],
   },
   "nettoyage-vitres": {
