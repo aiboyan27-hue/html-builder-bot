@@ -128,11 +128,11 @@ const servicesData: Record<string, {
       "Parfait pour maintenir la propreté entre les nettoyages en profondeur",
       "Service rapide et efficace",
     ],
-    heroImage: "https://images.unsplash.com/photo-1527515545081-5db817172677?w=600&h=800&fit=crop",
+    heroImage: "/lovable-uploads/nettoyage-regulier-hero.png",
     descriptionTitle: "Nettoyage régulier professionnel",
     description: [
-      "Notre service de nettoyage régulier est conçu pour les familles occupées de Montréal. Nous maintenons la propreté de votre maison avec des visites régulières.",
-      "Revenez toujours dans un espace frais et accueillant. Disponible selon votre horaire.",
+      "Notre service de nettoyage régulier permet de garder votre maison propre et fraîche en tout temps. Des centaines de personnes nous font confiance pour l'entretien continu de leur espace. À chaque visite, nous dépoussiérons, passons l'aspirateur, lavons les sols et nettoyons les surfaces selon une liste détaillée.",
+      "Idéal pour un entretien hebdomadaire ou aux deux semaines, afin de réduire le stress et garder votre maison toujours prête à recevoir.",
     ],
     checklist: [
       { title: "Chambres", icon: Bed, items: ["Faire les lits", "Épousseter les têtes de lit et les surfaces"] },
