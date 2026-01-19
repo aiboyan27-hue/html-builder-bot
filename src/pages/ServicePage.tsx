@@ -218,7 +218,7 @@ const servicesData: Record<string, {
       "Nettoyage des surfaces, fenêtres et sols",
       "Prêt à emménager après rénovation",
     ],
-    heroImage: "https://images.unsplash.com/photo-1504307651254-35680f356dfd?w=600&h=800&fit=crop",
+    heroImage: "/lovable-uploads/nettoyage-apres-construction-hero.png",
     descriptionTitle: "Nettoyage professionnel après construction",
     description: [
       "Après des travaux de construction ou de rénovation, votre espace a besoin d'un nettoyage spécialisé.",
