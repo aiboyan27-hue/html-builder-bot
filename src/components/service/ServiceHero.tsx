@@ -56,11 +56,11 @@ const ServiceHero = ({ title, subtitle, benefits, image }: ServiceHeroProps) => 
 
           {/* Right Image */}
           <div className="flex justify-center lg:justify-end">
-            <div className="w-full max-w-md lg:max-w-lg">
+            <div className="w-full max-w-md lg:max-w-xl">
               <img
                 src={image}
                 alt={title}
-                className="rounded-3xl shadow-elevated w-full h-auto object-cover aspect-[3/4]"
+                className="rounded-3xl shadow-elevated w-full h-auto object-contain"
               />
             </div>
           </div>
