@@ -143,11 +143,12 @@ const servicesData: Record<string, {
       { title: "Bureau", icon: Briefcase, items: ["Épousseter les bureaux et les tables", "Sortir les poubelles"] },
     ],
     faqs: [
-      { question: "À quelle fréquence recommandez-vous le nettoyage régulier ?", answer: "Nous recommandons un nettoyage hebdomadaire ou bimensuel pour un entretien optimal." },
-      { question: "Puis-je modifier ma fréquence de nettoyage ?", answer: "Oui, vous pouvez ajuster votre calendrier à tout moment." },
-      { question: "Que comprend le nettoyage régulier ?", answer: "Époussettage, aspirateur, vadrouille, nettoyage des salles de bain et cuisine." },
-      { question: "Utilisez-vous mes produits ou les vôtres ?", answer: "Nous apportons nos propres produits écologiques, mais pouvons utiliser les vôtres sur demande." },
-      { question: "Combien de temps dure un nettoyage régulier ?", answer: "Généralement 2-3 heures selon la taille de votre maison." },
+      { question: "Que comprend le nettoyage récurrent ?", answer: "Époussetage, aspirateur, lavage des planchers, nettoyage de la salle de bain et de la cuisine, ainsi qu'un entretien général pour garder votre logement propre entre les visites." },
+      { question: "À quelle fréquence devrais-je planifier un nettoyage ?", answer: "Une fréquence hebdomadaire est idéale pour les maisons occupées ou avec animaux. Aux deux semaines convient à la majorité des gens, et le mensuel est parfait pour un entretien léger." },
+      { question: "Aurais-je toujours la même personne pour le nettoyage ?", answer: "Nous faisons de notre mieux pour assurer la même personne. Si un changement est nécessaire, nous vous en informerons à l'avance." },
+      { question: "Le premier nettoyage est-il différent ?", answer: "Oui. La première visite prend généralement plus de temps et peut coûter un peu plus, car elle permet de remettre le logement à niveau. Les visites suivantes sont plus rapides." },
+      { question: "Est-ce que je fais des économies avec un service récurrent ?", answer: "Oui. Le service hebdomadaire offre 15 % de rabais, aux deux semaines 10 %, et mensuel 5 %. Plus la fréquence est élevée, plus vous économisez." },
+      { question: "Que faire si je dois annuler ou reporter un nettoyage ?", answer: "Aucun problème. Il suffit simplement de nous en informer à l'avance." },
     ],
   },
   "nettoyage-demenagement": {
