@@ -323,11 +323,12 @@ const servicesData: Record<string, {
       },
     ],
     faqs: [
-      { question: "Combien de temps dure le traitement ?", answer: "Généralement 2-4 heures selon la surface à traiter." },
-      { question: "Faut-il éviter de marcher sur le sol après ?", answer: "Nous recommandons d'attendre 24h avant de marcher sur les zones traitées." },
-      { question: "Le scellement est-il permanent ?", answer: "Le scellement dure généralement 2-3 ans selon l'usage." },
-      { question: "Traitez-vous les murs carrelés ?", answer: "Oui, nous traitons les murs de douche et autres surfaces carrelées." },
-      { question: "Utilisez-vous des produits écologiques ?", answer: "Oui, nos produits sont sécuritaires et respectueux de l'environnement." },
+      { question: "Que comprend le nettoyage de céramique et joints ?", answer: "Nous éliminons la saleté incrustée et les taches sur la céramique et les joints afin de leur redonner leur couleur et leur apparence d'origine." },
+      { question: "Comment déterminez-vous le prix ?", answer: "Envoyez-nous simplement quelques photos des zones à nettoyer ainsi que la superficie approximative. Nous analyserons le tout et vous fournirons une soumission." },
+      { question: "Est-ce sécuritaire pour tous les types de céramique ?", answer: "Oui. Nous utilisons des méthodes sécuritaires et adaptées pour la céramique, le porcelaine, le marbre et autres surfaces similaires." },
+      { question: "Appliquez-vous un scellant après le nettoyage des joints ?", answer: "Oui, sur demande. L'application d'un scellant aide à prévenir les taches futures et facilite l'entretien à long terme." },
+      { question: "Pouvez-vous corriger des joints décolorés ?", answer: "Oui. Le nettoyage permet souvent d'éclaircir les joints et de leur redonner une apparence uniforme. Dans certains cas de décoloration sévère, le résultat peut être limité — nous vous en informerons avant de commencer." },
+      { question: "À quelle fréquence devrais-je faire nettoyer la céramique et les joints ?", answer: "En général, un nettoyage par année est suffisant pour la plupart des résidences. Les zones très fréquentées peuvent nécessiter un entretien plus fréquent." },
     ],
   },
   "nettoyage-commercial": {
