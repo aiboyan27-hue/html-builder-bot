@@ -55,11 +55,11 @@ const servicesData: Record<string, {
       "Parfait pour les maisons non nettoyées depuis 30+ jours",
       "Personnalisé selon vos besoins",
     ],
-    heroImage: "https://images.unsplash.com/photo-1581578731548-c64695cc6952?w=600&h=800&fit=crop",
+    heroImage: "/lovable-uploads/nettoyage-en-profondeur-hero.png",
     descriptionTitle: "Nettoyage professionnel en profondeur",
     description: [
-      "Nos spécialistes ont réalisé des milliers de nettoyages en profondeur, rendant les maisons impeccables de fond en comble. Nous nettoyons les zones difficiles d'accès, éliminons la saleté accumulée et personnalisons chaque nettoyage.",
-      "Chaque visite suit une liste de vérification détaillée pour garantir que rien n'est oublié. C'est le service parfait pour un nouveau départ ou un renouveau saisonnier.",
+      "Notre équipe est spécialisée dans le nettoyage en profondeur afin de redonner à votre maison toute sa fraîcheur, du sol au plafond. Nous prenons soin des zones difficiles d'accès, éliminons la saleté accumulée et adaptons chaque nettoyage à vos besoins spécifiques.",
+      "Chaque visite est réalisée selon une liste de vérification détaillée, assurant un travail complet et soigné, sans rien laisser au hasard. C'est le service idéal pour repartir sur de bonnes bases ou pour un grand ménage saisonnier.",
     ],
     checklist: [
       {
