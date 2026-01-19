@@ -378,11 +378,11 @@ const servicesData: Record<string, {
       { title: "Bureau", icon: Briefcase, items: ["Épousseter les bureaux et les tables", "Sortir les poubelles"] },
     ],
     faqs: [
-      { question: "Travaillez-vous tard le soir ?", answer: "Oui, nous nous adaptons à vos horaires, même tard en soirée." },
-      { question: "Gérez-vous la vaisselle ?", answer: "Oui, sur demande nous pouvons gérer vaisselle et rangement." },
-      { question: "Quel préavis est nécessaire ?", answer: "Idéalement 1-2 semaines, mais nous faisons notre possible pour les urgences." },
-      { question: "Travaillez-vous les week-ends ?", answer: "Oui, les week-ends sont notre période la plus occupée pour les événements." },
-      { question: "Pouvez-vous gérer de grands espaces ?", answer: "Oui, nous avons des équipes pour les grands événements." },
+      { question: "Pouvez-vous nettoyer avant, pendant et après l'événement ?", answer: "Oui. Nous pouvons intervenir avant, pendant et après l'événement, selon vos besoins." },
+      { question: "Quels types d'événements nettoyez-vous ?", answer: "Tous types d'événements : fêtes privées, événements corporatifs, mariages, anniversaires et rassemblements. Petits ou grands." },
+      { question: "Combien de nettoyeurs sont nécessaires ?", answer: "Cela dépend de l'événement et du lieu. Contactez-nous et nous vous aiderons à déterminer ce qui est le plus adapté." },
+      { question: "Combien de temps après l'événement pouvez-vous intervenir ?", answer: "Immédiatement après l'événement ou le lendemain matin, selon ce qui vous convient le mieux." },
+      { question: "Est-ce que vous sortez les poubelles ?", answer: "Oui." },
     ],
   },
 };
