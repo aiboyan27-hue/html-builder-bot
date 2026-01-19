@@ -3,7 +3,7 @@ import Footer from "@/components/Footer";
 import AboutHero from "@/components/about/AboutHero";
 import OurStory from "@/components/about/OurStory";
 import CoreValues from "@/components/about/CoreValues";
-import WhyLocals from "@/components/about/WhyLocals";
+import WhyUs from "@/components/WhyUs";
 import ExpertTeam from "@/components/about/ExpertTeam";
 import TrustMetrics from "@/components/about/TrustMetrics";
 import GoogleMap from "@/components/about/GoogleMap";
@@ -16,7 +16,7 @@ const About = () => {
       <AboutHero />
       <OurStory />
       <CoreValues />
-      <WhyLocals />
+      <WhyUs />
       <ExpertTeam />
       <TrustMetrics />
       <GoogleMap />

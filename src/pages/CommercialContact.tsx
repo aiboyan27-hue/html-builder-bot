@@ -8,6 +8,7 @@ import { Label } from "@/components/ui/label";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import { useToast } from "@/hooks/use-toast";
+import { supabase } from "@/integrations/supabase/client";
 
 const CommercialContact = () => {
   const { toast } = useToast();
@@ -18,8 +19,9 @@ const CommercialContact = () => {
     message: "",
   });
   const [isSubmitted, setIsSubmitted] = useState(false);
+  const [isLoading, setIsLoading] = useState(false);
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     
     if (!formData.name || !formData.phone) {
@@ -31,12 +33,35 @@ const CommercialContact = () => {
       return;
     }
 
-    // Simulate form submission
-    setIsSubmitted(true);
-    toast({
-      title: "Demande envoyée !",
-      description: "Nous vous rappelons rapidement.",
-    });
+    setIsLoading(true);
+    
+    try {
+      const { error } = await supabase.functions.invoke('send-quote-email', {
+        body: {
+          name: formData.name,
+          phone: formData.phone,
+          email: formData.email || undefined,
+          message: formData.message || undefined,
+        },
+      });
+
+      if (error) throw error;
+
+      setIsSubmitted(true);
+      toast({
+        title: "Demande envoyée !",
+        description: "Nous vous rappelons rapidement.",
+      });
+    } catch (error) {
+      console.error("Error sending email:", error);
+      toast({
+        title: "Erreur",
+        description: "Une erreur est survenue. Veuillez réessayer.",
+        variant: "destructive",
+      });
+    } finally {
+      setIsLoading(false);
+    }
   };
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
@@ -201,9 +226,9 @@ const CommercialContact = () => {
                         />
                       </div>
 
-                      <Button type="submit" className="w-full" size="lg">
+                      <Button type="submit" className="w-full" size="lg" disabled={isLoading}>
                         <Send className="w-4 h-4 mr-2" />
-                        Envoyer la demande
+                        {isLoading ? "Envoi en cours..." : "Envoyer la demande"}
                       </Button>
                     </form>
                   </>
