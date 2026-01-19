@@ -209,11 +209,10 @@ const servicesData: Record<string, {
       },
     ],
     faqs: [
-      { question: "Nettoyez-vous les fenêtres en hauteur ?", answer: "Oui, jusqu'à 3 étages avec équipement sécuritaire." },
-      { question: "Utilisez-vous des produits écologiques ?", answer: "Oui, tous nos produits sont écologiques et sécuritaires." },
-      { question: "Quelle est la fréquence recommandée ?", answer: "Nous recommandons 2-4 fois par an selon l'environnement." },
-      { question: "Nettoyez-vous les moustiquaires ?", answer: "Oui, le nettoyage des moustiquaires est inclus." },
-      { question: "Travaillez-vous par temps de pluie ?", answer: "Nous reportons si nécessaire pour garantir la qualité." },
+      { question: "Nettoyez-vous l'intérieur et l'extérieur ?", answer: "Oui. Nous offrons le nettoyage intérieur, extérieur ou les deux. La majorité des clients choisissent les deux pour un résultat optimal." },
+      { question: "Nettoyez-vous les fenêtres en hauteur ou difficiles d'accès ?", answer: "Oui. Nous disposons de l'équipement nécessaire pour nettoyer les fenêtres en hauteur ou difficiles d'accès." },
+      { question: "Pouvez-vous enlever les taches d'eau dure ?", answer: "Oui. Nous pouvons traiter les taches causées par l'eau dure." },
+      { question: "À quelle fréquence devrais-je faire nettoyer mes fenêtres ?", answer: "Tous les 3 mois est idéal. Cela aide à prévenir l'accumulation de taches permanentes." },
     ],
   },
   "nettoyage-apres-construction": {
