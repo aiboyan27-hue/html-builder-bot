@@ -16,7 +16,7 @@ const services = [
     slug: "house-condo",
     title: "Nettoyage en profondeur",
     description:
-      "Professional cleaning for houses and condos. A reliable, detailed clean that keeps your space fresh and comfortable.",
+      "Un nettoyage en profondeur, fait selon ce qui est important pour vous. Parce que les petits détails font toute la différence.",
     image: "https://images.unsplash.com/photo-1584622650111-993a426fbf0a?w=600&h=400&fit=crop",
   },
   {
