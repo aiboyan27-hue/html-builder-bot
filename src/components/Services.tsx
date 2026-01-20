@@ -68,6 +68,13 @@ const services = [
       "Redonnez à vos surfaces en céramique un aspect propre et rafraîchi grâce à un nettoyage en profondeur réalisé par des experts.",
     image: "/lovable-uploads/service-ceramique.png",
   },
+  {
+    slug: "nettoyage-location-courte-duree",
+    title: "Nettoyage pour locations de courte durée",
+    description:
+      "Idéal pour les locations de courte durée. Un nettoyage fiable entre chaque séjour pour obtenir des avis 5 étoiles, séjour après séjour.",
+    image: "/lovable-uploads/service-location-courte-duree.png",
+  },
 ];
 
 const Services = () => {
