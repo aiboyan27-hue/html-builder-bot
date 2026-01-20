@@ -13,7 +13,7 @@ const AboutHero = () => {
           {/* Right - Image */}
           <div className="order-1 lg:order-2 flex justify-center lg:justify-end">
             <div className="rounded-3xl overflow-hidden shadow-elevated max-w-md lg:max-w-lg">
-              <img src="https://images.unsplash.com/photo-1556157382-97eda2d62296?w=600&h=500&fit=crop" alt="Team members" className="w-full h-auto object-cover aspect-[4/3]" />
+              <img src="/lovable-uploads/about-hero-bathroom.png" alt="Salle de bain propre et éclatante" className="w-full h-auto object-cover aspect-[4/3]" />
             </div>
           </div>
         </div>
