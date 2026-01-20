@@ -82,6 +82,13 @@ const services = [
       "Un nettoyage professionnel pour des vitres parfaitement propres, à l'intérieur comme à l'extérieur.",
     image: "/lovable-uploads/service-vitres.png",
   },
+  {
+    slug: "nettoyage-tapis",
+    title: "Nettoyage de tapis",
+    description:
+      "Redonnez vie à vos tapis. Nous éliminons la saleté incrustée, les taches et les mauvaises odeurs.",
+    image: "/lovable-uploads/service-tapis.png",
+  },
 ];
 
 const Services = () => {
