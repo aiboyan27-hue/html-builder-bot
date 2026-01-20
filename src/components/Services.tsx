@@ -28,10 +28,10 @@ const services = [
   },
   {
     slug: "post-construction",
-    title: "Post Construction Cleaning",
+    title: "Nettoyage après déménagement",
     description:
-      "Deep post-renovation cleaning to remove dust and debris and make the space move-in ready.",
-    image: "https://images.unsplash.com/photo-1581578731548-c64695cc6952?w=600&h=400&fit=crop",
+      "Un nettoyage complet avant de remettre les clés. Pour partir sans souci.",
+    image: "/lovable-uploads/service-demenagement.png",
   },
   {
     slug: "office-cleaning",
