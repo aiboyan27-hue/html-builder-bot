@@ -363,7 +363,7 @@ const servicesData: Record<string, {
       "Nettoyage complet après la fête",
       "Service flexible selon vos horaires",
     ],
-    heroImage: "https://images.unsplash.com/photo-1530103862676-de8c9debad1d?w=600&h=800&fit=crop",
+    heroImage: "/lovable-uploads/nettoyage-evenementiel-hero.png",
     descriptionTitle: "Nettoyage professionnel pour événements",
     description: [
       "Organisez votre événement l'esprit tranquille. Nous préparons votre espace avant et le remettons en ordre après.",
