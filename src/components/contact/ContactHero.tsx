@@ -37,7 +37,7 @@ const ContactHero = () => {
           {/* Right Image */}
           <div className="relative">
             <div className="relative rounded-3xl overflow-hidden bg-muted aspect-[4/5]">
-              <img src="https://images.unsplash.com/photo-1581578731548-c64695cc6952?w=600&h=800&fit=crop" alt="Notre équipe de nettoyage" className="w-full h-full object-cover" />
+              <img src="/lovable-uploads/contact-hero.png" alt="Notre équipe de nettoyage" className="w-full h-full object-cover" />
             </div>
           </div>
         </div>
