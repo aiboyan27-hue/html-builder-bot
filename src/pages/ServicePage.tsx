@@ -304,7 +304,7 @@ const servicesData: Record<string, {
       "Blanchiment et scellement des joints",
       "Traitement protecteur longue durée",
     ],
-    heroImage: "https://images.unsplash.com/photo-1584622650111-993a426fbf0a?w=600&h=800&fit=crop",
+    heroImage: "/lovable-uploads/nettoyage-ceramique-hero.png",
     descriptionTitle: "Nettoyage professionnel de céramique et joints",
     description: [
       "Les joints de céramique accumulent saleté, moisissures et taches au fil du temps. Notre service redonne l'éclat d'origine à vos planchers.",
