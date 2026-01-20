@@ -190,7 +190,7 @@ const servicesData: Record<string, {
       "Techniques professionnelles sans traces",
       "Service pour résidentiel et commercial",
     ],
-    heroImage: "https://images.unsplash.com/photo-1558317374-067fb5f30001?w=600&h=800&fit=crop",
+    heroImage: "/lovable-uploads/nettoyage-vitres-hero.png",
     descriptionTitle: "Nettoyage professionnel de vitres",
     description: [
       "Des fenêtres propres transforment l'apparence de votre maison et laissent entrer plus de lumière naturelle.",
