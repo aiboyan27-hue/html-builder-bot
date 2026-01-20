@@ -75,6 +75,13 @@ const services = [
       "Idéal pour les locations de courte durée. Un nettoyage fiable entre chaque séjour pour obtenir des avis 5 étoiles, séjour après séjour.",
     image: "/lovable-uploads/service-location-courte-duree.png",
   },
+  {
+    slug: "nettoyage-vitres",
+    title: "Nettoyage de vitres",
+    description:
+      "Un nettoyage professionnel pour des vitres parfaitement propres, à l'intérieur comme à l'extérieur.",
+    image: "/lovable-uploads/service-vitres.png",
+  },
 ];
 
 const Services = () => {
