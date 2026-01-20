@@ -159,7 +159,7 @@ const servicesData: Record<string, {
       "Récupérez votre dépôt de garantie",
       "Emménagez dans un espace impeccable",
     ],
-    heroImage: "https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=600&h=800&fit=crop",
+    heroImage: "/lovable-uploads/nettoyage-demenagement-hero.png",
     descriptionTitle: "Nettoyage professionnel de déménagement",
     description: [
       "Le déménagement est assez stressant. Laissez-nous gérer le nettoyage pour que vous puissiez vous concentrer sur l'essentiel.",
