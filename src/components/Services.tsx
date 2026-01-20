@@ -35,9 +35,9 @@ const services = [
   },
   {
     slug: "office-cleaning",
-    title: "Office Cleaning",
+    title: "Nettoyage commercial",
     description:
-      "Consistent office cleaning to keep your workspace professional, healthy, and presentable for staff and clients.",
+      "Un entretien régulier pour garder vos espaces de travail propres, bien entretenus et professionnels, autant pour vos employés que pour vos clients.",
     image: "https://images.unsplash.com/photo-1497366216548-37526070297c?w=600&h=400&fit=crop",
   },
   {
