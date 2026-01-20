@@ -48,11 +48,11 @@ const services = [
     image: "/lovable-uploads/service-nettoyage-regulier.png",
   },
   {
-    slug: "power-washing",
-    title: "Power Washing Cleaning",
+    slug: "post-construction",
+    title: "Nettoyage après construction",
     description:
-      "Exterior power washing for driveways, patios, and outdoor surfaces for a clean, refreshed look.",
-    image: "https://images.unsplash.com/photo-1558618047-f4b511b44991?w=600&h=400&fit=crop",
+      "Un nettoyage minutieux après les travaux, pour un espace propre et prêt à être utilisé.",
+    image: "/lovable-uploads/service-apres-construction.png",
   },
   {
     slug: "after-party",
