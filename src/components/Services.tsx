@@ -146,10 +146,10 @@ const Services = () => {
                   className="pl-4 basis-full sm:basis-1/2 lg:basis-1/4"
                 >
                   <Link
-                    to={`/services/${service.slug}`}
+                    to="/commercial"
                     className="group block h-full"
                   >
-                    <div className="h-full bg-[#FFF8E7] rounded-2xl overflow-hidden shadow-sm hover:shadow-md transition-all duration-300">
+                    <div className="h-full bg-[#FFF8E7] rounded-2xl overflow-hidden shadow-sm hover:shadow-elevated hover:-translate-y-1 transition-all duration-300 cursor-pointer">
                       {/* Image */}
                       <div className="aspect-[4/3] overflow-hidden rounded-t-2xl m-3 mb-0">
                         <img
