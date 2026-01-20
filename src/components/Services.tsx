@@ -21,10 +21,10 @@ const services = [
   },
   {
     slug: "move-in-out",
-    title: "Move In & Out Cleaning",
+    title: "Nettoyage avant emménagement",
     description:
-      "A thorough move-in / move-out clean so you can hand over (or receive) a spotless home with confidence.",
-    image: "https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=600&h=400&fit=crop",
+      "Emménagez dans un espace propre et accueillant. Tout est nettoyé et désinfecté avant votre arrivée.",
+    image: "/lovable-uploads/service-emmenagement.png",
   },
   {
     slug: "post-construction",
