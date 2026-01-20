@@ -254,7 +254,7 @@ const servicesData: Record<string, {
       "Nettoyage en profondeur des fibres",
       "Traitement anti-allergènes",
     ],
-    heroImage: "https://images.unsplash.com/photo-1558171813-4c088753af8f?w=600&h=800&fit=crop",
+    heroImage: "/lovable-uploads/nettoyage-tapis-hero.png",
     descriptionTitle: "Nettoyage professionnel de tapis",
     description: [
       "Les tapis accumulent poussière, allergènes et taches au fil du temps. Notre nettoyage en profondeur restaure leur apparence et leur fraîcheur.",
