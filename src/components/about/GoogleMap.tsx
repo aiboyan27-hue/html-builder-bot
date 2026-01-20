@@ -17,8 +17,8 @@ const GoogleMap = () => {
         </div>
         
         <div className="relative flex rounded-lg overflow-hidden" style={{ maxWidth: '1140px', margin: '0 auto' }}>
-          {/* Map - Left side */}
-          <div className="w-full lg:w-[65%] h-[360px] md:h-[420px] relative">
+          {/* Map - Takes most of the width */}
+          <div className="flex-1 h-[360px] md:h-[420px] relative">
             <iframe
               src={mapUrl}
               width="100%"
@@ -41,13 +41,13 @@ const GoogleMap = () => {
             </div>
           </div>
 
-          {/* Cyan Background Area - Right side on desktop */}
-          <div className="hidden lg:flex lg:w-[35%] bg-[hsl(187,55%,72%)] items-end justify-end p-6">
+          {/* Cyan Background Area - Minimal width for button only */}
+          <div className="hidden lg:flex w-auto bg-[hsl(187,55%,72%)] items-end justify-center p-4">
             <a
               href={googleMapsLink}
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex items-center gap-3 bg-foreground hover:bg-foreground/90 text-background px-5 py-3 rounded-lg font-semibold text-sm uppercase tracking-wide transition-colors"
+              className="inline-flex items-center gap-3 bg-foreground hover:bg-foreground/90 text-background px-5 py-3 rounded-lg font-semibold text-sm uppercase tracking-wide transition-colors whitespace-nowrap"
             >
               Ouvrir dans Google Map
               <Maximize2 className="w-4 h-4" />
