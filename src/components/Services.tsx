@@ -62,11 +62,11 @@ const services = [
     image: "/lovable-uploads/service-evenementiel.png",
   },
   {
-    slug: "eco-cleaning",
-    title: "Eco Cleaning",
+    slug: "nettoyage-ceramique",
+    title: "Nettoyage de céramique et joints",
     description:
-      "Green cleaning options using eco-friendly products for a healthier home and a lower environmental impact.",
-    image: "https://images.unsplash.com/photo-1556909114-f6e7ad7d3136?w=600&h=400&fit=crop",
+      "Redonnez à vos surfaces en céramique un aspect propre et rafraîchi grâce à un nettoyage en profondeur réalisé par des experts.",
+    image: "/lovable-uploads/service-ceramique.png",
   },
 ];
 
