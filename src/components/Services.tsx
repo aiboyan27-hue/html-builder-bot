@@ -42,10 +42,10 @@ const services = [
   },
   {
     slug: "regular-cleaning",
-    title: "Regular House Cleaning",
+    title: "Nettoyage régulier",
     description:
-      "Recurring weekly or bi-weekly cleaning to maintain a tidy home without the stress.",
-    image: "https://images.unsplash.com/photo-1502672260266-1c1ef2d93688?w=600&h=400&fit=crop",
+      "Profitez d'une maison propre et fraîche, semaine après semaine. On s'occupe de l'entretien régulier pour vous simplifier la vie.",
+    image: "/lovable-uploads/service-nettoyage-regulier.png",
   },
   {
     slug: "power-washing",
