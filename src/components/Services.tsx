@@ -55,11 +55,11 @@ const services = [
     image: "/lovable-uploads/service-apres-construction.png",
   },
   {
-    slug: "after-party",
-    title: "After Party Cleaning",
+    slug: "nettoyage-evenementiel",
+    title: "Nettoyage événementiel",
     description:
-      "Before or after event cleaning to reset your space quickly—trash removal, surfaces, floors, and bathrooms.",
-    image: "https://images.unsplash.com/photo-1530103862676-de8c9debad1d?w=600&h=400&fit=crop",
+      "Un nettoyage rapide et efficace avant ou après vos événements.",
+    image: "/lovable-uploads/service-evenementiel.png",
   },
   {
     slug: "eco-cleaning",
