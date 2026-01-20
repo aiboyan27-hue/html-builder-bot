@@ -308,7 +308,7 @@ const servicesData: Record<string, {
     descriptionTitle: "Nettoyage professionnel de céramique et joints",
     description: [
       "Les joints de céramique accumulent saleté, moisissures et taches au fil du temps. Notre service redonne l'éclat d'origine à vos planchers.",
-      "Nous utilisons des équipements professionnels et offrons un scellement protecteur pour prolonger la durée de vie de vos sols.",
+      "Nous utilisons des équipements professionnels pour un résultat impeccable.",
     ],
     checklist: [
       { 
