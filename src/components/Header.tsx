@@ -108,7 +108,8 @@ const Header = () => {
 
           {/* Desktop CTA - Right aligned */}
           <div className="hidden lg:flex items-center gap-4">
-            <a href="tel:5141234567" className="inline-flex items-center gap-2.5 bg-secondary text-secondary-foreground px-6 py-3 text-base font-semibold hover:bg-secondary/80 transition-colors border border-border">(514) 448-6566<Phone className="w-4 h-4" />
+            <a href="tel:5141234567" className="inline-flex items-center gap-2.5 bg-secondary text-secondary-foreground px-6 py-3 text-base font-semibold hover:bg-secondary/80 transition-colors border border-border">
+              <Phone className="w-4 h-4" />
               (514) 123-4567
             </a>
             <Button onClick={() => handleNavClick("/commercial")} className="bg-primary hover:bg-primary/90 text-primary-foreground px-8 py-3 h-auto text-base font-bold uppercase tracking-wide">
