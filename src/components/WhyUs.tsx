@@ -16,7 +16,7 @@ const trustCards = [{
   title: "Produits sécuritaires",
   description: "Des produits non toxiques, sûrs pour les enfants et les animaux."
 }];
-const comparisonRows = ["Professionnels vérifiés et assurés", "Des milliers de clients satisfaits", "Réservation simple et rapide", "Qualité constante, visite après visite", "Satisfaction garantie", "Équipes entièrement assurées", "Rappels automatiques de rendez-vous", "Accompagnement client dédié", "Avantages sur certains services spécialisés", "Produits écologiques et sécuritaires"];
+const comparisonRows = ["Professionnels vérifiés et assurés", "Des milliers de clients satisfaits", "Réservation simple et rapide", "Qualité constante, visite après visite", "Satisfaction garantie", "Équipes entièrement assurées", "Rappels automatiques de rendez-vous", "Produits écologiques et sécuritaires"];
 const WhyUs = () => {
   return (
     <section className="py-20 bg-background">
