@@ -446,8 +446,6 @@ const ServicePage = () => {
 
       <Reviews />
 
-      <ServiceCTA />
-
       <Footer />
     </main>
   );
