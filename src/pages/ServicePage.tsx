@@ -8,6 +8,7 @@ import ServiceDescription from "@/components/service/ServiceDescription";
 import CleaningChecklist from "@/components/service/CleaningChecklist";
 import AddOns from "@/components/service/AddOns";
 import WhyUs from "@/components/WhyUs";
+import Reviews from "@/components/Reviews";
 
 import ServiceFAQ from "@/components/service/ServiceFAQ";
 import ServiceCTA from "@/components/service/ServiceCTA";
@@ -442,6 +443,8 @@ const ServicePage = () => {
       <WhyUs />
 
       <ServiceFAQ faqs={service.faqs} />
+
+      <Reviews />
 
       <ServiceCTA />
 
