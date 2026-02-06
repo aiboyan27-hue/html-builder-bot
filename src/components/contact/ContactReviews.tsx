@@ -4,18 +4,18 @@ const reviews = [
   {
     name: "Tamim Moradi",
     text: "Service incroyable. Prix concurrentiel. Tout simplement satisfait de la qualité du service.",
-    avatar: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=100&h=100&fit=crop&crop=face",
+    avatar: "/lovable-uploads/avatar-tamim.png",
   },
   {
     name: "Nadjombe J",
     badge: "Guide Local",
     text: "Bon service professionnel, je suis très impressionné par la rapidité et la propreté. Ils ont nettoyé mon appartement en 2 heures et il avait l'air complètement nouveau.",
-    avatar: "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=100&h=100&fit=crop&crop=face",
+    avatar: "/lovable-uploads/avatar-nadjombe.png",
   },
   {
     name: "Alejandro Costas",
     text: "Service impeccable autant clientèle que professionnel. L'équipe a fait mes 3 étages de maison et je suis très satisfait. Je recommande!",
-    avatar: "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=100&h=100&fit=crop&crop=face",
+    avatar: "",
   },
 ];
 
@@ -44,11 +44,17 @@ const ContactReviews = () => {
 
               {/* Reviewer */}
               <div className="flex items-center gap-3 mb-4">
-                <img
-                  src={review.avatar}
-                  alt={review.name}
-                  className="w-10 h-10 rounded-full object-cover"
-                />
+                {review.avatar ? (
+                  <img
+                    src={review.avatar}
+                    alt={review.name}
+                    className="w-10 h-10 rounded-full object-cover"
+                  />
+                ) : (
+                  <div className="w-10 h-10 rounded-full bg-purple-600 flex items-center justify-center text-white font-semibold text-sm">
+                    {review.name.charAt(0).toUpperCase()}
+                  </div>
+                )}
                 <div>
                   <p className="font-semibold text-foreground text-sm">{review.name}</p>
                   {review.badge && (
