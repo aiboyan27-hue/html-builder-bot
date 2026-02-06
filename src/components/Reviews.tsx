@@ -11,6 +11,8 @@ const reviews = [
     avatar: "/lovable-uploads/avatar-tamim.png",
     text: "Service incroyable. Prix concurrentiel. Tout simplement satisfait de la qualité du service.",
     rating: 5,
+    timeAgo: "Il y a une semaine",
+    link: "https://www.google.com/maps/contrib/114338990355153957049/place/ChIJNXRhTZ2XCwQRv3iD9ynG5Ig/@45.4783825,-74.4791624,9z/data=!4m6!1m5!8m4!1e1!2s114338990355153957049!3m1!1e1?hl=fr-CA&entry=ttu&g_ep=EgoyMDI2MDIwNC4wIKXMDSoASAFQAw%3D%3D",
   },
   {
     id: 2,
@@ -19,6 +21,8 @@ const reviews = [
     avatar: "/lovable-uploads/avatar-nadjombe.png",
     text: "Bon service professionnel, je suis très impressionné par la rapidité et la propreté. Ils ont nettoyé mon appartement en 2 heures et il avait l'air complètement nouveau.",
     rating: 5,
+    timeAgo: "Il y a 2 semaines",
+    link: "https://www.google.com/maps/contrib/111693630022488787170/place/ChIJNXRhTZ2XCwQRv3iD9ynG5Ig/@25.9029805,-74.5019456,4z/data=!4m6!1m5!8m4!1e1!2s111693630022488787170!3m1!1e1?hl=fr-CA&entry=ttu&g_ep=EgoyMDI2MDIwNC4wIKXMDSoASAFQAw%3D%3D",
   },
   {
     id: 3,
@@ -26,6 +30,8 @@ const reviews = [
     avatar: "", // Uses letter avatar
     text: "Service impeccable autant clientèle que professionnel. L'équipe a fait mes 3 étages de maison et je suis très satisfait. Je recommande!",
     rating: 5,
+    timeAgo: "Il y a 2 semaines",
+    link: "https://www.google.com/maps/contrib/117747275226408416173/place/ChIJNXRhTZ2XCwQRv3iD9ynG5Ig/@32.8906403,-80.355104,5z/data=!4m6!1m5!8m4!1e1!2s117747275226408416173!3m1!1e1?hl=fr-CA&entry=ttu&g_ep=EgoyMDI2MDIwNC4wIKXMDSoASAFQAw%3D%3D",
   },
 ];
 
@@ -62,9 +68,12 @@ const Reviews = () => {
         {/* Reviews Row */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mb-20">
           {reviews.map((review) => (
-            <div
+            <a
               key={review.id}
-              className="bg-muted/40 rounded-2xl p-6 flex flex-col"
+              href={review.link}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="bg-muted/40 rounded-2xl p-6 flex flex-col hover:shadow-md transition-shadow no-underline"
             >
               {/* Stars */}
               <div className="mb-4">
@@ -91,6 +100,7 @@ const Reviews = () => {
                   {review.badge && (
                     <p className="text-xs text-muted-foreground">{review.badge}</p>
                   )}
+                  <p className="text-xs text-muted-foreground">{review.timeAgo}</p>
                 </div>
               </div>
 
@@ -104,7 +114,7 @@ const Reviews = () => {
                 <p className="text-xs text-muted-foreground mb-1">Publié sur</p>
                 <GoogleLogo />
               </div>
-            </div>
+            </a>
           ))}
         </div>
 
