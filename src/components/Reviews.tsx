@@ -68,12 +68,9 @@ const Reviews = () => {
         {/* Reviews Row */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mb-20">
           {reviews.map((review) => (
-            <a
+            <div
               key={review.id}
-              href={review.link}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="bg-muted/40 rounded-2xl p-6 flex flex-col hover:shadow-md transition-shadow no-underline"
+              className="bg-muted/40 rounded-2xl p-6 flex flex-col"
             >
               {/* Stars */}
               <div className="mb-4">
@@ -94,9 +91,14 @@ const Reviews = () => {
                   </div>
                 )}
                 <div>
-                  <h4 className="font-semibold text-foreground text-sm">
+                  <a
+                    href={review.link}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="font-semibold text-foreground text-sm hover:underline"
+                  >
                     {review.name}
-                  </h4>
+                  </a>
                   {review.badge && (
                     <p className="text-xs text-muted-foreground">{review.badge}</p>
                   )}
@@ -114,7 +116,7 @@ const Reviews = () => {
                 <p className="text-xs text-muted-foreground mb-1">Publié sur</p>
                 <GoogleLogo />
               </div>
-            </a>
+            </div>
           ))}
         </div>
 

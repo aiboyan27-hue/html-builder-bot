@@ -37,12 +37,9 @@ const ContactReviews = () => {
         {/* Review Cards */}
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 mb-20">
           {reviews.map((review, index) => (
-            <a
+            <div
               key={index}
-              href={review.link}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="bg-card rounded-xl p-6 border border-border/50 shadow-sm hover:shadow-md transition-shadow no-underline block"
+              className="bg-card rounded-xl p-6 border border-border/50 shadow-sm"
             >
               {/* Stars */}
               <div className="flex gap-0.5 mb-4">
@@ -65,7 +62,14 @@ const ContactReviews = () => {
                   </div>
                 )}
                 <div>
-                  <p className="font-semibold text-foreground text-sm">{review.name}</p>
+                  <a
+                    href={review.link}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="font-semibold text-foreground text-sm hover:underline"
+                  >
+                    {review.name}
+                  </a>
                   {review.badge && (
                     <p className="text-xs text-muted-foreground">{review.badge}</p>
                   )}
@@ -92,7 +96,7 @@ const ContactReviews = () => {
                   </span>
                 </div>
               </div>
-            </a>
+            </div>
           ))}
         </div>
 
