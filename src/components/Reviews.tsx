@@ -7,26 +7,24 @@ import { Star } from "lucide-react";
 const reviews = [
   {
     id: 1,
-    name: "Diane Fargale",
-    timeAgo: "1 week ago",
-    avatar: "https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=100&h=100&fit=crop&crop=face",
-    text: "I had such a wonderful experience; timely professional and made my new apartment sparkle!",
+    name: "Tamim Moradi",
+    avatar: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=100&h=100&fit=crop&crop=face",
+    text: "Service incroyable. Prix concurrentiel. Tout simplement satisfait de la qualité du service.",
     rating: 5,
   },
   {
     id: 2,
-    name: "Ryan Wilner",
-    timeAgo: "2 weeks ago",
-    avatar: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=100&h=100&fit=crop&crop=face",
-    text: "Excellent, consistent service! Great communication and professionalism. I highly recommend.",
+    name: "Nadjombe J",
+    badge: "Guide Local",
+    avatar: "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=100&h=100&fit=crop&crop=face",
+    text: "Bon service professionnel, je suis très impressionné par la rapidité et la propreté. Ils ont nettoyé mon appartement en 2 heures et il avait l'air complètement nouveau.",
     rating: 5,
   },
   {
     id: 3,
-    name: "Irene B",
-    timeAgo: "Local guide • 2 weeks ago",
-    avatar: "https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=100&h=100&fit=crop&crop=face",
-    text: "Kerli and Michelle were amazing!!! I was in need of a deep cleaning and they definitely delivered. I loved the attention to detail an... very much appreciated them asking for a",
+    name: "Alejandro Costas",
+    avatar: "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=100&h=100&fit=crop&crop=face",
+    text: "Service impeccable autant clientèle que professionnel. L'équipe a fait mes 3 étages de maison et je suis très satisfait. Je recommande!",
     rating: 5,
   },
 ];
@@ -84,7 +82,9 @@ const Reviews = () => {
                   <h4 className="font-semibold text-foreground text-sm">
                     {review.name}
                   </h4>
-                  <p className="text-xs text-muted-foreground">{review.timeAgo}</p>
+                  {review.badge && (
+                    <p className="text-xs text-muted-foreground">{review.badge}</p>
+                  )}
                 </div>
               </div>
 

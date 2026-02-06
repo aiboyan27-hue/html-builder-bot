@@ -2,22 +2,20 @@ import { Star } from "lucide-react";
 
 const reviews = [
   {
-    name: "Diane Fargale",
-    time: "1 week ago",
-    text: "I had such a wonderful experience; timely professional and made my new apartment sparkle!",
-    avatar: "https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=100&h=100&fit=crop&crop=face",
+    name: "Tamim Moradi",
+    text: "Service incroyable. Prix concurrentiel. Tout simplement satisfait de la qualité du service.",
+    avatar: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=100&h=100&fit=crop&crop=face",
   },
   {
-    name: "Ryan Wilner",
-    time: "2 weeks ago",
-    text: "Excellent, consistent service! Great communication and professionalism. I highly recommend.",
+    name: "Nadjombe J",
+    badge: "Guide Local",
+    text: "Bon service professionnel, je suis très impressionné par la rapidité et la propreté. Ils ont nettoyé mon appartement en 2 heures et il avait l'air complètement nouveau.",
     avatar: "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=100&h=100&fit=crop&crop=face",
   },
   {
-    name: "Irene B",
-    time: "Local guide • 2 weeks ago",
-    text: "Kerli and Michelle were amazing!!! I was in need of a deep cleaning and they definitely delivered. I loved the attention to detail an... very much appreciated them asking for a",
-    avatar: "https://images.unsplash.com/photo-1544005313-94ddf0286df2?w=100&h=100&fit=crop&crop=face",
+    name: "Alejandro Costas",
+    text: "Service impeccable autant clientèle que professionnel. L'équipe a fait mes 3 étages de maison et je suis très satisfait. Je recommande!",
+    avatar: "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=100&h=100&fit=crop&crop=face",
   },
 ];
 
@@ -53,7 +51,9 @@ const ContactReviews = () => {
                 />
                 <div>
                   <p className="font-semibold text-foreground text-sm">{review.name}</p>
-                  <p className="text-xs text-muted-foreground">{review.time}</p>
+                  {review.badge && (
+                    <p className="text-xs text-muted-foreground">{review.badge}</p>
+                  )}
                 </div>
               </div>
 
