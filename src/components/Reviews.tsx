@@ -61,7 +61,7 @@ const Reviews = () => {
         {/* Section Title */}
         <div className="text-center mb-12">
           <h2 className="text-3xl md:text-4xl font-bold text-foreground">
-            Ce que vos voisins disent
+            Recommandé par vos voisins
           </h2>
         </div>
 

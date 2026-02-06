@@ -31,7 +31,7 @@ const ContactReviews = () => {
       <div className="container">
         {/* Section Title */}
         <h2 className="text-3xl md:text-4xl font-serif font-bold text-foreground text-center mb-12">
-          Ce que vos voisins disent
+          Recommandé par vos voisins
         </h2>
 
         {/* Review Cards */}
