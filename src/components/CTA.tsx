@@ -27,7 +27,7 @@ const CTA = () => {
               variant="secondary"
               className="rounded-full px-10 text-base mt-4"
             >
-              <Link to="/commercial">Obtenir une soumission</Link>
+              <Link to="/soumission">Obtenir une soumission</Link>
             </Button>
           </div>
         </div>

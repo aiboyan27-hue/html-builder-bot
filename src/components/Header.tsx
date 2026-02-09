@@ -92,7 +92,7 @@ const Header = () => {
 
           {/* Desktop Navigation - Centered */}
           <nav className="hidden lg:flex items-center gap-12">
-            <button onClick={() => handleNavClick("/about")} className="text-base font-medium text-foreground hover:text-foreground/70 transition-colors">
+            <button onClick={() => handleNavClick("/apropos")} className="text-base font-medium text-foreground hover:text-foreground/70 transition-colors">
               À propos
             </button>
             <div className="relative" onMouseEnter={() => setServicesOpen(true)} onMouseLeave={() => setServicesOpen(false)}>
@@ -112,7 +112,7 @@ const Header = () => {
               <Phone className="w-4 h-4" />
               (514) 123-4567
             </a>
-            <Button onClick={() => handleNavClick("/commercial")} className="bg-primary hover:bg-primary/90 text-primary-foreground px-8 py-3 h-auto text-base font-bold uppercase tracking-wide">
+            <Button onClick={() => handleNavClick("/soumission")} className="bg-primary hover:bg-primary/90 text-primary-foreground px-8 py-3 h-auto text-base font-bold uppercase tracking-wide">
               Obtenir une soumission
             </Button>
           </div>
@@ -142,7 +142,7 @@ const Header = () => {
       {/* Mobile Menu */}
       {mobileMenuOpen && <div className="lg:hidden bg-background border-t border-border">
           <div className="container py-4 space-y-4">
-            <button onClick={() => handleNavClick("/about")} className="block py-2 text-foreground font-medium w-full text-left">
+            <button onClick={() => handleNavClick("/apropos")} className="block py-2 text-foreground font-medium w-full text-left">
               À propos
             </button>
             <div className="space-y-2">
@@ -168,7 +168,7 @@ const Header = () => {
                 <Phone className="w-4 h-4" />
                 (514) 123-4567
               </a>
-              <Button onClick={() => handleNavClick("/commercial")} className="w-full py-3 h-auto font-bold uppercase tracking-wide">
+              <Button onClick={() => handleNavClick("/soumission")} className="w-full py-3 h-auto font-bold uppercase tracking-wide">
                 Obtenir une soumission
               </Button>
             </div>

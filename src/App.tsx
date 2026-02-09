@@ -26,10 +26,12 @@ const App = () => (
         <Routes>
           <Route path="/" element={<Index />} />
           <Route path="/quote" element={<Quote />} />
-          <Route path="/booking" element={<Navigate to="/commercial" replace />} />
-          <Route path="/about" element={<About />} />
+          <Route path="/booking" element={<Navigate to="/soumission" replace />} />
+          <Route path="/about" element={<Navigate to="/apropos" replace />} />
+          <Route path="/apropos" element={<About />} />
           <Route path="/contact" element={<Contact />} />
-          <Route path="/commercial" element={<CommercialContact />} />
+          <Route path="/commercial" element={<Navigate to="/soumission" replace />} />
+          <Route path="/soumission" element={<CommercialContact />} />
           <Route path="/privacy" element={<PrivacyPolicy />} />
           <Route path="/terms" element={<TermsOfUse />} />
           <Route path="/services/:serviceId" element={<ServicePage />} />

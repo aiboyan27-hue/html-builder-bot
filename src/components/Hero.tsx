@@ -36,7 +36,7 @@ const Hero = () => {
             {/* Single CTA */}
             <div className="flex justify-center lg:justify-start mb-10">
               <Button asChild size="lg" className="px-8 text-base">
-                <Link to="/commercial">Obtenir une soumission</Link>
+                <Link to="/soumission">Obtenir une soumission</Link>
               </Button>
             </div>
 
