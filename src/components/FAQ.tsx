@@ -29,7 +29,7 @@ const faqs = [
   {
     question: "Comment fonctionne le paiement ?",
     answer:
-      "Après avoir communiqué avec nous, nous vous enverrons un lien de paiement sécurisé. Une préautorisation est effectuée sur votre carte environ 24 heures avant le nettoyage à des fins de vérification — aucun montant n'est débité à ce moment. Le paiement est effectué uniquement une fois le service complété, et un reçu vous est transmis par courriel. Ce processus éprouvé assure une expérience simple, sécurisée et sans souci.",
+      "Après avoir communiqué avec nous, nous vous enverrons un lien de paiement sécurisé. Une préautorisation est effectuée sur votre carte environ 24 heures avant le nettoyage à des fins de vérification — aucun montant n'est débité à ce moment. Le paiement est effectué uniquement une fois le service complété, et un reçu vous est transmis par courriel. Ce processus assure une expérience simple, sécurisée et sans souci.",
   },
   {
     question: "Dois-je être présent(e) lors du nettoyage ?",
