@@ -34,7 +34,7 @@ const faqs = [
   {
     question: "Dois-je être présent(e) lors du nettoyage ?",
     answer:
-      "Non, votre présence n'est pas obligatoire, tant que nous avons accès à votre espace. Pour un premier nettoyage, nous recommandons toutefois une courte visite ou un suivi afin de nous assurer que tout correspond à vos attentes.",
+      "Votre présence n'est pas nécessaire, tant que nous avons accès à votre espace. Pour un premier nettoyage, nous aimons toutefois faire un court suivi avec vous afin de nous assurer que tout est à la hauteur de vos attentes.",
   },
 ];
 
