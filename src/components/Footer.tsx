@@ -59,12 +59,12 @@ const Footer = () => {
                 </Link>
               </li>
               <li>
-                <Link to="/commercial" className="hover:text-primary-foreground transition-colors">
+                <Link to="/soumission" className="hover:text-primary-foreground transition-colors">
                   Obtenir une soumission
                 </Link>
               </li>
               <li>
-                <Link to="/about" className="hover:text-primary-foreground transition-colors">
+                <Link to="/apropos" className="hover:text-primary-foreground transition-colors">
                   À propos
                 </Link>
               </li>

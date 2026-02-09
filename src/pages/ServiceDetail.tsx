@@ -166,7 +166,7 @@ const ServiceDetail = () => {
               </div>
 
               <Button asChild size="lg" className="rounded-full px-8">
-                <Link to="/commercial">Obtenir une soumission</Link>
+                <Link to="/soumission">Obtenir une soumission</Link>
               </Button>
             </div>
 
@@ -236,7 +236,7 @@ const ServiceDetail = () => {
             Obtenez une soumission personnalisée. Sans engagement.
           </p>
           <Button asChild size="lg" variant="secondary" className="rounded-full px-10">
-            <Link to="/commercial">Obtenir une soumission</Link>
+            <Link to="/soumission">Obtenir une soumission</Link>
           </Button>
         </div>
       </section>

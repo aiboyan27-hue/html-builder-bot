@@ -229,7 +229,7 @@ const Booking = () => {
               </a>
             </p>
             <Button asChild className="bg-accent text-accent-foreground hover:bg-accent/90 font-semibold">
-              <Link to="/commercial">Nettoyage commercial – Réserver ici</Link>
+              <Link to="/soumission">Nettoyage commercial – Réserver ici</Link>
             </Button>
           </div>
 

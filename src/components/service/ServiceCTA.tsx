@@ -19,7 +19,7 @@ const ServiceCTA = () => {
             size="lg"
             className="bg-primary hover:bg-primary/90 text-primary-foreground rounded-lg px-10 py-6 text-base font-semibold uppercase tracking-wide whitespace-nowrap"
           >
-            <Link to="/commercial">Obtenir une soumission</Link>
+            <Link to="/soumission">Obtenir une soumission</Link>
           </Button>
         </div>
       </div>

@@ -17,7 +17,7 @@ const ContactHero = () => {
               Une entreprise locale et familiale prête à répondre à vos besoins de nettoyage
             </p>
             <Button asChild className="bg-primary hover:bg-primary/90 text-primary-foreground px-8 py-6 text-base font-bold uppercase tracking-wide rounded-md">
-              <Link to="/commercial">Contactez-nous</Link>
+              <Link to="/soumission">Contactez-nous</Link>
             </Button>
 
             {/* Rating Row */}

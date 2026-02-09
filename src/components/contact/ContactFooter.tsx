@@ -88,7 +88,7 @@ const ContactFooter = () => {
             <Link to="/booking" className="block text-sm text-background/80 hover:text-background transition-colors">
               Book now
             </Link>
-            <Link to="/about" className="block text-sm text-background/80 hover:text-background transition-colors">
+            <Link to="/apropos" className="block text-sm text-background/80 hover:text-background transition-colors">
               About
             </Link>
             <a href="#" className="block text-sm text-background/80 hover:text-background transition-colors">
