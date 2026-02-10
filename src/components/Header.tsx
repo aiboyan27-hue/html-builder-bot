@@ -108,9 +108,9 @@ const Header = () => {
 
           {/* Desktop CTA - Right aligned */}
           <div className="hidden lg:flex items-center gap-4">
-            <a href="tel:5141234567" className="inline-flex items-center gap-2.5 bg-secondary text-secondary-foreground px-6 py-3 text-base font-semibold hover:bg-secondary/80 transition-colors border border-border">
+            <a href="tel:5144486566" className="inline-flex items-center gap-2.5 bg-secondary text-secondary-foreground px-6 py-3 text-base font-semibold hover:bg-secondary/80 transition-colors border border-border">
               <Phone className="w-4 h-4" />
-              (514) 123-4567
+              (514) 448-6566
             </a>
             <Button onClick={() => handleNavClick("/soumission")} className="bg-primary hover:bg-primary/90 text-primary-foreground px-8 py-3 h-auto text-base font-bold uppercase tracking-wide">
               Obtenir une soumission
@@ -164,9 +164,9 @@ const Header = () => {
               Contact
             </button>
             <div className="pt-4 border-t border-border space-y-3">
-              <a href="tel:5141234567" className="flex items-center justify-center gap-2 bg-secondary text-secondary-foreground py-3 font-semibold border border-border">
+              <a href="tel:5144486566" className="flex items-center justify-center gap-2 bg-secondary text-secondary-foreground py-3 font-semibold border border-border">
                 <Phone className="w-4 h-4" />
-                (514) 123-4567
+                (514) 448-6566
               </a>
               <Button onClick={() => handleNavClick("/soumission")} className="w-full py-3 h-auto font-bold uppercase tracking-wide">
                 Obtenir une soumission

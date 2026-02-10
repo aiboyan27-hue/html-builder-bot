@@ -46,9 +46,9 @@ const ServiceHero = ({ title, subtitle, benefits, image }: ServiceHeroProps) => 
                 variant="outline"
                 className="border-foreground text-foreground hover:bg-foreground/5 rounded-lg px-8 py-6 text-base font-medium"
               >
-                <a href="tel:5141234567" className="flex items-center gap-2">
+                <a href="tel:5144486566" className="flex items-center gap-2">
                   <Phone className="w-4 h-4" />
-                  (514) 123-4567
+                  (514) 448-6566
                 </a>
               </Button>
             </div>
