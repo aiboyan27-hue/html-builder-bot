@@ -218,7 +218,7 @@ const ServiceDetail = () => {
                   Contactez-nous et nous vous aiderons à choisir le plan de nettoyage parfait pour votre espace.
                 </p>
                 <Button asChild variant="outline" className="rounded-full">
-                  <a href="tel:5141234567">Appelez (514) 123-4567</a>
+                  <a href="tel:5144486566">Appelez (514) 448-6566</a>
                 </Button>
               </div>
             </div>

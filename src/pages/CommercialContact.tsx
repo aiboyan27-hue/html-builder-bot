@@ -99,7 +99,7 @@ const CommercialContact = () => {
 
                 <div className="space-y-6">
                   <a 
-                    href="tel:5141234567" 
+                    href="tel:5144486566" 
                     className="flex items-center gap-4 p-4 bg-card border border-border hover:border-primary transition-colors group"
                   >
                     <div className="w-12 h-12 bg-primary flex items-center justify-center">
@@ -107,7 +107,7 @@ const CommercialContact = () => {
                     </div>
                     <div>
                       <p className="font-semibold text-foreground group-hover:text-primary transition-colors">
-                        (514) 123-4567
+                        (514) 448-6566
                       </p>
                       <p className="text-sm text-muted-foreground">Appelez-nous maintenant</p>
                     </div>
