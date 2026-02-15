@@ -118,7 +118,7 @@ const CommercialContact = () => {
                       <Mail className="w-5 h-5 text-primary-foreground" />
                     </div>
                     <div>
-                      <p className="font-semibold text-foreground">info@auranettoyage.ca</p>
+                      <p className="font-semibold text-foreground">info@auranettoyage.com</p>
                       <p className="text-sm text-muted-foreground">Écrivez-nous</p>
                     </div>
                   </div>

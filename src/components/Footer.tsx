@@ -111,8 +111,8 @@ const Footer = () => {
                 </a>
               </li>
               <li>
-                <a href="mailto:info@auranettoyage.ca" className="hover:text-primary-foreground transition-colors">
-                  info@auranettoyage.ca
+                <a href="mailto:info@auranettoyage.com" className="hover:text-primary-foreground transition-colors">
+                  info@auranettoyage.com
                 </a>
               </li>
               <li>Montréal, Québec</li>

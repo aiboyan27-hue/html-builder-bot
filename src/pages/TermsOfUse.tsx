@@ -172,8 +172,8 @@ const TermsOfUse = () => {
               <p>
                 Montréal, Québec
                 <br />
-                <a href="mailto:info@auranettoyage.ca" className="underline hover:text-primary">
-                  info@auranettoyage.ca
+                <a href="mailto:info@auranettoyage.com" className="underline hover:text-primary">
+                  info@auranettoyage.com
                 </a>
               </p>
               <p className="mt-2">
