@@ -23,7 +23,7 @@ const ContactHero = () => {
             {/* Rating Row */}
             <div className="flex items-center gap-4 pt-4">
               <div className="flex -space-x-3">
-                {avatars.map((avatar, index) => <img key={index} src={avatar} alt={`Client ${index + 1}`} className="w-10 h-10 rounded-full border-2 border-background object-cover" />)}
+                {avatars.map((avatar, index) => {})}
               </div>
               <div className="flex flex-col">
                 <div className="flex gap-0.5">
