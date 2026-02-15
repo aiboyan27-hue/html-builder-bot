@@ -1,0 +1,61 @@
+import { useState, useRef, useEffect } from "react";
+import { cn } from "@/lib/utils";
+
+interface OptimizedImageProps extends React.ImgHTMLAttributes<HTMLImageElement> {
+  src: string;
+  alt: string;
+  className?: string;
+}
+
+const OptimizedImage = ({ src, alt, className, ...props }: OptimizedImageProps) => {
+  const [loaded, setLoaded] = useState(false);
+  const [inView, setInView] = useState(false);
+  const imgRef = useRef<HTMLDivElement>(null);
+
+  useEffect(() => {
+    const el = imgRef.current;
+    if (!el) return;
+
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting) {
+          setInView(true);
+          observer.disconnect();
+        }
+      },
+      { rootMargin: "200px" }
+    );
+
+    observer.observe(el);
+    return () => observer.disconnect();
+  }, []);
+
+  return (
+    <div ref={imgRef} className="relative">
+      {/* Skeleton placeholder */}
+      {!loaded && (
+        <div
+          className={cn(
+            "absolute inset-0 animate-pulse rounded-[inherit] bg-muted",
+            className
+          )}
+        />
+      )}
+      {inView && (
+        <img
+          src={src}
+          alt={alt}
+          className={cn(
+            "transition-opacity duration-500",
+            loaded ? "opacity-100" : "opacity-0",
+            className
+          )}
+          onLoad={() => setLoaded(true)}
+          {...props}
+        />
+      )}
+    </div>
+  );
+};
+
+export default OptimizedImage;

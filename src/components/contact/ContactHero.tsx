@@ -1,6 +1,7 @@
 import { Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import { Star } from "lucide-react";
+import OptimizedImage from "@/components/OptimizedImage";
 const avatars = ["https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=100&h=100&fit=crop&crop=face", "https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=100&h=100&fit=crop&crop=face", "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=100&h=100&fit=crop&crop=face", "https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=100&h=100&fit=crop&crop=face"];
 const ContactHero = () => {
   return <section className="py-16 md:py-24">
@@ -37,7 +38,7 @@ const ContactHero = () => {
           {/* Right Image */}
           <div className="relative">
             <div className="relative rounded-3xl overflow-hidden bg-muted aspect-[4/5]">
-              <img src="/lovable-uploads/contact-hero.png" alt="Notre équipe de nettoyage" className="w-full h-full object-cover" />
+              <OptimizedImage src="/lovable-uploads/contact-hero.png" alt="Notre équipe de nettoyage" className="w-full h-full object-cover" />
             </div>
           </div>
         </div>
