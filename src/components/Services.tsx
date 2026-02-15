@@ -7,6 +7,7 @@ import {
   type CarouselApi,
 } from "@/components/ui/carousel";
 import { useState, useEffect, useCallback } from "react";
+import OptimizedImage from "@/components/OptimizedImage";
 
 // ============================================
 // EDITABLE SERVICES DATA - Update this list to change services
@@ -173,7 +174,7 @@ const Services = () => {
                     <div className="h-full bg-[#FFF8E7] rounded-2xl overflow-hidden shadow-sm hover:shadow-elevated hover:-translate-y-1 transition-all duration-300 cursor-pointer">
                       {/* Image */}
                       <div className="aspect-[4/3] overflow-hidden rounded-t-2xl m-3 mb-0">
-                        <img
+                        <OptimizedImage
                           src={service.image}
                           alt={service.title}
                           className="w-full h-full object-cover rounded-xl transition-transform duration-300 group-hover:scale-105"

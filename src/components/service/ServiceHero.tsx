@@ -1,6 +1,7 @@
 import { Link } from "react-router-dom";
 import { Phone, Sparkles } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import OptimizedImage from "@/components/OptimizedImage";
 
 interface ServiceHeroProps {
   title: string;
@@ -57,7 +58,7 @@ const ServiceHero = ({ title, subtitle, benefits, image }: ServiceHeroProps) => 
           {/* Right Image */}
           <div className="flex justify-center lg:justify-end">
             <div className="w-full max-w-md lg:max-w-xl">
-              <img
+              <OptimizedImage
                 src={image}
                 alt={title}
                 className="rounded-3xl shadow-elevated w-full h-auto object-contain"

@@ -1,6 +1,7 @@
 import { Link } from "react-router-dom";
 import { Shield } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import OptimizedImage from "@/components/OptimizedImage";
 
 const Hero = () => {
   return (
@@ -58,7 +59,7 @@ const Hero = () => {
           {/* Image - Reduced size */}
           <div className="relative">
             <div className="relative rounded-3xl overflow-hidden shadow-elevated max-w-sm lg:max-w-md mx-auto">
-              <img
+              <OptimizedImage
                 alt="Professional cleaner at work"
                 className="w-full h-auto object-cover aspect-[3/4]"
                 src="/lovable-uploads/19cd016a-0dd4-44ae-9eb3-6b8ee9cdfec4.png"
