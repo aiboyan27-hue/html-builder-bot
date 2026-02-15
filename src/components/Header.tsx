@@ -2,7 +2,7 @@ import { useState } from "react";
 import { Link, useLocation, useNavigate } from "react-router-dom";
 import { Phone, ChevronDown, Menu, X, Sparkles, Home, RefreshCw, Building, Droplets, Hammer, PartyPopper } from "lucide-react";
 import { Button } from "@/components/ui/button";
-import auraLogo from "@/assets/aura-logo.png";
+import auraLogo from "@/assets/aura-logo-new.png";
 const services = [{
   slug: "nettoyage-en-profondeur",
   title: "Nettoyage en profondeur",
