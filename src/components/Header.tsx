@@ -84,7 +84,7 @@ const Header = () => {
   };
   return <header className="fixed top-0 left-0 right-0 z-50 bg-background border-b border-border max-w-[1280px] mx-auto">
       <div className="container">
-        <div className="flex items-center justify-between h-20">
+        <div className="flex items-center justify-between h-16 overflow-hidden">
           {/* Logo - Left aligned, bigger without changing header height */}
           <button onClick={() => handleNavClick("/")} className="flex items-center py-1">
             <img src={auraLogo} alt="Aura Nettoyage" className="h-24 md:h-28 w-auto object-contain" />
