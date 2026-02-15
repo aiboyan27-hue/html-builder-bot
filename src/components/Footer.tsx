@@ -1,6 +1,6 @@
 import { Link } from "react-router-dom";
 import { Facebook, Instagram } from "lucide-react";
-import auraLogoWhite from "@/assets/aura-logo-white.png";
+import auraLogo from "@/assets/aura-logo.png";
 const services = [{
   slug: "nettoyage-en-profondeur",
   title: "Nettoyage en profondeur"
@@ -35,7 +35,7 @@ const Footer = () => {
         <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-12">
           {/* Brand */}
           <div>
-            <img src={auraLogoWhite} alt="Aura Nettoyage" className="h-32 w-auto object-contain mb-4" />
+            <img src={auraLogo} alt="Aura Nettoyage" className="h-32 w-auto object-contain mb-4 brightness-0 invert" />
             <p className="text-sm text-primary-foreground/70 mb-6">
               Service de nettoyage professionnel et fiable pour votre tranquillité d'esprit.
             </p>
