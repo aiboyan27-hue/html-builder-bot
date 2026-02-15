@@ -82,7 +82,7 @@ const Header = () => {
       }, 100);
     }
   };
-  return <header className="fixed top-0 left-0 right-0 z-50 bg-background border-b border-border">
+  return <header className="fixed top-0 left-0 right-0 z-50 bg-background border-b border-border max-w-[1280px] mx-auto">
       <div className="container">
         <div className="flex items-center justify-between h-20">
           {/* Logo - Left aligned, bigger without changing header height */}
