@@ -21,17 +21,17 @@ const ContactHero = () => {
             </Button>
 
             {/* Rating Row */}
-            <div className="flex items-center gap-4 pt-4">
-              <div className="flex -space-x-3">
-                {avatars.map((avatar, index) => {})}
-              </div>
-              <div className="flex flex-col">
-                <div className="flex gap-0.5">
-                  {[...Array(5)].map((_, i) => <Star key={i} className="w-4 h-4 fill-primary text-primary" />)}
-                </div>
-                
-              </div>
-            </div>
+            
+
+
+
+
+
+
+
+
+
+
           </div>
 
           {/* Right Image */}
