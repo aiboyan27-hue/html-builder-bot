@@ -26,12 +26,12 @@ const reviews = [
   },
   {
     id: 3,
-    name: "Alejandro Costas",
+    name: "Elizabeth Katkova",
     avatar: "",
-    text: "Service impeccable autant clientèle que professionnel. L'équipe a fait mes 3 étages de maison et je suis très satisfait. Je recommande!",
+    text: "Entreprise familiale honnête et professionnelle. Très bonne communication, service impeccable et gens de confiance. Je recommande fortement.",
     rating: 5,
     timeAgo: "Il y a 2 semaines",
-    link: "https://maps.google.com/maps/contrib/117747275226408416173",
+    link: "https://www.google.com/maps/contrib/100973007977033124871/place/ChIJNXRhTZ2XCwQRv3iD9ynG5Ig/@45.606036,-73.7059175,13z/data=!4m6!1m5!8m4!1e1!2s100973007977033124871!3m1!1e1?hl=fr-CA&entry=ttu&g_ep=EgoyMDI2MDIxNi4wIKXMDSoASAFQAw%3D%3D",
   },
 ];
 
